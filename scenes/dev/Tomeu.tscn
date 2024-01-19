@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbj7y1m7ryrtn"]
+[gd_scene load_steps=4 format=3 uid="uid://dbj7y1m7ryrtn"]
+
+[ext_resource type="PackedScene" uid="uid://bkwmiu271cxf8" path="res://prefabs/mainMenu/main_menu.tscn" id="1_evwpy"]
+[ext_resource type="PackedScene" uid="uid://c8i7dlv0ns4jl" path="res://prefabs/mainMenu/intro_music.tscn" id="2_jjxu3"]
 
 [sub_resource type="Environment" id="Environment_8xg1a"]
 background_mode = 2
@@ -8,9 +11,8 @@ ambient_light_color = Color(0.788235, 0.435294, 0.976471, 1)
 ambient_light_energy = 1.35
 reflected_light_source = 2
 fog_enabled = true
-fog_light_color = Color(0.741176, 0.25098, 0.905882, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_klrau"]
+fog_light_color = Color(0.396078, 0.25098, 0.905882, 1)
+fog_density = 0.3153
 
 [node name="Tomeu" type="Node3D"]
 
@@ -20,10 +22,6 @@ environment = SubResource("Environment_8xg1a")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.0416971, 0.483893, 0.874133, -0.023056, 0.875127, -0.483344, -0.998864, 0, 0.0476469, 2.54065, 0, 0.0727984)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-mesh = SubResource("CylinderMesh_klrau")
-skeleton = NodePath("../MeshInstance3D")
+[node name="MainMenu" parent="." instance=ExtResource("1_evwpy")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.948092, 5.78976, 0)
-mesh = SubResource("CylinderMesh_klrau")
+[node name="IntroMusic" parent="." instance=ExtResource("2_jjxu3")]
