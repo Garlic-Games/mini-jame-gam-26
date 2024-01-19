@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkwmiu271cxf8"]
+
+[ext_resource type="Texture2D" uid="uid://w246lk2eqrg" path="res://art/mainMenu/vaporwave-background-10.png" id="1_tu1xq"]
+[ext_resource type="Theme" uid="uid://dpqda1rl4km7n" path="res://art/theme/main.tres" id="2_f3fat"]
+
+[node name="MainMenu" type="CanvasLayer"]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="AspectRatioContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="MainBackground" type="TextureRect" parent="AspectRatioContainer/PanelContainer"]
+clip_contents = true
+layout_mode = 2
+texture = ExtResource("1_tu1xq")
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="Holder" type="VBoxContainer" parent="AspectRatioContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 300
+
+[node name="MainTitle" type="Label" parent="AspectRatioContainer/PanelContainer/MarginContainer/Holder"]
+layout_mode = 2
+theme = ExtResource("2_f3fat")
+theme_override_colors/font_color = Color(0.960784, 0.792157, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 100
+text = "SUPER RAPID MOVEMENT"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/PanelContainer/MarginContainer/Holder"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="Start" type="Button" parent="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme = ExtResource("2_f3fat")
+theme_override_colors/font_color = Color(0.996078, 0.996078, 0.996078, 1)
+theme_override_font_sizes/font_size = 40
+text = "Start"
+
+[node name="Options" type="Button" parent="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme = ExtResource("2_f3fat")
+theme_override_colors/font_color = Color(0.996078, 0.996078, 0.996078, 1)
+theme_override_font_sizes/font_size = 40
+text = "Options"
+
+[node name="Exit" type="Button" parent="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("2_f3fat")
+theme_override_colors/font_color = Color(0.996078, 0.996078, 0.996078, 1)
+theme_override_font_sizes/font_size = 40
+text = "Exit"
