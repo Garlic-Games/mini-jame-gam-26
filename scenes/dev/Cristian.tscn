@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dx45nsf1kdr7e"]
+
+[ext_resource type="PackedScene" uid="uid://n7r0bvkmr1fc" path="res://art/models/edificio2.glb" id="1_ea6px"]
+[ext_resource type="PackedScene" uid="uid://gmtkaq8a6a0l" path="res://art/models/edificio3.glb" id="2_x1oc1"]
+[ext_resource type="PackedScene" uid="uid://bnvsotbepg3ew" path="res://art/models/edificio4.glb" id="3_kbph1"]
+[ext_resource type="PackedScene" uid="uid://jwubqipkoqyb" path="res://art/models/edificio.glb" id="4_s25lr"]
+[ext_resource type="PackedScene" uid="uid://cesnylnkki064" path="res://art/models/palmera.glb" id="5_ydqsk"]
+
+[node name="Cristian" type="Node3D"]
+
+[node name="edificio2" parent="." instance=ExtResource("1_ea6px")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.362)
+
+[node name="edificio3" parent="." instance=ExtResource("2_x1oc1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.5218)
+
+[node name="edificio4" parent="." instance=ExtResource("3_kbph1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1942, 0, 0)
+
+[node name="edificio" parent="." instance=ExtResource("4_s25lr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1992, 0, 0)
+
+[node name="palmera" parent="." instance=ExtResource("5_ydqsk")]
+transform = Transform3D(0.444369, 0, -0.155624, 0, 0.470832, 0, 0.155624, 0, 0.444369, 0, 0, 0)
