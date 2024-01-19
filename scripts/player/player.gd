@@ -1,5 +1,6 @@
 extends Node
 
+# Cuanto más alto, menos frenará al colisionar.
 @export var brakeResistance : float = 4.5;
 
 func speedAfterCollision(playerSpeed : float, minimumSpeed : float):

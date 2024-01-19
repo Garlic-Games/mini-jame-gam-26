@@ -5,4 +5,3 @@
 [node name="IntroMusic" type="AudioStreamPlayer"]
 stream = ExtResource("1_ogmt5")
 autoplay = true
-bus = &"Music"
