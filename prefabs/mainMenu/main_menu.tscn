@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkwmiu271cxf8"]
+[gd_scene load_steps=12 format=3 uid="uid://bkwmiu271cxf8"]
 
 [ext_resource type="Script" path="res://scripts/mainMenu/main_menu.gd" id="1_8805b"]
 [ext_resource type="Texture2D" uid="uid://w246lk2eqrg" path="res://art/backgrounds/vaporwave-background-10.png" id="1_tu1xq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" path="res://art/shaders/glitch.gdshader" id="4_5f5nj"]
 [ext_resource type="AudioStream" uid="uid://dcnytumipye5u" path="res://art/sounds/Menu Sounds/wav/menu_19.wav" id="6_afl2u"]
 [ext_resource type="AudioStream" uid="uid://08glyqutlt1y" path="res://art/sounds/Menu Sounds/wav/menu_1.wav" id="7_dmuv4"]
+[ext_resource type="PackedScene" uid="uid://c8i7dlv0ns4jl" path="res://prefabs/mainMenu/intro_music.tscn" id="8_coyqn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dfff5"]
 shader = ExtResource("4_5f5nj")
@@ -113,6 +114,8 @@ bus = &"Effects"
 
 [node name="EnterGame" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_dmuv4")
+
+[node name="IntroMusic" parent="." instance=ExtResource("8_coyqn")]
 
 [connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Start" to="ChangeButton" method="play" binds= [0.0]]
 [connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Start" to="EnterGame" method="play" binds= [0.0]]

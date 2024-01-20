@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbj7y1m7ryrtn"]
+[gd_scene load_steps=12 format=3 uid="uid://dbj7y1m7ryrtn"]
 
 [ext_resource type="PackedScene" uid="uid://bkwmiu271cxf8" path="res://prefabs/mainMenu/main_menu.tscn" id="1_evwpy"]
-[ext_resource type="PackedScene" uid="uid://c8i7dlv0ns4jl" path="res://prefabs/mainMenu/intro_music.tscn" id="2_jjxu3"]
+[ext_resource type="Script" path="res://scripts/ui/RevolutionsHud.gd" id="2_8tlw2"]
+[ext_resource type="FontFile" uid="uid://c7kkllaqq3iir" path="res://art/fonts/GravityRegular5.ttf" id="2_f74ss"]
+[ext_resource type="Texture2D" uid="uid://dl5pid43m3gey" path="res://art/textures/hud.tga" id="3_ai56c"]
+[ext_resource type="Shader" path="res://art/shaders/speedmetter.gdshader" id="3_q7t4j"]
+[ext_resource type="Script" path="res://scripts/ui/Speed.gd" id="3_vcs1a"]
 
 [sub_resource type="Environment" id="Environment_8xg1a"]
 reflected_light_source = 2
@@ -9,13 +13,60 @@ fog_enabled = true
 fog_light_color = Color(0.396078, 0.25098, 0.905882, 1)
 fog_density = 0.3153
 
+[sub_resource type="Gradient" id="Gradient_hl650"]
+colors = PackedColorArray(0.356863, 0, 1, 1, 1, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rg7hs"]
+gradient = SubResource("Gradient_hl650")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37bg7"]
+texture = SubResource("GradientTexture2D_rg7hs")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ys2ex"]
+shader = ExtResource("3_q7t4j")
+
 [node name="Tomeu" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8xg1a")
 
 [node name="MainMenu" parent="." instance=ExtResource("1_evwpy")]
+visible = false
 
-[node name="IntroMusic" parent="." instance=ExtResource("2_jjxu3")]
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="Revolutions" type="ProgressBar" parent="Hud"]
+anchors_preset = -1
+anchor_left = 0.778
+anchor_top = 0.832
+anchor_right = 0.978
+anchor_bottom = 0.967
+offset_left = 0.239868
+offset_top = 0.440002
+offset_right = -0.760132
+offset_bottom = -0.360107
+theme_override_styles/fill = SubResource("StyleBoxTexture_37bg7")
+value = 50.0
+show_percentage = false
+script = ExtResource("2_8tlw2")
+
+[node name="MettersPerSeccond" type="Label" parent="Hud/Revolutions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_f74ss")
+theme_override_font_sizes/font_size = 30
+text = " 30 KM/H"
+vertical_alignment = 1
+script = ExtResource("3_vcs1a")
+
+[node name="TextureRect" type="TextureRect" parent="Hud"]
+material = SubResource("ShaderMaterial_ys2ex")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_ai56c")
 
 [node name="Camera2D" type="Camera2D" parent="."]
