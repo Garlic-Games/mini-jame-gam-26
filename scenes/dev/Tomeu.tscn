@@ -25,4 +25,3 @@ transform = Transform3D(0.0416971, 0.483893, 0.874133, -0.023056, 0.875127, -0.4
 [node name="MainMenu" parent="." instance=ExtResource("1_evwpy")]
 
 [node name="IntroMusic" parent="." instance=ExtResource("2_jjxu3")]
-bus = &"Master"

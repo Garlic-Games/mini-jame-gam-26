@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://n7r0bvkmr1fc"
-path="res://.godot/imported/edificio2.glb-454acfc32e71e2790b00724842bda784.scn"
+uid="uid://cesnylnkki064"
+path="res://.godot/imported/palm_tree.glb-6dbfb5a1ae0170ff95330ad2af09663d.scn"
 
 [deps]
 
-source_file="res://art/models/edificio2.glb"
-dest_files=["res://.godot/imported/edificio2.glb-454acfc32e71e2790b00724842bda784.scn"]
+source_file="res://art/models/palm_tree.glb"
+dest_files=["res://.godot/imported/palm_tree.glb-6dbfb5a1ae0170ff95330ad2af09663d.scn"]
 
 [params]
 

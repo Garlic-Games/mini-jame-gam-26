@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bnvsotbepg3ew"
-path="res://.godot/imported/edificio4.glb-8d68ea33e00b32f4528e12716a405cf0.scn"
+uid="uid://gmtkaq8a6a0l"
+path="res://.godot/imported/building3.glb-840d9272c786428dda99a8caf3c38369.scn"
 
 [deps]
 
-source_file="res://art/models/edificio4.glb"
-dest_files=["res://.godot/imported/edificio4.glb-8d68ea33e00b32f4528e12716a405cf0.scn"]
+source_file="res://art/models/building3.glb"
+dest_files=["res://.godot/imported/building3.glb-840d9272c786428dda99a8caf3c38369.scn"]
 
 [params]
 

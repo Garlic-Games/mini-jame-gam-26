@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://4wpq48utc75i" path="res://prefabs/destroyable.tscn" id="1_qhq1v"]
 [ext_resource type="Script" path="res://scripts/destroyable/destroyable.gd" id="2_cw6e7"]
-[ext_resource type="PackedScene" uid="uid://jwubqipkoqyb" path="res://art/models/edificio.glb" id="3_7g1pj"]
+[ext_resource type="PackedScene" uid="uid://jwubqipkoqyb" path="res://art/models/building1.glb" id="3_7g1pj"]
 
 [node name="Building" type="Node3D"]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cesnylnkki064"
-path="res://.godot/imported/palmera.glb-490fa28cbb0c4226e68b5e454cc8a844.scn"
+uid="uid://bnvsotbepg3ew"
+path="res://.godot/imported/building4.glb-d3c91fb726bf3470fdc146b9cc355333.scn"
 
 [deps]
 
-source_file="res://art/models/palmera.glb"
-dest_files=["res://.godot/imported/palmera.glb-490fa28cbb0c4226e68b5e454cc8a844.scn"]
+source_file="res://art/models/building4.glb"
+dest_files=["res://.godot/imported/building4.glb-d3c91fb726bf3470fdc146b9cc355333.scn"]
 
 [params]
 
