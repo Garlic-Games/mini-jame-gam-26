@@ -24,12 +24,6 @@ window/size/viewport_height=1080
 
 project/assembly_name="Mini-jame-gam-26"
 
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
-
-
 [input]
 
 accelerate={
@@ -66,3 +60,8 @@ back={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":6,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

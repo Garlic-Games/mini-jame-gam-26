@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://w246lk2eqrg"
-path="res://.godot/imported/vaporwave-background-10.png-8c877264878efe9a37dd482b4ebe1c15.ctex"
+path="res://.godot/imported/vaporwave-background-10.png-1061c3520cbc51b123d41b1cd2b9eb6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/mainMenu/vaporwave-background-10.png"
-dest_files=["res://.godot/imported/vaporwave-background-10.png-8c877264878efe9a37dd482b4ebe1c15.ctex"]
+source_file="res://art/backgrounds/vaporwave-background-10.png"
+dest_files=["res://.godot/imported/vaporwave-background-10.png-1061c3520cbc51b123d41b1cd2b9eb6b.ctex"]
 
 [params]
 
