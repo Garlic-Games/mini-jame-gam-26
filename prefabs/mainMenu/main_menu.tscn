@@ -119,4 +119,4 @@ stream = ExtResource("7_dmuv4")
 [connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Options" to="ChangeButton" method="play" binds= [0.0]]
 [connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Exit" to="ChangeButton" method="play" binds= [0.0]]
 [connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="finished" from="ChangeButton" to="." method="_on_start_pressed"]
+[connection signal="finished" from="EnterGame" to="." method="_on_start_pressed"]
