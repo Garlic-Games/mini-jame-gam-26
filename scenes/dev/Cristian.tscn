@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://d0pam8jlu6dcl" path="res://prefabs/environment/building2.tscn" id="2_e1dgj"]
 [ext_resource type="PackedScene" uid="uid://1lbn8hxgtmuy" path="res://prefabs/environment/building3.tscn" id="3_2v4ar"]
 [ext_resource type="PackedScene" uid="uid://ungaqd0sni1n" path="res://prefabs/environment/building4.tscn" id="4_uftpy"]
-[ext_resource type="PackedScene" uid="uid://c8v5q3e3y8gau" path="res://prefabs/environment/palm_tree.tscn" id="5_0oxqr"]
 [ext_resource type="PackedScene" uid="uid://dkpwsovdhmw7y" path="res://prefabs/environment/mountain.tscn" id="6_ec41h"]
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="7_5p4pm"]
 [ext_resource type="Texture2D" uid="uid://bb5plvmeleg46" path="res://art/textures/sunwave.png" id="8_mym5t"]
+[ext_resource type="PackedScene" uid="uid://cesnylnkki064" path="res://art/models/palm_tree.glb" id="8_w7866"]
 
 [sub_resource type="Environment" id="Environment_udsya"]
 background_mode = 1
@@ -37,11 +37,8 @@ environment = SubResource("Environment_udsya")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.671721, -0.191734, 0.715562, 0, 0.965926, 0.258819, -0.740805, -0.173854, 0.648832, 12.7683, 6.00838, 13.3346)
 
-[node name="Delorean" parent="." instance=ExtResource("7_5p4pm")]
-transform = Transform3D(-0.777267, 0, -0.629171, 0, 1, 0, 0.629171, 0, -0.777267, 8.58567, 0.249996, 10.9653)
-engine_force_value = 4000
-
 [node name="Map" type="Node3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.37743, 11.0232, 0.102859)
@@ -60,9 +57,6 @@ collision_layer = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Floor/RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235332, -3.8147e-06, -0.30834)
 shape = SubResource("BoxShape3D_urkbn")
-
-[node name="Palm tree" parent="Map" instance=ExtResource("5_0oxqr")]
-transform = Transform3D(0.291413, 0, 0, 0, 0.291413, 0, 0, 0, 0.291413, 6.02296, -0.01019, 0.931549)
 
 [node name="Mountain" parent="Map" instance=ExtResource("6_ec41h")]
 transform = Transform3D(0.340576, 0, -0.940217, 0, 1, 0, 0.940217, 0, 0.340576, 30.6298, 4.3781, -118.221)
@@ -133,9 +127,6 @@ transform = Transform3D(0.508936, 0, -0.860804, 0, 1, 0, 0.860804, 0, 0.508936, 
 [node name="Mountain16" parent="Map" instance=ExtResource("6_ec41h")]
 transform = Transform3D(-0.786978, 0, -0.616981, 0, 1, 0, 0.616981, 0, -0.786978, -85.3356, 4.5552, 26.3697)
 
-[node name="Building 4" parent="Map" instance=ExtResource("4_uftpy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.54303, 0.249997, 8.46948)
-
 [node name="Building 3" parent="Map" instance=ExtResource("3_2v4ar")]
 transform = Transform3D(-0.259426, 0, -0.965763, 0, 1, 0, 0.965763, 0, -0.259426, 13.3913, 0.249996, -10.1627)
 
@@ -154,6 +145,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.93042, 0.249996, 20.6577)
 [node name="Building 7" parent="Map" instance=ExtResource("3_2v4ar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.7642, 0.249996, 4.58792)
 
+[node name="Building 4" parent="Map" instance=ExtResource("4_uftpy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.88535, 0.249996, 7.70346)
+
+[node name="palm_tree" parent="Map" instance=ExtResource("8_w7866")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 5.00161, 0, 3.34941)
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(47.4975, 0, 0, 0, 47.4975, 0, 0, 0, 1, 0, 348.833, -1650.59)
 texture = ExtResource("8_mym5t")
+
+[node name="Delorean" parent="." instance=ExtResource("7_5p4pm")]
+transform = Transform3D(-0.846927, 0, -0.531709, 0, 1, 0, 0.531709, 0, -0.846927, 10.8551, 0, 11.1899)
+engine_force_value = 4000

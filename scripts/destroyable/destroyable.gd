@@ -21,9 +21,9 @@ func _ready():
 	if piecesNode:
 		piecesNode.set_process(false);
 		piecesNode.hide();
-	
+		pass;
+		
 func _process(delta):
-	
 	if isDestroyed:
 		timerDespawn += delta;
 
@@ -31,7 +31,6 @@ func _process(delta):
 			queue_free();
 			
 func Explode():
-	
 	if isDestroyed:
 		return;
 		
@@ -49,7 +48,6 @@ func Explode():
 		
 	for piece in pieces:
 		forceDirection = explosionCenter.direction_to(piece.position);
-		
 		randomVector = Vector3(randf_range(0, 1), randf_range(0, 1), randf_range(0, 1)) * forceDirection;
 		piece.apply_impulse(randomVector, forceDirection * explosionForce * 100.0);
 
@@ -60,8 +58,9 @@ func FindRigidBodies(node : Node, pieceContainer : Array):
 		
 		elif child.name == "Rest in Pieces":
 			piecesNode = child;
-			
+
 			for pz in piecesNode.get_children():
 				if pz is RigidBody3D:
-					pieceContainer.append(pz);
 					pz.gravity_scale = 0.0;	
+					
+					pieceContainer.append(pz);
