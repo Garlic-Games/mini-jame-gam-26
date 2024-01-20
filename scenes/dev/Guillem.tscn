@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0jv0cq7u6qcd"]
+[gd_scene load_steps=5 format=3 uid="uid://b0jv0cq7u6qcd"]
 
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="1_7qtxn"]
+[ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/environment/building1.tscn" id="2_78lom"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p3qla"]
 size = Vector3(5000, 0.5, 5000)
@@ -26,3 +27,6 @@ mesh = SubResource("BoxMesh_p3qla")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235332, -3.8147e-06, -0.30834)
 shape = SubResource("BoxShape3D_uiek3")
+
+[node name="Building 1" parent="." instance=ExtResource("2_78lom")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5108, 0, 0)
