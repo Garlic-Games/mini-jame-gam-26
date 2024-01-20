@@ -1,5 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://ungaqd0sni1n"]
+[gd_scene load_steps=34 format=3 uid="uid://ungaqd0sni1n"]
 
+[ext_resource type="Script" path="res://scripts/destroyable/destroyable.gd" id="2_lwl13"]
 [ext_resource type="PackedScene" uid="uid://bnvsotbepg3ew" path="res://art/models/building4.glb" id="3_4i7sh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hdvou"]
@@ -567,6 +568,7 @@ shadow_mesh = SubResource("ArrayMesh_ghe07")
 points = PackedVector3Array(0.0216088, -0.19779, 0.0635047, 0.0216088, 0.0659043, -0.148831, 0.0216088, 0.0659043, 0.063089, 0.0216004, 0.0659301, 0.063089, -0.0648265, 0.0659301, 0.0222056, 0.0216004, 0.0659301, -0.148831)
 
 [node name="Building 4" type="Node3D"]
+script = ExtResource("2_lwl13")
 
 [node name="Model" parent="." instance=ExtResource("3_4i7sh")]
 
