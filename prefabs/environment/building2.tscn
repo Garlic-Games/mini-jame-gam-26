@@ -1,7 +1,10 @@
-[gd_scene load_steps=43 format=3 uid="uid://d0pam8jlu6dcl"]
+[gd_scene load_steps=44 format=3 uid="uid://d0pam8jlu6dcl"]
 
 [ext_resource type="Script" path="res://scripts/destroyable/destroyable.gd" id="2_a7h0m"]
 [ext_resource type="PackedScene" uid="uid://n7r0bvkmr1fc" path="res://art/models/building2.glb" id="3_g7tqk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_or8yp"]
+size = Vector3(6, 9, 6)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pr0cf"]
 resource_name = "Antena"
@@ -988,6 +991,14 @@ points = PackedVector3Array(-8.88854e-06, -1.6385, 0.0520935, 0.0451143, -1.6385
 script = ExtResource("2_a7h0m")
 
 [node name="Model" parent="." instance=ExtResource("3_g7tqk")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Model"]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.30121, 0)
+shape = SubResource("BoxShape3D_or8yp")
 
 [node name="Rest in Pieces" type="Node3D" parent="."]
 

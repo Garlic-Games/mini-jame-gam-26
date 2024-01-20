@@ -73,3 +73,10 @@ func calc_rpm():
 	if(rpm_value < rpm_idle && selected_gear == 0):
 		rpm_value = rpm_idle;
 		
+
+func _on_body_entered(body):
+	if body.get_collision_layer_value(4):
+		var destroyable = body.get_parent().get_parent();
+		
+		if (speed_kph >= destroyable.minimumSpeed):
+			destroyable.Explode();

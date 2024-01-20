@@ -67,9 +67,13 @@ _surfaces = [{
 }]
 
 [node name="Delorean" type="VehicleBody3D" node_paths=PackedStringArray("motorStreamPlayer")]
+collision_layer = 4
+collision_mask = 10
 mass = 1500.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.35, 0.25)
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_2hxfg")
 motorStreamPlayer = NodePath("AudioStreamPlayer")
 
@@ -169,3 +173,5 @@ damping_relaxation = 0.75
 _import_path = NodePath("BODY-vehicle/wheel2-wheel")
 transform = Transform3D(2.48, 0, 0, 0, 1.385, 0, 0, 0, 1.385, 0, 0, 0)
 mesh = SubResource("ArrayMesh_8u5tn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

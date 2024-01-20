@@ -1,7 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://ungaqd0sni1n"]
+[gd_scene load_steps=35 format=3 uid="uid://ungaqd0sni1n"]
 
 [ext_resource type="Script" path="res://scripts/destroyable/destroyable.gd" id="2_lwl13"]
 [ext_resource type="PackedScene" uid="uid://bnvsotbepg3ew" path="res://art/models/building4.glb" id="3_4i7sh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bf7im"]
+margin = 5.845
+size = Vector3(6, 20, 14)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hdvou"]
 resource_name = "Edificio_pisos"
@@ -571,6 +575,14 @@ points = PackedVector3Array(0.0216088, -0.19779, 0.0635047, 0.0216088, 0.0659043
 script = ExtResource("2_lwl13")
 
 [node name="Model" parent="." instance=ExtResource("3_4i7sh")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Model"]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.66085, 0)
+shape = SubResource("BoxShape3D_bf7im")
 
 [node name="Rest in Pieces" type="Node3D" parent="."]
 
