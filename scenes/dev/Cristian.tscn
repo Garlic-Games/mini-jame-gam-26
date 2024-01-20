@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dx45nsf1kdr7e"]
 
-[ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/environment/building1.tscn" id="1_e25s7"]
+[ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/building.tscn" id="1_e25s7"]
 [ext_resource type="PackedScene" uid="uid://d0pam8jlu6dcl" path="res://prefabs/environment/building2.tscn" id="2_e1dgj"]
 [ext_resource type="PackedScene" uid="uid://1lbn8hxgtmuy" path="res://prefabs/environment/building3.tscn" id="3_2v4ar"]
 [ext_resource type="PackedScene" uid="uid://ungaqd0sni1n" path="res://prefabs/environment/building4.tscn" id="4_uftpy"]
