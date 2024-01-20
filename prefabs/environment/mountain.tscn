@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkpwsovdhmw7y"]
 
-[ext_resource type="PackedScene" uid="uid://4wpq48utc75i" path="res://prefabs/environment/destroyable.tscn" id="1_b4ruo"]
+[ext_resource type="PackedScene" uid="uid://4wpq48utc75i" path="res://prefabs/destroyable.tscn" id="1_b4ruo"]
 [ext_resource type="Script" path="res://scripts/destroyable/destroyable.gd" id="2_by8ej"]
-[ext_resource type="PackedScene" uid="uid://jwubqipkoqyb" path="res://art/models/building1.glb" id="3_22pd8"]
+[ext_resource type="PackedScene" uid="uid://vrtido521pmn" path="res://art/models/mountain.glb" id="3_pl1c8"]
 
-[node name="Building" type="Node3D"]
+[node name="Mountain" type="Node3D"]
 
 [node name="Destroyable" parent="." instance=ExtResource("1_b4ruo")]
 script = ExtResource("2_by8ej")
 
-[node name="edificio" parent="." instance=ExtResource("3_22pd8")]
+[node name="Model" parent="." instance=ExtResource("3_pl1c8")]

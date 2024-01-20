@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c8v5q3e3y8gau"]
 
-[ext_resource type="PackedScene" uid="uid://4wpq48utc75i" path="res://prefabs/environment/destroyable.tscn" id="1_mhn0g"]
+[ext_resource type="PackedScene" uid="uid://4wpq48utc75i" path="res://prefabs/destroyable.tscn" id="1_mhn0g"]
 [ext_resource type="Script" path="res://scripts/destroyable/destroyable.gd" id="2_hla5v"]
 [ext_resource type="PackedScene" uid="uid://cesnylnkki064" path="res://art/models/palm_tree.glb" id="3_xxi74"]
 
