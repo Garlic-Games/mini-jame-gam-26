@@ -15,6 +15,7 @@ var pieces : Array = [];
 var isDestroyed = false;
 
 func _ready():
+	add_to_group("Destroyables");
 	FindRigidBodies(self, pieces);
 
 	if piecesNode:

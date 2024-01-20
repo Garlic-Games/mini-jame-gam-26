@@ -75,8 +75,8 @@ func calc_rpm():
 		
 
 func _on_body_entered(body):
-	if body.get_collision_layer_value(4):
+	if body.get_parent().get_parent().is_in_group("Destroyables"):
 		var destroyable = body.get_parent().get_parent();
-		
+
 		if (speed_kph >= destroyable.minimumSpeed):
 			destroyable.Explode();
