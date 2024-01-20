@@ -1,15 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbj7y1m7ryrtn"]
+[gd_scene load_steps=16 format=3 uid="uid://dbj7y1m7ryrtn"]
 
 [ext_resource type="PackedScene" uid="uid://bkwmiu271cxf8" path="res://prefabs/mainMenu/main_menu.tscn" id="1_evwpy"]
 [ext_resource type="Script" path="res://scripts/ui/RevolutionsHud.gd" id="2_8tlw2"]
 [ext_resource type="FontFile" uid="uid://c7kkllaqq3iir" path="res://art/fonts/GravityRegular5.ttf" id="2_f74ss"]
+[ext_resource type="Script" path="res://scripts/ui/Hud.gd" id="2_s4mdk"]
 [ext_resource type="Texture2D" uid="uid://dl5pid43m3gey" path="res://art/textures/hud.tga" id="3_ai56c"]
 [ext_resource type="Shader" path="res://art/shaders/speedmetter.gdshader" id="3_q7t4j"]
 [ext_resource type="Script" path="res://scripts/ui/Speed.gd" id="3_vcs1a"]
+[ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="7_hmbix"]
 
 [sub_resource type="Environment" id="Environment_8xg1a"]
-reflected_light_source = 2
-fog_enabled = true
 fog_light_color = Color(0.396078, 0.25098, 0.905882, 1)
 fog_density = 0.3153
 
@@ -25,6 +25,12 @@ texture = SubResource("GradientTexture2D_rg7hs")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ys2ex"]
 shader = ExtResource("3_q7t4j")
 
+[sub_resource type="BoxMesh" id="BoxMesh_4fefs"]
+size = Vector3(5000, 0.5, 5000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uftgj"]
+size = Vector3(5000, 0.5, 5000)
+
 [node name="Tomeu" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -33,7 +39,9 @@ environment = SubResource("Environment_8xg1a")
 [node name="MainMenu" parent="." instance=ExtResource("1_evwpy")]
 visible = false
 
-[node name="Hud" type="CanvasLayer" parent="."]
+[node name="Hud" type="CanvasLayer" parent="." node_paths=PackedStringArray("delorean")]
+script = ExtResource("2_s4mdk")
+delorean = NodePath("../Delorean")
 
 [node name="Revolutions" type="ProgressBar" parent="Hud"]
 anchors_preset = -1
@@ -69,4 +77,47 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_ai56c")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Points" type="Label" parent="Hud"]
+anchors_preset = -1
+anchor_left = 0.141
+anchor_top = 0.062
+anchor_right = 0.281
+anchor_bottom = 0.09
+offset_left = -0.720001
+offset_top = 0.0399933
+offset_right = 0.47998
+offset_bottom = -0.200005
+theme_override_fonts/font = ExtResource("2_f74ss")
+theme_override_font_sizes/font_size = 28
+text = "100000000"
+vertical_alignment = 1
+script = ExtResource("3_vcs1a")
+
+[node name="Treasures" type="Label" parent="Hud"]
+anchors_preset = -1
+anchor_left = 0.027
+anchor_top = 0.06
+anchor_right = 0.117
+anchor_bottom = 0.088
+offset_left = 4.16
+offset_top = 0.199997
+offset_right = 0.359985
+offset_bottom = -0.0400085
+theme_override_fonts/font = ExtResource("2_f74ss")
+theme_override_font_sizes/font_size = 28
+text = "05/30"
+vertical_alignment = 1
+script = ExtResource("3_vcs1a")
+
+[node name="Delorean" parent="." instance=ExtResource("7_hmbix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15539, 0)
+engine_force_value = 3000
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_4fefs")
+
+[node name="RigidBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235332, -3.8147e-06, -0.30834)
+shape = SubResource("BoxShape3D_uftgj")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0jv0cq7u6qcd"]
+[gd_scene load_steps=5 format=3 uid="uid://dypx5v01gfi15"]
 
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="1_7qtxn"]
 [ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/environment/building1.tscn" id="2_78lom"]
