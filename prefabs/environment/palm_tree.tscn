@@ -8,6 +8,8 @@
 
 [node name="Destroyable" parent="." instance=ExtResource("1_mhn0g")]
 script = ExtResource("2_hla5v")
+minimumSpeed = null
+explosionForce = null
 
-[node name="Model" parent="." instance=ExtResource("3_xxi74")]
+[node name="Model" parent="Destroyable" instance=ExtResource("3_xxi74")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.113327, -3.8147e-06, -0.0619164)

@@ -818,6 +818,8 @@ points = PackedVector3Array(-8.82894e-06, -1.6395, 0.0520933, 0.0451054, -1.6395
 
 [node name="Destroyable" parent="." instance=ExtResource("1_qhq1v")]
 script = ExtResource("2_cw6e7")
+minimumSpeed = null
+explosionForce = null
 
 [node name="Model" parent="Destroyable" instance=ExtResource("3_7g1pj")]
 visible = false

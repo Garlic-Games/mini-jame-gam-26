@@ -8,5 +8,7 @@
 
 [node name="Destroyable" parent="." instance=ExtResource("1_nai4j")]
 script = ExtResource("2_a7h0m")
+minimumSpeed = null
+explosionForce = null
 
-[node name="Model" parent="." instance=ExtResource("3_g7tqk")]
+[node name="Model" parent="Destroyable" instance=ExtResource("3_g7tqk")]
