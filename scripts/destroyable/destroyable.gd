@@ -1,14 +1,18 @@
 extends Node
 
-@export var minimumSpeed : float = 20.0;
-@export var explosionForce : float = 15.0;
+@export var minimumSpeed : float = 30.0; # km/h
+@export var explosionForce : float = 5.0;
+@export var despawnTime : float = 4.0;
+
+var timerDespawn = 0.0;
 
 var explosionCenter : Vector3 = Vector3.ZERO;
 
 var piecesNode : Node = null;
 var modelNode : Node = null;
-
 var pieces : Array = [];
+
+var isDestroyed = false;
 
 func _ready():
 	FindRigidBodies(self, pieces);
@@ -17,39 +21,46 @@ func _ready():
 		piecesNode.set_process(false);
 		piecesNode.hide();
 	
-	set_process_input(true) 
+func _process(delta):
 	
-func _input(ev):
-	if Input.is_key_pressed(KEY_K):
-		Explode();
-		
+	if isDestroyed:
+		timerDespawn += delta;
+
+		if timerDespawn >= despawnTime:
+			queue_free();
+			
 func Explode():
+	
+	if isDestroyed:
+		return;
+		
 	var forceDirection : Vector3;
 	var randomVector : Vector3;
 	
-	piecesNode.set_process(true);
-	piecesNode.show();
-	
+	isDestroyed = true;
+
 	modelNode.set_process(false);
 	modelNode.hide();
+	modelNode.queue_free();
 	
+	piecesNode.set_process(true);
+	piecesNode.show();
+		
 	for piece in pieces:
 		forceDirection = explosionCenter.direction_to(piece.position);
 		
 		randomVector = Vector3(randf_range(0, 1), randf_range(0, 1), randf_range(0, 1)) * forceDirection;
-		piece.apply_force(randomVector, forceDirection * explosionForce * 1000.0);
+		piece.apply_impulse(randomVector, forceDirection * explosionForce * 100.0);
 
 func FindRigidBodies(node : Node, pieceContainer : Array):
 	for child in node.get_children():
-		if child is RigidBody3D:
-			pieceContainer.append(child);
-			child.gravity_scale=0;
-			
-			if piecesNode == null:
-				piecesNode = node;
-
-		if child.get_child_count() > 0:
-			FindRigidBodies(child, pieces);
+		if child.name == "Model":
+			modelNode = child;
 		
-		elif modelNode == null:
-			modelNode = node;
+		elif child.name == "Rest in Pieces":
+			piecesNode = child;
+			
+			for pz in piecesNode.get_children():
+				if pz is RigidBody3D:
+					pieceContainer.append(pz);
+					pz.gravity_scale = 0.0;	
