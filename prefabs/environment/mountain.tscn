@@ -1,7 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkpwsovdhmw7y"]
+[gd_scene load_steps=3 format=3 uid="uid://dkpwsovdhmw7y"]
 
 [ext_resource type="PackedScene" uid="uid://vrtido521pmn" path="res://art/models/mountain.glb" id="3_pl1c8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1c2am"]
+size = Vector3(21.7678, 15.35, 28.2026)
 
 [node name="Mountain" type="Node3D"]
 
 [node name="Model" parent="." instance=ExtResource("3_pl1c8")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Model"]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.480811, 0.574104, -1.48979)
+shape = SubResource("BoxShape3D_1c2am")

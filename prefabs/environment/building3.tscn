@@ -5,7 +5,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jsjhc"]
 margin = 5.845
-size = Vector3(6, 9, 14)
+size = Vector3(5.11719, 9, 13.7578)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wio75"]
 resource_name = "Edificio_pisos"

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://jwubqipkoqyb" path="res://art/models/building1.glb" id="3_7g1pj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x4i57"]
-size = Vector3(6, 15, 6)
+size = Vector3(5.26563, 15, 5.47363)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mg5pf"]
 resource_name = "Antena"
