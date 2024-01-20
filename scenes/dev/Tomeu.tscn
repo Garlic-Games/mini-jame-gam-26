@@ -4,11 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://c8i7dlv0ns4jl" path="res://prefabs/mainMenu/intro_music.tscn" id="2_jjxu3"]
 
 [sub_resource type="Environment" id="Environment_8xg1a"]
-background_mode = 2
-background_energy_multiplier = 2.0
-ambient_light_source = 3
-ambient_light_color = Color(0.788235, 0.435294, 0.976471, 1)
-ambient_light_energy = 1.35
 reflected_light_source = 2
 fog_enabled = true
 fog_light_color = Color(0.396078, 0.25098, 0.905882, 1)
@@ -19,9 +14,8 @@ fog_density = 0.3153
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8xg1a")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.0416971, 0.483893, 0.874133, -0.023056, 0.875127, -0.483344, -0.998864, 0, 0.0476469, 2.54065, 0, 0.0727984)
-
 [node name="MainMenu" parent="." instance=ExtResource("1_evwpy")]
 
 [node name="IntroMusic" parent="." instance=ExtResource("2_jjxu3")]
+
+[node name="Camera2D" type="Camera2D" parent="."]

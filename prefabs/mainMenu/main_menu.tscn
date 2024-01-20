@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkwmiu271cxf8"]
+[gd_scene load_steps=11 format=3 uid="uid://bkwmiu271cxf8"]
 
 [ext_resource type="Script" path="res://scripts/mainMenu/main_menu.gd" id="1_8805b"]
 [ext_resource type="Texture2D" uid="uid://w246lk2eqrg" path="res://art/backgrounds/vaporwave-background-10.png" id="1_tu1xq"]
 [ext_resource type="Theme" uid="uid://dpqda1rl4km7n" path="res://art/theme/main.tres" id="2_f3fat"]
 [ext_resource type="PackedScene" uid="uid://eo18yjsvfw7e" path="res://scenes/main.tscn" id="2_v7yms"]
 [ext_resource type="Shader" path="res://art/shaders/glitch.gdshader" id="4_5f5nj"]
+[ext_resource type="AudioStream" uid="uid://dcnytumipye5u" path="res://art/sounds/Menu Sounds/wav/menu_19.wav" id="6_afl2u"]
+[ext_resource type="AudioStream" uid="uid://08glyqutlt1y" path="res://art/sounds/Menu Sounds/wav/menu_1.wav" id="7_dmuv4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dfff5"]
 shader = ExtResource("4_5f5nj")
@@ -105,5 +107,16 @@ theme_override_colors/font_color = Color(0.996078, 0.996078, 0.996078, 1)
 theme_override_font_sizes/font_size = 40
 text = "Exit"
 
-[connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[node name="ChangeButton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_afl2u")
+bus = &"Effects"
+
+[node name="EnterGame" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_dmuv4")
+
+[connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Start" to="ChangeButton" method="play" binds= [0.0]]
+[connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Start" to="EnterGame" method="play" binds= [0.0]]
+[connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Options" to="ChangeButton" method="play" binds= [0.0]]
+[connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Exit" to="ChangeButton" method="play" binds= [0.0]]
 [connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="finished" from="ChangeButton" to="." method="_on_start_pressed"]
