@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://76cb32bxrree"]
+
+[ext_resource type="PackedScene" uid="uid://b8dmgead1javv" path="res://external/3D/delorean/delorean.glb" id="1_xsicx"]
+
+[node name="delorean" instance=ExtResource("1_xsicx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.715, -1.18, 12.175)
