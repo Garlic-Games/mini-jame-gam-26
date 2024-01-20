@@ -948,7 +948,6 @@ script = ExtResource("2_pehe6")
 [node name="Model" parent="." instance=ExtResource("3_7q3v7")]
 
 [node name="Rest in Pieces" type="Node3D" parent="."]
-visible = false
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Rest in Pieces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05982, 6.69546, -3.59129)

@@ -573,7 +573,6 @@ script = ExtResource("2_lwl13")
 [node name="Model" parent="." instance=ExtResource("3_4i7sh")]
 
 [node name="Rest in Pieces" type="Node3D" parent="."]
-visible = false
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Rest in Pieces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.37929, 9.41607, 6.38339)
