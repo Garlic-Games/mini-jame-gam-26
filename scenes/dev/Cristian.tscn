@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dx45nsf1kdr7e"]
+[gd_scene load_steps=10 format=3 uid="uid://dx45nsf1kdr7e"]
 
 [ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/building.tscn" id="1_e25s7"]
 [ext_resource type="PackedScene" uid="uid://d0pam8jlu6dcl" path="res://prefabs/environment/building2.tscn" id="2_e1dgj"]
@@ -20,6 +20,12 @@ glow_hdr_threshold = 1.15
 fog_light_color = Color(0.027451, 0.0352941, 0.0431373, 1)
 fog_light_energy = 3.73
 adjustment_brightness = 4.41
+
+[sub_resource type="BoxMesh" id="BoxMesh_okb2f"]
+size = Vector3(5000, 0.5, 5000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_urkbn"]
+size = Vector3(5000, 0.5, 5000)
 
 [node name="Cristian" type="Node3D"]
 
@@ -121,3 +127,12 @@ transform = Transform3D(0.508936, 0, -0.860804, 0, 1, 0, 0.860804, 0, 0.508936, 
 
 [node name="Mountain16" parent="." instance=ExtResource("6_ec41h")]
 transform = Transform3D(-0.786978, 0, -0.616981, 0, 1, 0, 0.616981, 0, -0.786978, -85.3356, 4.5552, 26.3697)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_okb2f")
+
+[node name="RigidBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235332, -3.8147e-06, -0.30834)
+shape = SubResource("BoxShape3D_urkbn")
