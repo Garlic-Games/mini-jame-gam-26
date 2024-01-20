@@ -7,15 +7,23 @@ const STEER_LIMIT = 0.4
 @export var engine_force_value = 40;
 @export var speed_limit = 340;
 @export var rpm_pitch_min = 0.05;
-@export var rpm_pitch_max = 6;
+@export var rpm_pitch_max = 5;
 @export var gear_down_percent = 10;
-@export var speed_gears = [0, 20, 80, 130, 160, 240];
+@export var rpm_idle = 1100;
+@export var rpm_max = 9500;
+@export var rpm_up = 8000;
+@export var rpm_down = 4000;
+@export var gears_ratio = [3.85, 2.04, 1.28, 0.951, 0.76];
 @export var motorStreamPlayer: AudioStreamPlayer;
 
 var steer_target = 0
 var speed_kph = 0;
+var rpm_value = 0;
 var rpm_percent = 0;
-var selected_gear = 0; #index of speed_gears
+var selected_gear = 0; #index of gears_ratio
+
+var radio_rueda_metros = 0.4;
+var factor_conversion = 60;
 
 func _physics_process(delta):
 	var fwd_mps = (linear_velocity) * transform.basis.x
@@ -42,24 +50,26 @@ func _physics_process(delta):
 			else:
 				engine_force = -engine_force_value
 		else:
-			brake = 1
+			brake = engine_force_value * 5
 	else:
 		brake = 0.0
 
 	steering = move_toward(steering, steer_target, STEER_SPEED * delta)
 	speed_kph = linear_velocity.length() * 3.6;
-	rpm_percent = calc_rpm();
+	calc_rpm();
 	var pichToSet =  clamp(rpm_percent * rpm_pitch_max / 100, rpm_pitch_min, rpm_pitch_max);
-	print(speed_kph, " - ", selected_gear, " - " ,rpm_percent, " - ", pichToSet)
+	print("KPH %d Gear %d RPM %d - %d MotorPitch %f" % [speed_kph, selected_gear+1, rpm_value, rpm_percent, pichToSet])
 	motorStreamPlayer.pitch_scale = pichToSet;
 
 func calc_rpm():
-	var actualGearMin = speed_gears[selected_gear];
-	var actualGearMax = speed_limit;
-	if(selected_gear < speed_gears.size() -1):
-		actualGearMax = speed_gears[selected_gear+1];
-		if speed_kph > actualGearMax:
-			selected_gear += 1;
-	if(speed_kph < actualGearMin - (actualGearMin * gear_down_percent / 100)):
+	var selectedRatio = gears_ratio[selected_gear];
+	rpm_value = (speed_kph * 1000) / (radio_rueda_metros / selectedRatio * factor_conversion)
+	rpm_percent = rpm_value  / rpm_max * 100;
+	if(rpm_value > rpm_up && selected_gear < gears_ratio.size() -1):
+		selected_gear += 1;
+	elif (rpm_value < rpm_down && selected_gear > 0):
 		selected_gear -= 1;
-	return ((speed_kph - actualGearMin) / (actualGearMax - actualGearMin)) * 100;
+	
+	if(rpm_value < rpm_idle && selected_gear == 0):
+		rpm_value = rpm_idle;
+		
