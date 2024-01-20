@@ -4,3 +4,9 @@
 
 [node name="delorean" instance=ExtResource("1_xsicx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.715, -1.18, 12.175)
+
+[node name="BezierCurve_005" parent="." index="4"]
+transform = Transform3D(-1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1.11788, 2.92776, -11.9546)
+
+[node name="Plane_002" parent="." index="11"]
+transform = Transform3D(0.219118, 0, 0, 0, 0, -0.0983769, 0, 0.219118, 0, -4.00187, -1.64243, 0.0216703)

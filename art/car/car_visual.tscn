@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwvjp5gqpeho0"]
+
+[ext_resource type="PackedScene" uid="uid://hr2xb34d23kb" path="res://art/car/race_car.glb" id="1_qljwd"]
+
+[node name="race_car" instance=ExtResource("1_qljwd")]

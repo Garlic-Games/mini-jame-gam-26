@@ -4,8 +4,15 @@ extends VehicleBody3D
 const STEER_SPEED = 1.5
 const STEER_LIMIT = 0.4
 
-@export var engine_force_value = 40;
+@export var engine_force_value = 3000;
 @export var speed_limit = 340;
+@export var brake_force_multiplier = 4;
+
+@export var wheel_fr: VehicleWheel3D;
+@export var wheel_br: VehicleWheel3D;
+@export var wheel_fl: VehicleWheel3D;
+@export var wheel_bl: VehicleWheel3D;
+
 @export var rpm_pitch_min = 0.05;
 @export var rpm_pitch_max = 5;
 @export var gear_down_percent = 10;
@@ -24,6 +31,10 @@ var selected_gear = 0; #index of gears_ratio
 
 var radio_rueda_metros = 0.4;
 var factor_conversion = 60;
+var is_upside_down = false;
+
+signal upside_down_changed(value)
+
 
 func _physics_process(delta):
 	var fwd_mps = (linear_velocity) * transform.basis.x
@@ -35,7 +46,7 @@ func _physics_process(delta):
 		# Increase engine force at low speeds to make the initial acceleration faster.
 		var speed = linear_velocity.length()
 		if speed < 5 and speed != 0:
-			engine_force = clamp(engine_force_value * 5 / speed, 0, engine_force_value)
+			engine_force = clamp(engine_force_value * brake_force_multiplier / speed, 0, engine_force_value)
 		else:
 			engine_force = engine_force_value
 	else:
@@ -46,20 +57,32 @@ func _physics_process(delta):
 		if fwd_mps >= Vector3.LEFT:
 			var speed = linear_velocity.length()
 			if speed < 5 and speed != 0:
-				engine_force = -clamp(engine_force_value * 5 / speed, 0, engine_force_value)
+				engine_force = -clamp(engine_force_value * brake_force_multiplier / speed, 0, engine_force_value)
 			else:
 				engine_force = -engine_force_value
 		else:
-			brake = engine_force_value * 5
+			brake = engine_force_value * brake_force_multiplier
 	else:
 		brake = 0.0
 
+	if Input.is_action_pressed("handbrake"):
+		wheel_br.brake = engine_force_value * brake_force_multiplier;
+		wheel_bl.brake = engine_force_value * brake_force_multiplier;
+	else:
+		wheel_br.brake = 0;
+		wheel_bl.brake = 0;
+		
+		
 	steering = move_toward(steering, steer_target, STEER_SPEED * delta)
 	speed_kph = linear_velocity.length() * 3.6;
 	calc_rpm();
 	var pichToSet =  clamp(rpm_percent * rpm_pitch_max / 100, rpm_pitch_min, rpm_pitch_max);
 	print("KPH %d Gear %d RPM %d - %d MotorPitch %f" % [speed_kph, selected_gear+1, rpm_value, rpm_percent, pichToSet])
 	motorStreamPlayer.pitch_scale = pichToSet;
+	var now_upside_down = (wheel_fr.is_in_contact() == null)  && (wheel_fl.is_in_contact() == null)  && (wheel_br.is_in_contact() == null) && (wheel_bl.is_in_contact() == null);
+	if(is_upside_down != now_upside_down):
+		is_upside_down = now_upside_down;
+		upside_down_changed.emit(now_upside_down);
 
 func calc_rpm():
 	var selectedRatio = gears_ratio[selected_gear];

@@ -1,14 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://cdukdf8fl5ccm"]
+[gd_scene load_steps=13 format=3 uid="uid://cdukdf8fl5ccm"]
 
 [ext_resource type="Script" path="res://scripts/vehicle.gd" id="1_2hxfg"]
-[ext_resource type="PackedScene" uid="uid://76cb32bxrree" path="res://prefabs/vehicle/delorean_visual.tscn" id="1_x3c7k"]
+[ext_resource type="Material" uid="uid://bd5tq3oe6nrij" path="res://art/Materials/cement.tres" id="3_5pg4s"]
+[ext_resource type="PackedScene" uid="uid://hr2xb34d23kb" path="res://art/car/race_car.glb" id="3_7bi4w"]
 [ext_resource type="Script" path="res://scripts/follow_camera.gd" id="3_tc8wa"]
-[ext_resource type="Material" path="res://art/Materials/car_red_body.tres" id="4_svikk"]
+[ext_resource type="Material" uid="uid://dlyvi6u87qoj5" path="res://art/Materials/car_red_body.tres" id="4_svikk"]
 [ext_resource type="PackedScene" uid="uid://dpwiasqc2c0kk" path="res://prefabs/ui/vehicle_ui.tscn" id="5_c4uwo"]
 [ext_resource type="AudioStream" uid="uid://d3vsh0osb71ey" path="res://art/sounds/Car/147242__qubodup__car-engine-loop.wav" id="6_0bhmy"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_dj6v0"]
-size = Vector3(2, 1.15, 4.2)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_48iy0"]
 _surfaces = [{
@@ -66,47 +64,30 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 62, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 28, 209, 0, 0, 28, 209, 0, 0, 28, 209, 0, 0, 28, 209, 0, 0, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 127, 29, 81, 255, 127, 29, 81, 255, 127, 29, 81, 255, 127, 29, 81, 28, 209, 255, 255, 28, 209, 255, 255, 28, 209, 255, 255, 28, 209, 255, 255, 255, 127, 226, 46, 255, 127, 226, 46, 255, 127, 226, 46, 255, 127, 226, 46, 225, 174, 255, 255, 225, 174, 255, 255, 225, 174, 255, 255, 225, 174, 255, 255, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 28, 209, 255, 127, 28, 209, 255, 127, 28, 209, 255, 127, 28, 209, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 225, 174, 0, 0, 225, 174, 0, 0, 225, 174, 0, 0, 225, 174, 0, 0, 255, 127, 225, 174, 255, 127, 225, 174, 255, 127, 225, 174, 255, 127, 225, 174)
 }]
 
-[node name="Delorean" type="VehicleBody3D" node_paths=PackedStringArray("motorStreamPlayer")]
-collision_layer = 4
-collision_mask = 10
+[sub_resource type="BoxShape3D" id="BoxShape3D_dj6v0"]
+size = Vector3(1.66, 0.995, 4.2)
+
+[node name="Delorean" type="VehicleBody3D" node_paths=PackedStringArray("wheel_fr", "wheel_br", "wheel_fl", "wheel_bl", "motorStreamPlayer")]
+collision_mask = 3
 mass = 1500.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.35, 0.25)
-max_contacts_reported = 1
-contact_monitor = true
 script = ExtResource("1_2hxfg")
+wheel_fr = NodePath("wheel-FR")
+wheel_br = NodePath("wheel-BR")
+wheel_fl = NodePath("wheel-FL")
+wheel_bl = NodePath("wheel-BL")
 motorStreamPlayer = NodePath("AudioStreamPlayer")
 
-[node name="visual" type="Node3D" parent="."]
-transform = Transform3D(-2.14186e-08, 0, 0.49, 0, 0.49, 0, -0.49, 0, -2.14186e-08, 0, 0, 0)
-
-[node name="delorean" parent="visual" instance=ExtResource("1_x3c7k")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.701894, 0.0774262)
-shape = SubResource("BoxShape3D_dj6v0")
-
-[node name="CameraBase" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97449, 0)
-
-[node name="Camera3D" type="Camera3D" parent="CameraBase"]
-transform = Transform3D(-0.709652, -0.170177, 0.683691, -2.11161e-08, 0.970391, 0.241539, -0.704552, 0.171409, -0.68864, 3.44908, 2.03236, -4.39379)
-current = true
-fov = 74.0
-near = 0.1
-script = ExtResource("3_tc8wa")
-min_distance = 3.0
-height = 1.25
-
 [node name="wheel-FR" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.754329, 0.295627, 1.38531)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.802908, 0.301214, 1.15783)
 use_as_traction = true
 use_as_steering = true
-wheel_roll_influence = 0.4
-wheel_radius = 0.25
-wheel_friction_slip = 1.0
+wheel_radius = 0.325
+wheel_friction_slip = 0.95
 suspension_travel = 0.25
 suspension_stiffness = 160.0
+suspension_max_force = 6500.0
 damping_compression = 0.5
 damping_relaxation = 0.75
 
@@ -114,15 +95,15 @@ damping_relaxation = 0.75
 _import_path = NodePath("BODY-vehicle/wheel3-wheel")
 transform = Transform3D(2.48, 0, 0, 0, 1.385, 0, 0, 0, 1.385, 0, 0, 0)
 mesh = SubResource("ArrayMesh_48iy0")
+surface_material_override/0 = ExtResource("3_5pg4s")
 
 [node name="wheel-BR" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.754329, 0.295627, -1.06039)
-use_as_traction = true
-wheel_roll_influence = 0.4
-wheel_radius = 0.25
-wheel_friction_slip = 1.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.802908, 0.295627, -1.474)
+wheel_radius = 0.325
+wheel_friction_slip = 0.85
 suspension_travel = 0.25
 suspension_stiffness = 160.0
+suspension_max_force = 9000.0
 damping_compression = 0.5
 damping_relaxation = 0.75
 
@@ -130,6 +111,69 @@ damping_relaxation = 0.75
 _import_path = NodePath("BODY-vehicle/wheel4-wheel")
 transform = Transform3D(2.48, 0, 0, 0, 1.385, 0, 0, 0, 1.385, 0, 0, 0)
 mesh = SubResource("ArrayMesh_rn81n")
+surface_material_override/0 = ExtResource("3_5pg4s")
+
+[node name="wheel-FL" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81896, 0.301045, 1.1575)
+use_as_traction = true
+use_as_steering = true
+wheel_radius = 0.325
+wheel_friction_slip = 0.95
+suspension_travel = 0.25
+suspension_stiffness = 160.0
+suspension_max_force = 6500.0
+damping_compression = 0.5
+damping_relaxation = 0.75
+
+[node name="Wheel1" type="MeshInstance3D" parent="wheel-FL"]
+_import_path = NodePath("BODY-vehicle/wheel1-wheel")
+transform = Transform3D(2.48, 0, 0, 0, 1.385, 0, 0, 0, 1.385, 0, 0, 0)
+mesh = SubResource("ArrayMesh_8ocl0")
+surface_material_override/0 = ExtResource("3_5pg4s")
+
+[node name="wheel-BL" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81896, 0.295627, -1.474)
+wheel_radius = 0.325
+wheel_friction_slip = 0.85
+suspension_travel = 0.25
+suspension_stiffness = 160.0
+suspension_max_force = 9000.0
+damping_compression = 0.5
+damping_relaxation = 0.75
+
+[node name="Wheel2" type="MeshInstance3D" parent="wheel-BL"]
+_import_path = NodePath("BODY-vehicle/wheel2-wheel")
+transform = Transform3D(2.48, 0, 0, 0, 1.385, 0, 0, 0, 1.385, 0, 0, 0)
+mesh = SubResource("ArrayMesh_8u5tn")
+surface_material_override/0 = ExtResource("3_5pg4s")
+
+[node name="visual" type="Node3D" parent="."]
+transform = Transform3D(-2.14186e-08, 0, 0.49, 0, 0.49, 0, -0.49, 0, -2.14186e-08, 0, 0, 0)
+
+[node name="race_car" parent="visual" instance=ExtResource("3_7bi4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.195, 0.708)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="visual"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.52895, 1.10833, 1.13224)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="visual"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.52895, 1.10833, -1.1191)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58658, 0.077)
+shape = SubResource("BoxShape3D_dj6v0")
+
+[node name="CameraBase" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35256, -1.38719)
+
+[node name="Camera3D" type="Camera3D" parent="CameraBase"]
+transform = Transform3D(-0.709652, -0.170177, 0.683691, -2.11161e-08, 0.970391, 0.241539, -0.704552, 0.171409, -0.68864, 3.449, -0.458, -4.394)
+current = true
+fov = 74.0
+near = 0.1
+script = ExtResource("3_tc8wa")
+min_distance = 3.0
+height = 0.1
 
 [node name="VehicleUi" parent="." node_paths=PackedStringArray("vehicle") instance=ExtResource("5_c4uwo")]
 vehicle = NodePath("..")
@@ -140,38 +184,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0.25)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_0bhmy")
 autoplay = true
-
-[node name="wheel-FL" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.725698, 0.295458, 1.38498)
-use_as_traction = true
-use_as_steering = true
-wheel_roll_influence = 0.4
-wheel_radius = 0.25
-wheel_friction_slip = 1.0
-suspension_travel = 0.25
-suspension_stiffness = 160.0
-damping_compression = 0.5
-damping_relaxation = 0.75
-
-[node name="Wheel1" type="MeshInstance3D" parent="wheel-FL"]
-_import_path = NodePath("BODY-vehicle/wheel1-wheel")
-transform = Transform3D(2.48, 0, 0, 0, 1.385, 0, 0, 0, 1.385, 0, 0, 0)
-mesh = SubResource("ArrayMesh_8ocl0")
-
-[node name="wheel-BL" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.725698, 0.295627, -1.06039)
-use_as_traction = true
-wheel_roll_influence = 0.4
-wheel_radius = 0.25
-wheel_friction_slip = 1.0
-suspension_travel = 0.25
-suspension_stiffness = 160.0
-damping_compression = 0.5
-damping_relaxation = 0.75
-
-[node name="Wheel2" type="MeshInstance3D" parent="wheel-BL"]
-_import_path = NodePath("BODY-vehicle/wheel2-wheel")
-transform = Transform3D(2.48, 0, 0, 0, 1.385, 0, 0, 0, 1.385, 0, 0, 0)
-mesh = SubResource("ArrayMesh_8u5tn")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
