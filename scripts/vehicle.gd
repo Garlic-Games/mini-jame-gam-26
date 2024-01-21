@@ -1,3 +1,4 @@
+class_name Vehicle
 extends VehicleBody3D
 
 

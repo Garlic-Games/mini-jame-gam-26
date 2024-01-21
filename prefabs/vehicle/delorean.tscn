@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dpwiasqc2c0kk" path="res://prefabs/ui/vehicle_ui.tscn" id="5_c4uwo"]
 [ext_resource type="AudioStream" uid="uid://d3vsh0osb71ey" path="res://art/sounds/Car/147242__qubodup__car-engine-loop.wav" id="6_0bhmy"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dj6v0"]
+size = Vector3(2, 1.15, 4.2)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_48iy0"]
 _surfaces = [{
 "aabb": AABB(-0.061457, -0.228035, -0.228035, 0.122924, 0.45608, 0.45607),
@@ -111,7 +114,17 @@ damping_relaxation = 0.75
 _import_path = NodePath("BODY-vehicle/wheel4-wheel")
 transform = Transform3D(2.48, 0, 0, 0, 1.385, 0, 0, 0, 1.385, 0, 0, 0)
 mesh = SubResource("ArrayMesh_rn81n")
-surface_material_override/0 = ExtResource("3_5pg4s")
+
+[node name="VehicleUi" parent="." node_paths=PackedStringArray("vehicle") instance=ExtResource("5_c4uwo")]
+vehicle = NodePath("..")
+
+[node name="center_mass_reference" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0.25)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_0bhmy")
+autoplay = true
+bus = &"Effects"
 
 [node name="wheel-FL" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81896, 0.301045, 1.1575)

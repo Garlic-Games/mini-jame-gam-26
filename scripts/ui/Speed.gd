@@ -1,3 +1,4 @@
+class_name Speed;
 extends Label
 
 func change_speed(speed: float): 
