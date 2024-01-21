@@ -173,14 +173,15 @@ func ResetCarFlipped():
 
 
 func _on_body_entered(body):
-	if body.is_in_group("Destroyable"):
-		hitStreamPlayer.play();
 
 	if body.is_in_group("Collectable"):
 		collectStreamPlayer.play();
 
 		body.get_parent().queue_free();
 		game_manager.add_treasure();
+	else:
+		hitStreamPlayer.play();
+	
 
 	pass; # Replace with function body.
 
