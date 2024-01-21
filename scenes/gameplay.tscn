@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://nl3ly4i4vwy"]
+[gd_scene load_steps=22 format=3 uid="uid://buyme7kl1u12p"]
 
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="1_eubgb"]
 [ext_resource type="Shader" path="res://art/shaders/sky.gdshader" id="1_k2uxh"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://d0pam8jlu6dcl" path="res://prefabs/environment/building2.tscn" id="6_hexdo"]
 [ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/environment/building1.tscn" id="7_et75q"]
 [ext_resource type="Texture2D" uid="uid://bb5plvmeleg46" path="res://art/textures/sunwave.png" id="8_tija1"]
-[ext_resource type="PackedScene" uid="uid://dq07b4db0n1if" path="res://prefabs/ui/hud.tscn" id="10_nyf0r"]
+[ext_resource type="PackedScene" path="res://prefabs/ui/hud.tscn" id="10_nyf0r"]
 [ext_resource type="PackedScene" uid="uid://ggtceocos6b3" path="res://prefabs/game/game_setter.tscn" id="12_l2vmp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tfkgv"]

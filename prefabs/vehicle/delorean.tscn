@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/vehicle.gd" id="1_2hxfg"]
 [ext_resource type="Material" uid="uid://bd5tq3oe6nrij" path="res://art/Materials/cement.tres" id="3_5pg4s"]
 [ext_resource type="Script" path="res://scripts/follow_camera.gd" id="3_tc8wa"]
-[ext_resource type="Material" uid="uid://dlyvi6u87qoj5" path="res://art/Materials/car_red_body.tres" id="4_svikk"]
+[ext_resource type="Material" path="res://art/Materials/car_red_body.tres" id="4_svikk"]
 [ext_resource type="PackedScene" uid="uid://dpwiasqc2c0kk" path="res://prefabs/ui/vehicle_ui.tscn" id="5_c4uwo"]
 [ext_resource type="ArrayMesh" uid="uid://bwci23srglq6j" path="res://art/car/race_car_Plane_009.res" id="6_w88hb"]
 [ext_resource type="AudioStream" uid="uid://bkw3wd37g2smq" path="res://art/sounds/Car/636066__lumamorph__eight-cylinder-engine-idling.wav" id="8_2wgnu"]
@@ -69,7 +69,7 @@ _surfaces = [{
 
 [node name="Delorean" type="VehicleBody3D" node_paths=PackedStringArray("wheel_fr", "wheel_br", "wheel_fl", "wheel_bl", "motorStreamPlayer")]
 collision_layer = 4
-collision_mask = 4107
+collision_mask = 11
 mass = 1500.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0.35, 0.25)
@@ -193,5 +193,4 @@ script = ExtResource("3_tc8wa")
 min_distance = 3.0
 height = 0.1
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="upside_down_changed" from="." to="VehicleUi" method="set_visible"]
