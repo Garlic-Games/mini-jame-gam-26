@@ -1154,5 +1154,34 @@ collision_mask = 10
 stream = ExtResource("18_bn4w5")
 autoplay = true
 
-[node name="Collectable" parent="." instance=ExtResource("19_vp3ty")]
+[node name="Collectables" type="Node3D" parent="."]
+
+[node name="Collectable" parent="Collectables" instance=ExtResource("19_vp3ty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238907, 0.249996, 453.843)
+
+[node name="Collectable2" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0568867, 0.249992, 42.3143)
+
+[node name="Collectable3" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.9907, 0.249993, 4.14191)
+
+[node name="Collectable4" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.3234, 0.249993, -95.0958)
+
+[node name="Collectable5" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.289, 0.249993, -38.1714)
+
+[node name="Collectable6" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 204.344, 0.249993, -116.514)
+
+[node name="Collectable7" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.6425, 0.249997, -93.2048)
+
+[node name="Collectable8" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.9196, 0.249997, 11.6861)
+
+[node name="Collectable9" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 218.845, 0.249997, 22.1665)
+
+[node name="Collectable10" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2176, 0.249982, 537.166)
