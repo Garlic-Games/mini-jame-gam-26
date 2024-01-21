@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://nl3ly4i4vwy"]
+[gd_scene load_steps=23 format=3 uid="uid://nl3ly4i4vwy"]
 
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="1_eubgb"]
 [ext_resource type="Shader" path="res://art/shaders/sky.gdshader" id="1_k2uxh"]
@@ -11,8 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://1lbn8hxgtmuy" path="res://prefabs/environment/building3.tscn" id="5_ahnyy"]
 [ext_resource type="PackedScene" uid="uid://d0pam8jlu6dcl" path="res://prefabs/environment/building2.tscn" id="6_hexdo"]
 [ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/environment/building1.tscn" id="7_et75q"]
+[ext_resource type="PackedScene" uid="uid://cne6pr2amcuke" path="res://prefabs/levelSections/palm_row.tscn" id="7_mqyte"]
 [ext_resource type="Texture2D" uid="uid://bb5plvmeleg46" path="res://art/textures/sunwave.png" id="8_tija1"]
 [ext_resource type="PackedScene" uid="uid://dq07b4db0n1if" path="res://prefabs/ui/hud.tscn" id="10_nyf0r"]
+[ext_resource type="PackedScene" uid="uid://dy717lk4h7tar" path="res://prefabs/levelSections/palm_line.tscn" id="11_6dcik"]
 [ext_resource type="PackedScene" uid="uid://ggtceocos6b3" path="res://prefabs/game/game_setter.tscn" id="12_l2vmp"]
 [ext_resource type="PackedScene" path="res://prefabs/ui/game_over_screen.tscn" id="15_wb25l"]
 
@@ -44,6 +46,9 @@ adjustment_brightness = 4.41
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1c2am"]
 size = Vector3(18.357, 15.35, 28.2026)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0cpgq"]
+size = Vector3(1.049, 1, 1.5)
 
 [node name="Gameplay" type="Node3D"]
 
@@ -280,7 +285,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 126.754)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 114.812)
 
 [node name="Road" type="Node3D" parent="Map"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -100.365, 0, -90.3555)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -100.365, -0.385597, -90.3555)
 
 [node name="EntryPath19" parent="Map/Road" instance=ExtResource("3_sf7vv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 74.5175)
@@ -291,8 +296,270 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 62.5326)
 [node name="EntryPath21" parent="Map/Road" instance=ExtResource("3_sf7vv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 50.5625)
 
-[node name="EntryPath22" parent="Map/Road" instance=ExtResource("3_sf7vv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 38.5765)
+[node name="Road3" type="Node3D" parent="Map"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -100.365, 0, -162.456)
+
+[node name="EntryPath19" parent="Map/Road3" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 74.5175)
+
+[node name="EntryPath20" parent="Map/Road3" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 62.5326)
+
+[node name="EntryPath21" parent="Map/Road3" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 50.5625)
+
+[node name="Road2" type="Node3D" parent="Map"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -223.365, -0.261751, -90.3555)
+
+[node name="EntryPath19" parent="Map/Road2" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 74.5175)
+
+[node name="EntryPath20" parent="Map/Road2" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 62.5326)
+
+[node name="EntryPath21" parent="Map/Road2" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 50.5625)
+
+[node name="EntryPath22" type="Node3D" parent="Map/Road2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 39.0625)
+
+[node name="PalmRow6" parent="Map/Road2/EntryPath22" instance=ExtResource("7_mqyte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.48712)
+
+[node name="PalmRow7" parent="Map/Road2/EntryPath22" instance=ExtResource("7_mqyte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.98712)
+
+[node name="PalmRow8" parent="Map/Road2/EntryPath22" instance=ExtResource("7_mqyte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.4871)
+
+[node name="Road4" type="Node3D" parent="Map"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 37.6282, -0.261751, 128.471)
+
+[node name="EntryPath19" parent="Map/Road4" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9.46227, 0.25, -111.035)
+
+[node name="EntryPath20" parent="Map/Road4" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -2.53773, 0.25, -111.035)
+
+[node name="EntryPath21" parent="Map/Road4" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -14.5377, 0.25, -111.035)
+
+[node name="EntryPath22" parent="Map/Road4" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -26.5377, 0.25, -111.035)
+
+[node name="EntryPath23" type="Node3D" parent="Map/Road4"]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -38.5377, 0.25, -111.035)
+
+[node name="PalmRow" parent="Map/Road4/EntryPath23" instance=ExtResource("7_mqyte")]
+
+[node name="PalmRow2" parent="Map/Road4/EntryPath23" instance=ExtResource("7_mqyte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+
+[node name="PalmRow3" parent="Map/Road4/EntryPath23" instance=ExtResource("7_mqyte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="PalmRow4" parent="Map/Road4/EntryPath23" instance=ExtResource("7_mqyte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
+
+[node name="PalmRow5" parent="Map/Road4/EntryPath23" instance=ExtResource("7_mqyte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.98712)
+
+[node name="PalmRow6" parent="Map/Road4/EntryPath23" instance=ExtResource("7_mqyte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.48712)
+
+[node name="PalmRow7" type="Node3D" parent="Map/Road4/EntryPath23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.98712)
+
+[node name="Palm tree" parent="Map/Road4/EntryPath23/PalmRow7" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 2, 0, 0.024)
+
+[node name="Palm tree2" parent="Map/Road4/EntryPath23/PalmRow7" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Road4/EntryPath23/PalmRow7"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Road4/EntryPath23/PalmRow7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Map/Road4/EntryPath23/PalmRow7"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Map/Road4/EntryPath23/PalmRow7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.330055, 0)
+light_color = Color(0, 1, 1, 1)
+light_energy = 60.0
+light_size = 0.305
+
+[node name="PalmRow8" type="Node3D" parent="Map/Road4/EntryPath23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99689, 0, 10.99)
+
+[node name="Palm tree" parent="Map/Road4/EntryPath23/PalmRow8" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 2, 0, 0.0240002)
+
+[node name="Palm tree2" parent="Map/Road4/EntryPath23/PalmRow8" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(0.0377356, 0, -0.0926067, 0, 0.1, 0, 0.0926067, 0, 0.0377356, 2.67461, 0, 1.03351)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Road4/EntryPath23/PalmRow8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.92413, 0, 1.48627)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Road4/EntryPath23/PalmRow8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Map/Road4/EntryPath23/PalmRow8"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Road4/EntryPath23/PalmRow8/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Map/Road4/EntryPath23/PalmRow8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.330055, 0)
+light_color = Color(0, 1, 1, 1)
+light_energy = 60.0
+light_size = 0.305
+
+[node name="EntryPath24" parent="Map/Road4" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(-1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, -1, -49.5377, 0.25, -64.0355)
+
+[node name="EntryPath25" parent="Map/Road4" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(-1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, -1, -49.5377, 0.25, -76.0355)
+
+[node name="EntryPath26" parent="Map/Road4" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(-1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, -1, -49.5377, 0.25, -88.0355)
+
+[node name="EntryPath27" type="Node3D" parent="Map/Road4"]
+transform = Transform3D(-1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, -1, -49.5377, 0.25, -100.035)
+
+[node name="PalmRow" parent="Map/Road4/EntryPath27" instance=ExtResource("7_mqyte")]
+
+[node name="PalmRow2" parent="Map/Road4/EntryPath27" instance=ExtResource("7_mqyte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+
+[node name="PalmRow3" parent="Map/Road4/EntryPath27" instance=ExtResource("7_mqyte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="PalmRow4" parent="Map/Road4/EntryPath27" instance=ExtResource("7_mqyte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
+
+[node name="PalmRow5" parent="Map/Road4/EntryPath27" instance=ExtResource("7_mqyte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.98712)
+
+[node name="PalmRow6" parent="Map/Road4/EntryPath27" instance=ExtResource("7_mqyte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.48712)
+
+[node name="PalmRow7" type="Node3D" parent="Map/Road4/EntryPath27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.98712)
+
+[node name="Palm tree" parent="Map/Road4/EntryPath27/PalmRow7" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 2, 0, 0.024)
+
+[node name="Palm tree2" parent="Map/Road4/EntryPath27/PalmRow7" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Road4/EntryPath27/PalmRow7"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Map/Road4/EntryPath27/PalmRow7"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Road4/EntryPath27/PalmRow7/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Map/Road4/EntryPath27/PalmRow7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.330055, 0)
+light_color = Color(0, 1, 1, 1)
+light_energy = 60.0
+light_size = 0.305
+
+[node name="PalmRow8" type="Node3D" parent="Map/Road4/EntryPath27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.4871)
+
+[node name="Palm tree" parent="Map/Road4/EntryPath27/PalmRow8" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 2, 0, 0.024)
+
+[node name="Palm tree2" parent="Map/Road4/EntryPath27/PalmRow8" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -1.06643, 0, 3.16216)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Road4/EntryPath27/PalmRow8"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Map/Road4/EntryPath27/PalmRow8"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Road4/EntryPath27/PalmRow8/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Map/Road4/EntryPath27/PalmRow8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.330055, 0)
+light_color = Color(0, 1, 1, 1)
+light_energy = 60.0
+light_size = 0.305
+
+[node name="EntryPath28" type="Node3D" parent="Map/Road4"]
+transform = Transform3D(-1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, -1, -49.5377, 0.25, -112.035)
+
+[node name="PalmRow" type="Node3D" parent="Map/Road4/EntryPath28"]
+
+[node name="Palm tree" parent="Map/Road4/EntryPath28/PalmRow" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 2, 0, 0.024)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Road4/EntryPath28/PalmRow"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Map/Road4/EntryPath28/PalmRow"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Road4/EntryPath28/PalmRow/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Map/Road4/EntryPath28/PalmRow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.330055, 0)
+light_color = Color(0, 1, 1, 1)
+light_energy = 60.0
+light_size = 0.305
+
+[node name="PalmRow2" parent="Map/Road4/EntryPath28" instance=ExtResource("7_mqyte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+
+[node name="Road5" type="Node3D" parent="Map"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 277.298, -0.261766, 83.0367)
+
+[node name="EntryPath19" parent="Map/Road5" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9.46227, 0.25, -111.035)
+
+[node name="EntryPath20" parent="Map/Road5" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -2.53773, 0.25, -111.035)
+
+[node name="EntryPath21" parent="Map/Road5" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -14.5377, 0.25, -111.035)
+
+[node name="EntryPath22" parent="Map/Road5" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -26.5377, 0.25, -111.035)
+
+[node name="EntryPath23" parent="Map/Road5" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -38.5377, 0.25, -111.035)
 
 [node name="Palm tree" parent="Map" instance=ExtResource("2_5bjpl")]
 transform = Transform3D(0.291413, 0, 0, 0, 0.291413, 0, 0, 0, 0.291413, 6.02296, -0.01019, 0.931549)
@@ -348,7 +615,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19.2,
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.6, 0, 4.8)
 
 [node name="Group 2" type="Node3D" parent="Map/CityBuildings"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.0948, 0, 22.242)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6076, 0, 7.87711)
 
 [node name="Palm tree2" parent="Map/CityBuildings/Group 2" instance=ExtResource("2_5bjpl")]
 transform = Transform3D(0.0699391, 0, 0, 0, 0.0699391, 0, 0, 0, 0.0699391, 7.83062, -0.004076, -47.004)
@@ -391,6 +658,361 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.8646
 
 [node name="Building 2" parent="Map/CityBuildings/Group 2" instance=ExtResource("6_hexdo")]
 transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 10.2497, 0.0999985, -45.9993)
+
+[node name="Group 3" type="Node3D" parent="Map/CityBuildings"]
+
+[node name="Building 4" parent="Map/CityBuildings/Group 3" instance=ExtResource("4_kun0v")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 81.6356, 0, 30.5365)
+
+[node name="Building 5" parent="Map/CityBuildings/Group 3" instance=ExtResource("4_kun0v")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 95.2356, 0, 30.5365)
+
+[node name="Building 6" parent="Map/CityBuildings/Group 3" instance=ExtResource("4_kun0v")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 108.836, 0, 30.5365)
+
+[node name="Building 14" parent="Map/CityBuildings/Group 3" instance=ExtResource("4_kun0v")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 81.6356, 0, -47.4635)
+
+[node name="Building 15" parent="Map/CityBuildings/Group 3" instance=ExtResource("4_kun0v")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 95.2356, 0, -47.4635)
+
+[node name="Building 16" parent="Map/CityBuildings/Group 3" instance=ExtResource("4_kun0v")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108.836, 0, -47.4635)
+
+[node name="Building 1" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 86.4, 0, 4)
+
+[node name="Building 2" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 86.4, 0, 8.8)
+
+[node name="Building 3" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 86.4, 0, 13.6)
+
+[node name="Building 7" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 92, 0, 13.6)
+
+[node name="Building 8" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 92, 0, 8.8)
+
+[node name="Building 9" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 92, 0, 4)
+
+[node name="Building 17" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 114, 0, -23.4)
+
+[node name="Building 18" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 114, 0, -28.2)
+
+[node name="Building 19" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 114, 0, -33)
+
+[node name="Building 20" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 114, 0, -7.4)
+
+[node name="Building 21" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 114, 0, -12.2)
+
+[node name="Building 22" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 114, 0, -17)
+
+[node name="Building 10" parent="Map/CityBuildings/Group 3" instance=ExtResource("6_hexdo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 108.457, 0, 7.0695)
+
+[node name="Building 11" parent="Map/CityBuildings/Group 3" instance=ExtResource("6_hexdo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 103.657, 0, 7.0695)
+
+[node name="Building 23" parent="Map/CityBuildings/Group 3" instance=ExtResource("5_ahnyy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 102.547, -1.2, -15.2891)
+
+[node name="Building 24" parent="Map/CityBuildings/Group 3" instance=ExtResource("5_ahnyy")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 107.547, -1.2, -24.2891)
+
+[node name="Building 27" parent="Map/CityBuildings/Group 3" instance=ExtResource("5_ahnyy")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 94.5473, -1.2, -24.2891)
+
+[node name="Building 28" parent="Map/CityBuildings/Group 3" instance=ExtResource("5_ahnyy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 85.5473, -1.2, -28.2891)
+
+[node name="Building 25" parent="Map/CityBuildings/Group 3" instance=ExtResource("5_ahnyy")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 104.547, -1.2, -2.28907)
+
+[node name="Building 26" parent="Map/CityBuildings/Group 3" instance=ExtResource("5_ahnyy")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 94.5473, -1.2, -6.28907)
+
+[node name="Building 12" parent="Map/CityBuildings/Group 3" instance=ExtResource("6_hexdo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 98.4568, 0, 7.0695)
+
+[node name="Building 13" parent="Map/CityBuildings/Group 3" instance=ExtResource("5_ahnyy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 84.6, 0, -15.8)
+
+[node name="Building 29" parent="Map/CityBuildings/Group 3" instance=ExtResource("5_ahnyy")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 80.6, 0, -5.8)
+
+[node name="Border" type="Node3D" parent="Map"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="PalmLine" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.0944, 0.1, 54.6353)
+
+[node name="PalmLine2" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -26.0944, 0.1, 54.6353)
+
+[node name="PalmLine3" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.0944, 0.1, 54.6353)
+
+[node name="PalmLine4" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -50.0944, 0.1, 54.6353)
+
+[node name="PalmLine5" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -62.0944, 0.1, 54.6353)
+
+[node name="PalmLine16" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 44.3013, 0.1, 41.9788)
+
+[node name="PalmLine17" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 56.3013, 0.1, 41.9788)
+
+[node name="PalmLine18" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 68.3013, 0.1, 41.9788)
+
+[node name="PalmLine19" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 80.3013, 0.1, 41.9788)
+
+[node name="PalmLine20" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 92.3013, 0.1, 41.9788)
+
+[node name="PalmLine21" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.5489, 0.1, 2.69418)
+
+[node name="PalmLine22" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.54892, 0.1, 2.69418)
+
+[node name="PalmLine23" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.45108, 0.1, 2.69418)
+
+[node name="PalmLine24" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.4511, 0.1, 2.69418)
+
+[node name="PalmLine25" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27.4511, 0.1, 2.69418)
+
+[node name="PalmLine36" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7558, 0.100004, -42.8759)
+
+[node name="PalmLine37" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7558, 0.100004, -61.8759)
+
+[node name="PalmLine46" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7558, 0.100004, -73.8759)
+
+[node name="PalmLine47" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 38.7558, 0.100004, -72.8759)
+
+[node name="PalmLine48" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 50.7558, 0.100004, -72.8759)
+
+[node name="PalmLine49" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 62.7558, 0.100004, -72.8759)
+
+[node name="PalmLine50" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 74.7558, 0.100004, -72.8759)
+
+[node name="PalmLine51" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 86.7558, 0.100004, -72.8759)
+
+[node name="PalmLine52" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 98.7558, 0.100004, -72.8759)
+
+[node name="PalmLine59" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 110.756, 0.100004, -72.8759)
+
+[node name="PalmLine60" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 122.756, 0.100004, -72.8759)
+
+[node name="PalmLine61" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 134.756, 0.100004, -72.8759)
+
+[node name="PalmLine62" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 146.756, 0.100004, -72.8759)
+
+[node name="PalmLine63" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 158.756, 0.100004, -72.8759)
+
+[node name="PalmLine6" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 51.9056, 0.1, 54.6353)
+
+[node name="PalmLine7" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.9056, 0.1, 54.6353)
+
+[node name="PalmLine8" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27.9056, 0.1, 54.6353)
+
+[node name="PalmLine9" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.9056, 0.1, 54.6353)
+
+[node name="PalmLine10" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.90562, 0.1, 54.6353)
+
+[node name="PalmLine11" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 111.906, 0.1, 54.6353)
+
+[node name="PalmLine12" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 99.9056, 0.1, 54.6353)
+
+[node name="PalmLine13" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 87.9056, 0.1, 54.6353)
+
+[node name="PalmLine26" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.2669, 0.199993, -9.00542)
+
+[node name="PalmLine27" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.2669, 0.199993, 2.99458)
+
+[node name="PalmLine28" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.2669, 0.199993, 14.9946)
+
+[node name="PalmLine29" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.2669, 0.199993, 26.9946)
+
+[node name="PalmLine30" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.2669, 0.199993, 38.9946)
+
+[node name="PalmLine31" type="Node3D" parent="Map/Border"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.2668, 0.199993, -69.0054)
+
+[node name="PalmRow" type="Node3D" parent="Map/Border/PalmLine31"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="PalmRow2" type="Node3D" parent="Map/Border/PalmLine31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow2"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="PalmRow3" type="Node3D" parent="Map/Border/PalmLine31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow3"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="PalmRow4" type="Node3D" parent="Map/Border/PalmLine31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow4"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Map/Border/PalmLine31/PalmRow4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980857, -0.330055, 0)
+light_color = Color(0.894118, 0, 0.596078, 1)
+light_energy = 60.0
+light_size = 0.305
+
+[node name="PalmRow5" type="Node3D" parent="Map/Border/PalmLine31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="Palm tree2" parent="Map/Border/PalmLine31/PalmRow5" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow5"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Border/PalmLine31/PalmRow5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Map/Border/PalmLine31/PalmRow5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980857, -0.330055, 0)
+light_color = Color(0.894118, 0, 0.596078, 1)
+light_energy = 60.0
+light_size = 0.305
+
+[node name="PalmRow6" type="Node3D" parent="Map/Border/PalmLine31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow6"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="PalmRow7" type="Node3D" parent="Map/Border/PalmLine31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow7"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="PalmRow8" type="Node3D" parent="Map/Border/PalmLine31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow8"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="PalmLine32" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.2668, 0.199993, -57.0054)
+
+[node name="PalmLine33" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.2668, 0.199993, -45.0054)
+
+[node name="PalmLine34" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.2669, 0.199993, -33.0054)
+
+[node name="PalmLine35" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.2669, 0.199993, -21.0054)
+
+[node name="PalmLine38" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, 147.767, 0.199993, 54.7071)
+
+[node name="PalmLine39" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, 135.767, 0.199993, 54.7071)
+
+[node name="PalmLine40" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, 123.767, 0.199993, 54.7071)
+
+[node name="PalmLine41" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 155.767, 0.199993, 8.20713)
+
+[node name="PalmLine53" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 155.767, 0.199993, -3.79287)
+
+[node name="PalmLine54" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 155.767, 0.199993, -15.7929)
+
+[node name="PalmLine55" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 155.767, 0.199993, -27.7929)
+
+[node name="PalmLine56" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 155.767, 0.199993, -39.7929)
+
+[node name="PalmLine57" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 155.767, 0.199993, -51.7929)
+
+[node name="PalmLine58" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 155.767, 0.199993, -63.7929)
+
+[node name="PalmLine42" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 155.767, 0.199993, 20.2071)
+
+[node name="PalmLine43" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 155.767, 0.199993, 32.2071)
+
+[node name="PalmLine44" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 155.767, 0.199993, 44.2071)
+
+[node name="PalmLine45" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 155.767, 0.199993, 56.2071)
+
+[node name="PalmLine14" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 75.9056, 0.1, 54.6353)
+
+[node name="PalmLine15" parent="Map/Border" instance=ExtResource("11_6dcik")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63.9056, 0.1, 54.6353)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(47.4975, 0, 0, 0, 47.4975, 0, 0, 0, 1, 0, 348.833, -1650.59)

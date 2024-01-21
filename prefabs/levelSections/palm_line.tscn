@@ -1,0 +1,167 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy717lk4h7tar"]
+
+[ext_resource type="PackedScene" uid="uid://c8v5q3e3y8gau" path="res://prefabs/environment/palm_tree.tscn" id="1_jvfgj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0cpgq"]
+size = Vector3(1.049, 1, 1.5)
+
+[node name="PalmLine" type="Node3D"]
+
+[node name="PalmRow" type="Node3D" parent="."]
+
+[node name="Palm tree2" parent="PalmRow" instance=ExtResource("1_jvfgj")]
+transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PalmRow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980857, -0.330055, 0)
+light_color = Color(0.894118, 0, 0.596078, 1)
+light_energy = 60.0
+light_size = 0.305
+
+[node name="PalmRow2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+
+[node name="Palm tree2" parent="PalmRow2" instance=ExtResource("1_jvfgj")]
+transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow2"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PalmRow2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980857, -0.330055, 0)
+light_color = Color(0.894118, 0, 0.596078, 1)
+light_energy = 60.0
+light_size = 0.305
+
+[node name="PalmRow3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Palm tree2" parent="PalmRow3" instance=ExtResource("1_jvfgj")]
+transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow3"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PalmRow3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980857, -0.330055, 0)
+light_color = Color(0.894118, 0, 0.596078, 1)
+light_energy = 60.0
+light_size = 0.305
+
+[node name="PalmRow4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
+
+[node name="Palm tree2" parent="PalmRow4" instance=ExtResource("1_jvfgj")]
+transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow4"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PalmRow4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980857, -0.330055, 0)
+light_color = Color(0.894118, 0, 0.596078, 1)
+light_energy = 60.0
+light_size = 0.305
+
+[node name="PalmRow5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="Palm tree2" parent="PalmRow5" instance=ExtResource("1_jvfgj")]
+transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow5"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PalmRow5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980857, -0.330055, 0)
+light_color = Color(0.894118, 0, 0.596078, 1)
+light_energy = 60.0
+light_size = 0.305
+
+[node name="PalmRow6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.5)
+
+[node name="Palm tree2" parent="PalmRow6" instance=ExtResource("1_jvfgj")]
+transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow6"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PalmRow6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980857, -0.330055, 0)
+light_color = Color(0.894118, 0, 0.596078, 1)
+light_energy = 60.0
+light_size = 0.305
+
+[node name="PalmRow7" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="Palm tree2" parent="PalmRow7" instance=ExtResource("1_jvfgj")]
+transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow7"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PalmRow7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980857, -0.330055, 0)
+light_color = Color(0.894118, 0, 0.596078, 1)
+light_energy = 60.0
+light_size = 0.305
+
+[node name="PalmRow8" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.5)
+
+[node name="Palm tree2" parent="PalmRow8" instance=ExtResource("1_jvfgj")]
+transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow8"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
+shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PalmRow8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980857, -0.330055, 0)
+light_color = Color(0.894118, 0, 0.596078, 1)
+light_energy = 60.0
+light_size = 0.305
