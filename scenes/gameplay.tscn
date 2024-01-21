@@ -225,7 +225,7 @@ transform = Transform3D(-1.05369, 0, 6.46348, 0, 6.5488, 0, -6.46348, 0, -1.0536
 
 [node name="MainBuilding" parent="Map" instance=ExtResource("6_hexdo")]
 transform = Transform3D(-1.09278e-07, 0, -2.5, 0, 2.5, 0, 2.5, 0, -1.09278e-07, 0, 0, 104.381)
-buildingSize = 14
+buildingSize = 13
 
 [node name="MainRoad" type="Node3D" parent="Map"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.3, -115.893)
