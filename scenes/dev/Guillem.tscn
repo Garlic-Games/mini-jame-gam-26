@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b0jv0cq7u6qcd"]
 
-[ext_resource type="PackedScene" uid="uid://oxof7o3h4yny" path="res://prefabs/ui/hud.tscn" id="1_1fy4q"]
+[ext_resource type="PackedScene" uid="uid://dq07b4db0n1if" path="res://prefabs/ui/hud.tscn" id="1_1fy4q"]
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="1_7qtxn"]
 [ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/environment/building1.tscn" id="2_78lom"]
 [ext_resource type="PackedScene" uid="uid://ungaqd0sni1n" path="res://prefabs/environment/building4.tscn" id="3_17qkl"]
@@ -36,7 +36,6 @@ shape = SubResource("BoxShape3D_uiek3")
 
 [node name="Building 1" parent="." instance=ExtResource("2_78lom")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.798442, 0, 22.128)
-buildingSize = 13
 
 [node name="Building 4" parent="." instance=ExtResource("3_17qkl")]
 transform = Transform3D(0.0446656, 0, 0.999002, 0, 1, 0, -0.999002, 0, 0.0446656, 0.11646, 0.249996, 55.7792)
