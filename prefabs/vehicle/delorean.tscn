@@ -193,4 +193,5 @@ script = ExtResource("3_tc8wa")
 min_distance = 3.0
 height = 0.1
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="upside_down_changed" from="." to="VehicleUi" method="set_visible"]

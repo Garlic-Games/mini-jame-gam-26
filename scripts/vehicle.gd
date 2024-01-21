@@ -151,3 +151,12 @@ func ResetCarFlipped():
 	transform.basis = Basis();
 	translate(Vector3(0, 0.03, 0));
 
+
+
+func _on_body_entered(body):
+	#print("Destroyable body entered");
+	if body.is_in_group("Destroyables"):
+		body.get_parent().get_parent().Explode();
+		#Stop car a bit
+		#add points to scene
+		pass

@@ -64,13 +64,3 @@ func FindRigidBodies(node : Node, pieceContainer : Array):
 					pz.gravity_scale = 0.0;	
 					
 					pieceContainer.append(pz);
-
-
-
-func _on_static_body_3d_body_entered(body):
-	#print("Destroyable body entered");
-	if body.is_in_group("Car"):
-		Explode();
-		#Stop car a bit
-		#add points to scene
-		pass
