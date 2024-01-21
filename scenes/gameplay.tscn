@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cne6pr2amcuke" path="res://prefabs/levelSections/palm_row.tscn" id="7_mqyte"]
 [ext_resource type="Texture2D" uid="uid://bb5plvmeleg46" path="res://art/textures/sunwave.png" id="8_tija1"]
 [ext_resource type="PackedScene" uid="uid://dq07b4db0n1if" path="res://prefabs/ui/hud.tscn" id="10_nyf0r"]
-[ext_resource type="PackedScene" path="res://prefabs/levelSections/palm_line.tscn" id="11_6dcik"]
+[ext_resource type="PackedScene" uid="uid://dy717lk4h7tar" path="res://prefabs/levelSections/palm_line.tscn" id="11_6dcik"]
 [ext_resource type="PackedScene" uid="uid://ggtceocos6b3" path="res://prefabs/game/game_setter.tscn" id="12_l2vmp"]
 [ext_resource type="PackedScene" uid="uid://ctvqifyknhevw" path="res://prefabs/ui/game_over_screen.tscn" id="15_wb25l"]
 [ext_resource type="AudioStream" uid="uid://dn7tugcpfssoq" path="res://art/music/Play.ogg" id="18_bn4w5"]
@@ -159,8 +159,8 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2, 6, 10, 15, 25, 32.6, 36, 38, 42, 48, 54),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": ["", "Hello, fellow pirate.", "You must steal all the NFT's to enter cryptoheaven. You have to be quick! We don't have a lot of energy so time will be limited!", "Destroy any cryptobuilding that gets in your way, don't worry, it will help your algorithm to mine more.", "Each building will generate cryptoscore. As fast you collide with it, more hashes will you win.", "Each building will require certain speed to be destroyed depending of its size.", "For example, this one will require slightly low speed to destroy.", "
-", "However, those, will require you to crash very, very hard to them.", "Collect the maximum amount of cryptoscore possible within time and have fun.", "Ah! Don't forget to pick up the NFT's!", "Drive with W, A, S, D and SPACE as hand brake."]
+"values": ["", "Hello, fellow pirate.", "Your GOAL is to steal all the NFT's to enter cryptoheaven. You have to be quick! We don't have a lot of energy so time will be limited!", "Destroy any cryptobuilding that gets in your way, don't worry, it will help your algorithm to mine more.", "Each building will generate cryptoscore. As fast you collide with it, more hashes you will win.", "Each building will require certain speed to be destroyed depending of its size.", "For example, this one will require slightly low speed to destroy.", "
+", "However, those, will require you to crash very, very hard to them.", "Collect the maximum amount of cryptoscore possible within time and have fun.", "Ah! Don't forget to pick up ALL the NFT's!", "Drive with W, A, S, D and SPACE as hand brake."]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -258,7 +258,7 @@ visible = false
 [node name="Collectables" type="Node3D" parent="."]
 
 [node name="Collectable" parent="Collectables" instance=ExtResource("19_vp3ty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.188039, 0.249996, 459.421)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.188039, 0.249996, 455.188)
 
 [node name="Collectable2" parent="Collectables" instance=ExtResource("19_vp3ty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0114429, 0.510989, 42.3822)

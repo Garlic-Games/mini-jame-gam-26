@@ -16,6 +16,8 @@ var max_treasures: int = 10;
 var state: GAME_STATES = GAME_STATES.LOADING;
 var animationPlayer: AnimationPlayer;
 var tutorialPlayed = false;
+var skip_tutorial_seconds = 3;
+var skip_tutorial_count = 0;
 
 signal game_finished();
 signal game_won();
@@ -32,6 +34,14 @@ func _process(delta):
 		if current_treasures >= max_treasures:
 			state = GAME_STATES.WIN;
 			game_finished.emit();
+			
+	if(state == GAME_STATES.TUTORIAL):
+		if Input.is_action_pressed("handbrake"):
+			skip_tutorial_count += delta;
+			if(skip_tutorial_count > skip_tutorial_seconds):
+				animationPlayer.play("RESET");
+		else:
+			skip_tutorial_count = 0;
 
 
 func set_tutorial():
@@ -50,6 +60,7 @@ func AnimationFinished(algo):
 func set_playing():
 	state = GAME_STATES.PLAYING;
 	current_points = 0;
+	current_treasures = 0;
 	
 func set_gameOver():
 	state = GAME_STATES.GAMEOVER;

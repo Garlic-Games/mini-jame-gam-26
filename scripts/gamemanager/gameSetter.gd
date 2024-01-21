@@ -1,6 +1,6 @@
 extends Node
 
-@export var play_time: float = 3 * 60;
+@export var play_time: float = 5 * 60;
 @export var animationPlayer: AnimationPlayer;
 
 var game_manager: GameManager;
