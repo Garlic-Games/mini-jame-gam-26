@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bv3i4jj4xy5a3"]
 
 [ext_resource type="Script" path="res://scripts/vehicle.gd" id="1"]
-[ext_resource type="Material" path="res://art/Materials/car_red_body.tres" id="2"]
+[ext_resource type="Material" uid="uid://igojn7am76gx" path="res://art/Materials/car_red_body.tres" id="2"]
 [ext_resource type="Material" path="res://art/Materials/car_window.tres" id="3"]
 [ext_resource type="Material" path="res://art/Materials/car_grill.tres" id="4"]
 [ext_resource type="Script" path="res://scripts/follow_camera.gd" id="5"]

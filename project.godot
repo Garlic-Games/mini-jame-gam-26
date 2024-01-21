@@ -66,6 +66,13 @@ handbrake={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Ground"
+3d_physics/layer_2="Actual Ground"
+3d_physics/layer_3="Car"
+3d_physics/layer_4="Destroyables"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
