@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dypx5v01gfi15"]
+[gd_scene load_steps=5 format=3 uid="uid://b0jv0cq7u6qcd"]
 
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="1_7qtxn"]
 [ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/environment/building1.tscn" id="2_78lom"]
@@ -13,7 +13,6 @@ size = Vector3(5000, 0.5, 5000)
 
 [node name="Delorean" parent="." instance=ExtResource("1_7qtxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.692966, 0)
-engine_force_value = 3000
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)

@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://scripts/vehicle.gd" id="1_2hxfg"]
 [ext_resource type="Material" uid="uid://bd5tq3oe6nrij" path="res://art/Materials/cement.tres" id="3_5pg4s"]
 [ext_resource type="Script" path="res://scripts/follow_camera.gd" id="3_tc8wa"]
-[ext_resource type="Material" uid="uid://igojn7am76gx" path="res://art/Materials/car_red_body.tres" id="4_svikk"]
+[ext_resource type="Material" uid="uid://dlyvi6u87qoj5" path="res://art/Materials/car_red_body.tres" id="4_svikk"]
 [ext_resource type="PackedScene" uid="uid://dpwiasqc2c0kk" path="res://prefabs/ui/vehicle_ui.tscn" id="5_c4uwo"]
-[ext_resource type="AudioStream" uid="uid://d3vsh0osb71ey" path="res://art/sounds/Car/147242__qubodup__car-engine-loop.wav" id="6_0bhmy"]
 [ext_resource type="ArrayMesh" uid="uid://bwci23srglq6j" path="res://art/car/race_car_Plane_009.res" id="6_w88hb"]
+[ext_resource type="AudioStream" uid="uid://bkw3wd37g2smq" path="res://art/sounds/Car/636066__lumamorph__eight-cylinder-engine-idling.wav" id="8_2wgnu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dj6v0"]
 size = Vector3(2, 1.15, 4.2)
@@ -162,7 +162,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0.25)
 visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_0bhmy")
+stream = ExtResource("8_2wgnu")
 autoplay = true
 bus = &"Effects"
 

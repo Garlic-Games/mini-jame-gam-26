@@ -16,7 +16,7 @@ const STEER_LIMIT = 0.4
 @export var wheel_fl: VehicleWheel3D;
 @export var wheel_bl: VehicleWheel3D;
 
-@export var rpm_pitch_min = 0.05;
+@export var rpm_pitch_min = 0.8;
 @export var rpm_pitch_max = 5;
 @export var gear_down_percent = 10;
 @export var rpm_idle = 1100;
@@ -113,7 +113,6 @@ func _physics_process(delta):
 func calc_rpm():
 	var selectedRatio = gears_ratio[selected_gear];
 	rpm_value = (speed_kph * 1000) / (radio_rueda_metros / selectedRatio * factor_conversion)
-	rpm_percent = rpm_value  / rpm_max * 100;
 	if(rpm_value > rpm_up && selected_gear < gears_ratio.size() -1):
 		selected_gear += 1;
 	elif (rpm_value < rpm_down && selected_gear > 0):
@@ -121,6 +120,7 @@ func calc_rpm():
 	
 	if(rpm_value < rpm_idle && selected_gear == 0):
 		rpm_value = rpm_idle;
+	rpm_percent = rpm_value  / rpm_max * 100;
 		
 
 func _on_body_entered(body):
