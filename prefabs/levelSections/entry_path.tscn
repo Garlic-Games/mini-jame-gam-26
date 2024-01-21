@@ -1,183 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdmh7uku4n623"]
+[gd_scene load_steps=2 format=3 uid="uid://cdmh7uku4n623"]
 
-[ext_resource type="PackedScene" uid="uid://c8v5q3e3y8gau" path="res://prefabs/environment/palm_tree.tscn" id="1_44tar"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0cpgq"]
-size = Vector3(1.049, 1, 1.5)
+[ext_resource type="PackedScene" uid="uid://cne6pr2amcuke" path="res://prefabs/levelSections/palm_row.tscn" id="1_3iehb"]
 
 [node name="EntryPath" type="Node3D"]
 
-[node name="PalmRow2" type="Node3D" parent="."]
+[node name="PalmRow" parent="." instance=ExtResource("1_3iehb")]
 
-[node name="Palm tree" parent="PalmRow2" instance=ExtResource("1_44tar")]
-transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 2, 0, 0.024)
-
-[node name="Palm tree2" parent="PalmRow2" instance=ExtResource("1_44tar")]
-transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="PalmRow2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow2/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="PalmRow" type="Node3D" parent="."]
+[node name="PalmRow2" parent="." instance=ExtResource("1_3iehb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 
-[node name="Palm tree" parent="PalmRow" instance=ExtResource("1_44tar")]
-transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 2, 0, 0.024)
-
-[node name="Palm tree2" parent="PalmRow" instance=ExtResource("1_44tar")]
-transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="PalmRow"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="PalmRow3" type="Node3D" parent="."]
+[node name="PalmRow3" parent="." instance=ExtResource("1_3iehb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="Palm tree" parent="PalmRow3" instance=ExtResource("1_44tar")]
-transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 2, 0, 0.024)
-
-[node name="Palm tree2" parent="PalmRow3" instance=ExtResource("1_44tar")]
-transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="PalmRow3"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow3/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="PalmRow4" type="Node3D" parent="."]
+[node name="PalmRow4" parent="." instance=ExtResource("1_3iehb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
 
-[node name="Palm tree" parent="PalmRow4" instance=ExtResource("1_44tar")]
-transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 2, 0, 0.024)
-
-[node name="Palm tree2" parent="PalmRow4" instance=ExtResource("1_44tar")]
-transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="PalmRow4"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow4/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="PalmRow5" type="Node3D" parent="."]
+[node name="PalmRow5" parent="." instance=ExtResource("1_3iehb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.98712)
 
-[node name="Palm tree" parent="PalmRow5" instance=ExtResource("1_44tar")]
-transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 2, 0, 0.024)
-
-[node name="Palm tree2" parent="PalmRow5" instance=ExtResource("1_44tar")]
-transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow5/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="PalmRow5"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow5/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="PalmRow6" type="Node3D" parent="."]
+[node name="PalmRow6" parent="." instance=ExtResource("1_3iehb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.48712)
 
-[node name="Palm tree" parent="PalmRow6" instance=ExtResource("1_44tar")]
-transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 2, 0, 0.024)
-
-[node name="Palm tree2" parent="PalmRow6" instance=ExtResource("1_44tar")]
-transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow6"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow6/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="PalmRow6"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow6/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="PalmRow7" type="Node3D" parent="."]
+[node name="PalmRow7" parent="." instance=ExtResource("1_3iehb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.98712)
 
-[node name="Palm tree" parent="PalmRow7" instance=ExtResource("1_44tar")]
-transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 2, 0, 0.024)
-
-[node name="Palm tree2" parent="PalmRow7" instance=ExtResource("1_44tar")]
-transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow7"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow7/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="PalmRow7"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow7/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="PalmRow8" type="Node3D" parent="."]
+[node name="PalmRow8" parent="." instance=ExtResource("1_3iehb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.4871)
-
-[node name="Palm tree" parent="PalmRow8" instance=ExtResource("1_44tar")]
-transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 2, 0, 0.024)
-
-[node name="Palm tree2" parent="PalmRow8" instance=ExtResource("1_44tar")]
-transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="PalmRow8"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow8/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="PalmRow8"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmRow8/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
-shape = SubResource("BoxShape3D_0cpgq")
