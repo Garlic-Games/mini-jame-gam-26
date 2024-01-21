@@ -34,11 +34,6 @@ const STEER_LIMIT = 0.4
 @export var m_min_speed = 50;
 @export var l_min_speed = 70;
 @export var xl_min_speed = 120;
-@export var xs_mask_layer = 10;
-@export var s_mask_layer = 11;
-@export var m_mask_layer = 12;
-@export var l_mask_layer = 13;
-@export var xl_mask_layer = 14;
 
 var steer_target = 0
 var speed_kph = 0;
@@ -128,11 +123,11 @@ func _physics_process(delta):
 		is_upside_down = now_upside_down;
 		upside_down_changed.emit(now_upside_down);
 	
-	set_collision_mask_value(xs_mask_layer, xs_min_speed > speed_kph);
-	set_collision_mask_value(s_mask_layer, s_min_speed > speed_kph);
-	set_collision_mask_value(m_mask_layer, m_min_speed > speed_kph);
-	set_collision_mask_value(l_mask_layer, l_min_speed > speed_kph);
-	set_collision_mask_value(xl_mask_layer, xl_min_speed > speed_kph);
+	set_collision_mask_value(10, xs_min_speed > speed_kph);
+	set_collision_mask_value(11, s_min_speed > speed_kph);
+	set_collision_mask_value(12, m_min_speed > speed_kph);
+	set_collision_mask_value(13, l_min_speed > speed_kph);
+	set_collision_mask_value(14, xl_min_speed > speed_kph);
 
 func calc_rpm():
 	var selectedRatio = gears_ratio[selected_gear];

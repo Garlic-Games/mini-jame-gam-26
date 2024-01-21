@@ -1,7 +1,8 @@
-[gd_scene load_steps=45 format=3 uid="uid://d0pam8jlu6dcl"]
+[gd_scene load_steps=46 format=3 uid="uid://d0pam8jlu6dcl"]
 
 [ext_resource type="Script" path="res://scripts/destroyable/destroyable.gd" id="2_a7h0m"]
 [ext_resource type="PackedScene" uid="uid://n7r0bvkmr1fc" path="res://art/models/building2.glb" id="3_g7tqk"]
+[ext_resource type="AudioStream" uid="uid://80n30814t1mf" path="res://art/sounds/Car/Explosion.wav" id="3_su5ge"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_or8yp"]
 size = Vector3(5, 9, 5)
@@ -990,8 +991,9 @@ shadow_mesh = SubResource("ArrayMesh_g1mlb")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1ew65"]
 points = PackedVector3Array(-8.88854e-06, -1.6385, 0.0520935, 0.0451143, -1.6385, 0.0260366, 0.0235021, 1.6385, 0.0135639, -8.88854e-06, 1.6385, 0.027138, -0.0235111, 1.6385, 0.0135639, -0.0451144, -1.6385, 0.0260366, 0.0451143, -1.6385, -0.026057, 0.0235021, 1.6385, -0.0135843, -0.0235111, 1.6385, -0.0135843, -0.0451144, -1.6385, -0.026057, -8.88854e-06, -1.6385, -0.0520935, -8.88854e-06, 1.6385, -0.0271482)
 
-[node name="Building 2" type="Node3D"]
+[node name="Building 2" type="Node3D" node_paths=PackedStringArray("audioPlayer")]
 script = ExtResource("2_a7h0m")
+audioPlayer = NodePath("AudioStreamPlayer")
 
 [node name="Model" parent="." instance=ExtResource("3_g7tqk")]
 
@@ -1004,7 +1006,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.30121, 0)
 shape = SubResource("BoxShape3D_or8yp")
 
 [node name="TooSlowHitBox" type="StaticBody3D" parent="Model"]
-collision_layer = 512
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Model/TooSlowHitBox"]
@@ -1154,5 +1156,10 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rest in Pieces/RigidBody3D11"]
 shape = SubResource("ConvexPolygonShape3D_1ew65")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_su5ge")
+volume_db = -15.0
+bus = &"Effects"
 
 [connection signal="body_entered" from="Model/AreaBody" to="." method="_on_body_entered"]

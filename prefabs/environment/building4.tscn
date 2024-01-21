@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://ungaqd0sni1n"]
+[gd_scene load_steps=37 format=3 uid="uid://ungaqd0sni1n"]
 
 [ext_resource type="Script" path="res://scripts/destroyable/destroyable.gd" id="2_lwl13"]
 [ext_resource type="PackedScene" uid="uid://bnvsotbepg3ew" path="res://art/models/building4.glb" id="3_4i7sh"]
+[ext_resource type="AudioStream" uid="uid://80n30814t1mf" path="res://art/sounds/Car/Explosion.wav" id="3_rrd05"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bf7im"]
 margin = 5.845
@@ -575,8 +576,9 @@ shadow_mesh = SubResource("ArrayMesh_ghe07")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_prjtt"]
 points = PackedVector3Array(0.0216088, -0.19779, 0.0635047, 0.0216088, 0.0659043, -0.148831, 0.0216088, 0.0659043, 0.063089, 0.0216004, 0.0659301, 0.063089, -0.0648265, 0.0659301, 0.0222056, 0.0216004, 0.0659301, -0.148831)
 
-[node name="Building 4" type="Node3D"]
+[node name="Building 4" type="Node3D" node_paths=PackedStringArray("audioPlayer")]
 script = ExtResource("2_lwl13")
+audioPlayer = NodePath("AudioStreamPlayer")
 
 [node name="Model" parent="." instance=ExtResource("3_4i7sh")]
 
@@ -591,7 +593,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.66085, 0)
 shape = SubResource("BoxShape3D_bf7im")
 
 [node name="TooSlowHitBox" type="StaticBody3D" parent="Model"]
-collision_layer = 512
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Model/TooSlowHitBox"]
@@ -707,5 +709,10 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rest in Pieces/RigidBody3D10"]
 shape = SubResource("ConvexPolygonShape3D_prjtt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rrd05")
+volume_db = -15.0
+bus = &"Effects"
 
 [connection signal="body_entered" from="Model/AreaBody" to="." method="_on_body_entered"]

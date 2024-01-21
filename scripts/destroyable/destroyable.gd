@@ -1,8 +1,14 @@
 extends Node
 
-@export var minimumSpeed : float = 30.0; # km/h
+enum Building_size {XS = 10, S = 11, M = 12 , L = 13, XL = 14}
+
+@export var buildingSize : Building_size = Building_size.XS;
 @export var explosionForce : float = 5.0;
 @export var despawnTime : float = 4.0;
+
+@export var audioPlayer: AudioStreamPlayer;
+@export var pitchMin = 0.6;
+@export var pitchMax = 0.9;
 
 var timerDespawn = 0.0;
 
@@ -10,6 +16,7 @@ var explosionCenter : Vector3 = Vector3.ZERO;
 
 var piecesNode : Node = null;
 var modelNode : Node = null;
+var slowHitBoxNode : StaticBody3D = null;
 var pieces : Array = [];
 
 var isDestroyed = false;
@@ -17,6 +24,8 @@ var isDestroyed = false;
 func _ready():
 	add_to_group("Destroyables");
 	FindRigidBodies(self, pieces);
+	#print(slowHitBoxNode, buildingSize)
+	slowHitBoxNode.set_collision_layer_value(buildingSize, true)
 
 	if piecesNode:
 		piecesNode.set_process(false);
@@ -55,6 +64,7 @@ func FindRigidBodies(node : Node, pieceContainer : Array):
 	for child in node.get_children():
 		if child.name == "Model":
 			modelNode = child;
+			slowHitBoxNode = modelNode.get_child(2)
 		
 		elif child.name == "Rest in Pieces":
 			piecesNode = child;
@@ -64,11 +74,19 @@ func FindRigidBodies(node : Node, pieceContainer : Array):
 					pz.gravity_scale = 0.0;	
 					
 					pieceContainer.append(pz);
+		
 
 func _on_body_entered(body):
 	print("Destroyable body entered");
 	if body.is_in_group("Car"):
 		Explode();
+		if audioPlayer.playing == false:
+			var pitch = randf_range(pitchMin, pitchMax);
+			print(pitch)
+			audioPlayer.pitch_scale = pitch;
+			audioPlayer.play();
+			print(audioPlayer.playing)
+		
 		#Stop car a bit
 		#add points to scene
 		pass

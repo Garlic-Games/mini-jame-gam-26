@@ -1,6 +1,7 @@
-[gd_scene load_steps=47 format=3 uid="uid://1lbn8hxgtmuy"]
+[gd_scene load_steps=48 format=3 uid="uid://1lbn8hxgtmuy"]
 
 [ext_resource type="Script" path="res://scripts/destroyable/destroyable.gd" id="2_pehe6"]
+[ext_resource type="AudioStream" uid="uid://80n30814t1mf" path="res://art/sounds/Car/Explosion.wav" id="3_1ihy4"]
 [ext_resource type="PackedScene" uid="uid://gmtkaq8a6a0l" path="res://art/models/building3.glb" id="3_7q3v7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jsjhc"]
@@ -950,8 +951,9 @@ shadow_mesh = SubResource("ArrayMesh_txwqr")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6lehi"]
 points = PackedVector3Array(-0.0648847, -0.163293, 0.0139813, -0.0648847, -0.115129, -0.0793262, 0.0262566, 0.172578, -0.847708, 0.0351152, -0.115129, -0.310745, 0.0351152, -0.115129, 0.379675, 0.0351152, -0.0665365, 0.531625, -0.0648847, -0.115129, 0.16415, -0.0071909, 0.172578, 0.500249, 0.0351152, 0.172578, -0.868124, 0.0351152, 0.172545, -0.868124, 0.0351152, 0.172578, 0.515731)
 
-[node name="Building 3" type="Node3D"]
+[node name="Building 3" type="Node3D" node_paths=PackedStringArray("audioPlayer")]
 script = ExtResource("2_pehe6")
+audioPlayer = NodePath("AudioStreamPlayer")
 
 [node name="Model" parent="." instance=ExtResource("3_7q3v7")]
 
@@ -964,7 +966,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2237, 0)
 shape = SubResource("BoxShape3D_jsjhc")
 
 [node name="TooSlowHitBox" type="StaticBody3D" parent="Model"]
-collision_layer = 512
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Model/TooSlowHitBox"]
@@ -1128,5 +1130,10 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rest in Pieces/RigidBody3D13"]
 shape = SubResource("ConvexPolygonShape3D_6lehi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1ihy4")
+volume_db = -15.0
+bus = &"Effects"
 
 [connection signal="body_entered" from="Model/AreaBody" to="." method="_on_body_entered"]

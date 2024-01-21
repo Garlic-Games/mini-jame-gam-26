@@ -1,6 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://bo4dmmgttfilt"]
+[gd_scene load_steps=37 format=3 uid="uid://bo4dmmgttfilt"]
 
 [ext_resource type="Script" path="res://scripts/destroyable/destroyable.gd" id="2_cw6e7"]
+[ext_resource type="AudioStream" uid="uid://80n30814t1mf" path="res://art/sounds/Car/Explosion.wav" id="3_4gupp"]
 [ext_resource type="PackedScene" uid="uid://jwubqipkoqyb" path="res://art/models/building1.glb" id="3_7g1pj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x4i57"]
@@ -819,8 +820,9 @@ shadow_mesh = SubResource("ArrayMesh_0aiq1")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uehmv"]
 points = PackedVector3Array(-8.82894e-06, -1.6395, 0.0520933, 0.0451054, -1.6395, 0.0260363, 0.0235022, 1.6395, 0.0135637, -8.82894e-06, 1.6395, 0.0271377, -0.023511, 1.6395, 0.0135637, -0.0451143, -1.6395, 0.0260363, 0.0451054, -1.6395, -0.0260572, 0.0235022, 1.6395, -0.0135845, -0.023511, 1.6395, -0.0135845, -0.0451143, -1.6395, -0.0260572, -8.82894e-06, -1.6395, -0.0520937, -8.82894e-06, 1.6395, -0.0271484)
 
-[node name="Building 1" type="Node3D"]
+[node name="Building 1" type="Node3D" node_paths=PackedStringArray("audioPlayer")]
 script = ExtResource("2_cw6e7")
+audioPlayer = NodePath("AudioStreamPlayer")
 
 [node name="Model" parent="." instance=ExtResource("3_7g1pj")]
 
@@ -833,7 +835,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.99628, 0)
 shape = SubResource("BoxShape3D_x4i57")
 
 [node name="TooSlowHitBox" type="StaticBody3D" parent="Model"]
-collision_layer = 512
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Model/TooSlowHitBox"]
@@ -949,5 +951,10 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rest in Pieces/RigidBody3D9"]
 shape = SubResource("ConvexPolygonShape3D_uehmv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4gupp")
+volume_db = -15.0
+bus = &"Effects"
 
 [connection signal="body_entered" from="Model/AreaBody" to="." method="_on_body_entered"]
