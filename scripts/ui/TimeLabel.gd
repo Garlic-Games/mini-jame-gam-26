@@ -6,4 +6,4 @@ func _ready():
 
 func _process(_delta):
 	if game_manager.state == GameManager.GAME_STATES.PLAYING:
-		text = "%.1d:" %(int(game_manager.time_remaining)/60) + "%.1d"%(int(game_manager.time_remaining)%60);
+		text = "%02d:" %(int(game_manager.time_remaining)/60) + "%02d"%(int(game_manager.time_remaining)%60);
