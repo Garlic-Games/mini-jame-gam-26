@@ -94,6 +94,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 284.281, 0.249996, -50.645)
 [node name="Collectable9" parent="Collectables" instance=ExtResource("19_vp3ty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243.554, 0.249996, -139.327)
 
+[node name="Collectable10" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0642087, 0.249996, 550.827)
+
 [node name="Map" type="Node3D" parent="."]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Map"]
@@ -1234,6 +1237,3 @@ collision_mask = 10
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_bn4w5")
 autoplay = true
-
-[node name="Collectable" parent="." instance=ExtResource("19_vp3ty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0642087, 0.249996, 550.827)
