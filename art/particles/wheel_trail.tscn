@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0yc53hpqphhb"]
+
+[ext_resource type="Shader" path="res://art/shaders/trail.gdshader" id="1_ktm2l"]
+
+[sub_resource type="Curve" id="Curve_btpj2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.536232, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wuvni"]
+curve = SubResource("Curve_btpj2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1ji8g"]
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_wuvni")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6r1ak"]
+render_priority = 0
+shader = ExtResource("1_ktm2l")
+shader_parameter/color = Color(0.513726, 0, 0.45098, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6f6tc"]
+material = SubResource("ShaderMaterial_6r1ak")
+size = Vector2(0.15, 0.15)
+
+[node name="wheel_trail" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00468838, 0, -0.00149143)
+amount = 200
+lifetime = 0.04
+speed_scale = 0.1
+process_material = SubResource("ParticleProcessMaterial_1ji8g")
+draw_pass_1 = SubResource("PlaneMesh_6f6tc")

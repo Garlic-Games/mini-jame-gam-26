@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjyeachxcglil"]
+
+[ext_resource type="Shader" path="res://art/shaders/trail.gdshader" id="1_ab3a1"]
+
+[sub_resource type="Curve" id="Curve_btpj2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.514493, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wuvni"]
+curve = SubResource("Curve_btpj2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1ji8g"]
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_wuvni")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vguvv"]
+render_priority = 0
+shader = ExtResource("1_ab3a1")
+shader_parameter/color = Color(1, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vv2ss"]
+material = SubResource("ShaderMaterial_vguvv")
+size = Vector2(0.08, 0.08)
+
+[node name="light_trail" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 50
+lifetime = 16.16
+speed_scale = 0.1
+process_material = SubResource("ParticleProcessMaterial_1ji8g")
+draw_pass_1 = SubResource("PlaneMesh_vv2ss")

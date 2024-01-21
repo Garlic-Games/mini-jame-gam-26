@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cdukdf8fl5ccm"]
+[gd_scene load_steps=16 format=3 uid="uid://cdukdf8fl5ccm"]
 
 [ext_resource type="Script" path="res://scripts/vehicle.gd" id="1_2hxfg"]
 [ext_resource type="Material" uid="uid://bd5tq3oe6nrij" path="res://art/Materials/cement.tres" id="3_5pg4s"]
 [ext_resource type="Script" path="res://scripts/follow_camera.gd" id="3_tc8wa"]
-[ext_resource type="Material" uid="uid://dlyvi6u87qoj5" path="res://art/Materials/car_red_body.tres" id="4_svikk"]
+[ext_resource type="PackedScene" uid="uid://bjyeachxcglil" path="res://art/particles/light_trail.tscn" id="3_tyxii"]
+[ext_resource type="PackedScene" uid="uid://d0yc53hpqphhb" path="res://art/particles/wheel_trail.tscn" id="4_sk4p5"]
+[ext_resource type="Material" path="res://art/Materials/car_red_body.tres" id="4_svikk"]
 [ext_resource type="PackedScene" uid="uid://dpwiasqc2c0kk" path="res://prefabs/ui/vehicle_ui.tscn" id="5_c4uwo"]
 [ext_resource type="AudioStream" uid="uid://7mwruodkyjdh" path="res://art/sounds/Car/Crunch.wav" id="6_d6syg"]
 [ext_resource type="ArrayMesh" uid="uid://bwci23srglq6j" path="res://art/car/race_car_Plane_009.res" id="6_w88hb"]
@@ -68,7 +70,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 62, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 28, 209, 0, 0, 28, 209, 0, 0, 28, 209, 0, 0, 28, 209, 0, 0, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 127, 29, 81, 255, 127, 29, 81, 255, 127, 29, 81, 255, 127, 29, 81, 28, 209, 255, 255, 28, 209, 255, 255, 28, 209, 255, 255, 28, 209, 255, 255, 255, 127, 226, 46, 255, 127, 226, 46, 255, 127, 226, 46, 255, 127, 226, 46, 225, 174, 255, 255, 225, 174, 255, 255, 225, 174, 255, 255, 225, 174, 255, 255, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 28, 209, 255, 127, 28, 209, 255, 127, 28, 209, 255, 127, 28, 209, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 225, 174, 0, 0, 225, 174, 0, 0, 225, 174, 0, 0, 225, 174, 0, 0, 255, 127, 225, 174, 255, 127, 225, 174, 255, 127, 225, 174, 255, 127, 225, 174)
 }]
 
-[node name="Delorean" type="VehicleBody3D" node_paths=PackedStringArray("wheel_fr", "wheel_br", "wheel_fl", "wheel_bl", "motorStreamPlayer", "hitStreamPlayer")]
+[node name="Delorean" type="VehicleBody3D" node_paths=PackedStringArray("wheel_fr", "wheel_br", "wheel_fl", "wheel_bl", "motorStreamPlayer", "hitStreamPlayer", "wheel_trails", "light_trails")]
 collision_layer = 4
 collision_mask = 11
 mass = 1500.0
@@ -84,10 +86,45 @@ wheel_fl = NodePath("wheel-FL")
 wheel_bl = NodePath("wheel-BL")
 motorStreamPlayer = NodePath("MotorAudio")
 hitStreamPlayer = NodePath("HitAudio")
+wheel_trails = NodePath("trails/wheel")
+light_trails = NodePath("trails/lights")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58658, 0.077)
 shape = SubResource("BoxShape3D_dj6v0")
+
+[node name="trails" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0484222, 0)
+
+[node name="wheel" type="Node3D" parent="trails"]
+visible = false
+
+[node name="trail_fr" parent="trails/wheel" instance=ExtResource("4_sk4p5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.802908, 0, 1.15783)
+
+[node name="trail_fl" parent="trails/wheel" instance=ExtResource("4_sk4p5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81896, 0, 1.1575)
+
+[node name="trail_br" parent="trails/wheel" instance=ExtResource("4_sk4p5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.802908, 0, -1.474)
+
+[node name="trail_bl" parent="trails/wheel" instance=ExtResource("4_sk4p5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81896, 0, -1.474)
+
+[node name="lights" type="Node3D" parent="trails"]
+visible = false
+
+[node name="light_trail" parent="trails/lights" instance=ExtResource("3_tyxii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.679358, 0.65, -2.023)
+
+[node name="light_trail2" parent="trails/lights" instance=ExtResource("3_tyxii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.501641, 0.65, -2.023)
+
+[node name="light_trail3" parent="trails/lights" instance=ExtResource("3_tyxii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48, 0.65, -2.023)
+
+[node name="light_trail4" parent="trails/lights" instance=ExtResource("3_tyxii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.685775, 0.65, -2.023)
 
 [node name="wheel-FR" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.802908, 0.301214, 1.15783)

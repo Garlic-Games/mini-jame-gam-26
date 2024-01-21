@@ -1159,7 +1159,7 @@ shape = SubResource("ConvexPolygonShape3D_1ew65")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_su5ge")
-volume_db = -15.0
+volume_db = -5.0
 bus = &"Effects"
 
 [connection signal="body_entered" from="Model/AreaBody" to="." method="_on_body_entered"]

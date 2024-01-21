@@ -36,6 +36,12 @@ const STEER_LIMIT = 0.4
 @export var xl_min_speed = 120;
 @export var hitStreamPlayer: AudioStreamPlayer;
 
+@export_category("Trails")
+@export var wheel_trails: Node3D;
+@export var light_trails: Node3D;
+@export var wheel_trail_speed = 100;
+@export var light_trail_speed = 80;
+
 var steer_target = 0
 var speed_kph = 0;
 var rpm_value = 0;
@@ -131,6 +137,16 @@ func _physics_process(delta):
 	set_collision_mask_value(12, m_min_speed > speed_kph);
 	set_collision_mask_value(13, l_min_speed > speed_kph);
 	set_collision_mask_value(14, xl_min_speed > speed_kph);
+	
+	#if speed_kph > wheel_trail_speed:
+	#	wheel_trails.show();
+	#else:
+	#	wheel_trails.hide();
+	#if speed_kph > light_trail_speed:
+	#	light_trails.show();
+	#else:
+	#	light_trails.hide();
+	
 
 func calc_rpm():
 	var selectedRatio = gears_ratio[selected_gear];
