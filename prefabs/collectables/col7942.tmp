@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgtf2hrjpsqsa"]
+
+[ext_resource type="Script" path="res://scripts/collectables/collectable.gd" id="1_bfs1a"]
+[ext_resource type="PackedScene" uid="uid://r1t0fejsamp5" path="res://art/models/collectable.glb" id="2_1ps1p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdort"]
+size = Vector3(5, 10, 5)
+
+[node name="Collectable" type="Node3D"]
+script = ExtResource("1_bfs1a")
+
+[node name="collectable" parent="." instance=ExtResource("2_1ps1p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.084, 6, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+angular_velocity = Vector3(0, 0.698132, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4711, 0)
+shape = SubResource("BoxShape3D_fdort")

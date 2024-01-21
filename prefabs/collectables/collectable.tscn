@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgtf2hrjpsqsa"]
+
+[ext_resource type="PackedScene" uid="uid://r1t0fejsamp5" path="res://art/models/collectable.glb" id="2_1ps1p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdort"]
+size = Vector3(3.13647, 10, 3.13574)
+
+[node name="Collectable" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+mass = 0.01
+gravity_scale = 0.0
+angular_velocity = Vector3(0, 4.71239, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4711, 0)
+shape = SubResource("BoxShape3D_fdort")
+
+[node name="collectable" parent="RigidBody3D" instance=ExtResource("2_1ps1p")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.5, 3.65232, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.980392, 0, 0.572549, 1)
+light_energy = 16.0
+omni_range = 12.2833
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9628, 9.74358, 0)
+light_color = Color(0, 1, 0.666667, 1)
+light_energy = 16.0
+omni_range = 12.2833
