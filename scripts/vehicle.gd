@@ -36,6 +36,9 @@ const STEER_LIMIT = 0.4
 @export var xl_min_speed = 120;
 @export var hitStreamPlayer: AudioStreamPlayer;
 
+@export_category("Interaction with collectables")
+@export var collectStreamPlayer: AudioStreamPlayer;
+
 var steer_target = 0
 var speed_kph = 0;
 var rpm_value = 0;
@@ -158,6 +161,8 @@ func _on_body_entered(body):
 		hitStreamPlayer.play();
 
 	if body.is_in_group("Collectable"):
+		collectStreamPlayer.play();
+		
 		body.get_parent().queue_free();
 		game_manager.add_treasure();
 		
