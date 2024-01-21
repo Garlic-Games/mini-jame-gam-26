@@ -192,13 +192,14 @@ transform = Transform3D(1.71962e-15, 3.93403e-08, 0.9, 0.9, -3.93403e-08, 0, 3.9
 mesh = ExtResource("6_w88hb")
 surface_material_override/0 = ExtResource("4_svikk")
 
+[node name="particles" type="Node3D" parent="visual"]
+
 [node name="CameraBase" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35256, -1.38719)
 
 [node name="Camera3D" type="Camera3D" parent="CameraBase"]
 transform = Transform3D(-0.709652, -0.170177, 0.683691, -2.11161e-08, 0.970391, 0.241539, -0.704552, 0.171409, -0.68864, 3.449, -0.458, -4.394)
 current = true
-fov = 74.0
 near = 0.1
 script = ExtResource("3_tc8wa")
 min_distance = 3.0
