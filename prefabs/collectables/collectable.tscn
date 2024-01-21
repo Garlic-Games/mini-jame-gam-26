@@ -3,17 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://r1t0fejsamp5" path="res://art/models/collectable.glb" id="2_1ps1p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdort"]
-size = Vector3(3.13647, 10, 3.13574)
+size = Vector3(3.13647, 9.70514, 3.13574)
 
 [node name="Collectable" type="Node3D"]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["Collectable"]]
+collision_layer = 8
+collision_mask = 4
 mass = 0.01
 gravity_scale = 0.0
 angular_velocity = Vector3(0, 4.71239, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4711, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10791, 0)
 shape = SubResource("BoxShape3D_fdort")
 
 [node name="collectable" parent="RigidBody3D" instance=ExtResource("2_1ps1p")]

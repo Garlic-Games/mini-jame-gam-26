@@ -957,7 +957,7 @@ audioPlayer = NodePath("AudioStreamPlayer")
 
 [node name="Model" parent="." instance=ExtResource("3_7q3v7")]
 
-[node name="AreaBody" type="Area3D" parent="Model"]
+[node name="AreaBody" type="Area3D" parent="Model" groups=["Destroyable"]]
 collision_layer = 8
 collision_mask = 4
 

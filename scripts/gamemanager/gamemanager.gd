@@ -5,7 +5,8 @@ enum GAME_STATES {
 	LOADING,
 	TUTORIAL,
 	PLAYING,
-	GAMEOVER
+	GAMEOVER,
+	WIN
 }
 
 var time_remaining: float;
@@ -17,6 +18,8 @@ var animationPlayer: AnimationPlayer;
 var tutorialPlayed = false;
 
 signal game_finished();
+signal game_won();
+signal points_added();
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,21 +28,25 @@ func _process(delta):
 		if time_remaining < 0:
 			state = GAME_STATES.GAMEOVER;
 			game_finished.emit();
-			
+
+		if current_treasures >= max_treasures:
+			state = GAME_STATES.WIN;
+			game_finished.emit();
+
 
 func set_tutorial():
-	if (tutorialPlayed): 
+	if (tutorialPlayed):
 		set_playing();
 		return;
 	state = GAME_STATES.TUTORIAL;
 	animationPlayer.play("tutorial")
 	animationPlayer.connect("animation_finished", AnimationFinished);
-	
+
 func AnimationFinished(algo):
 	tutorialPlayed = true;
 	animationPlayer.disconnect("animation_finished", AnimationFinished);
 	set_playing();
-	
+
 func set_playing():
 	state = GAME_STATES.PLAYING;
 	current_points = 0;
@@ -49,10 +56,11 @@ func set_gameOver():
 
 func add_points(points: int):
 	current_points = current_points + points;
+	emit_signal("points_added");
 
 func add_treasure():
 	current_treasures = current_treasures + 1;
-	
+
 func injectPlayTime(game_time):
 	time_remaining = game_time;
-	
+

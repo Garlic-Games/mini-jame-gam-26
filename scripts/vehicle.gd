@@ -42,6 +42,9 @@ const STEER_LIMIT = 0.4
 @export var wheel_trail_speed = 100;
 @export var light_trail_speed = 80;
 
+@export_category("Interaction with collectables")
+@export var collectStreamPlayer: AudioStreamPlayer;
+
 var steer_target = 0
 var speed_kph = 0;
 var rpm_value = 0;
@@ -56,9 +59,11 @@ var reset_count = 0;
 
 signal upside_down_changed(value)
 
+var game_manager : GameManager;
 
 func _ready():
 	add_to_group("Car");
+	game_manager = get_node("/root/Gamemanager");
 
 func _process(delta):
 	if(is_upside_down):
@@ -137,7 +142,7 @@ func _physics_process(delta):
 	set_collision_mask_value(12, m_min_speed > speed_kph);
 	set_collision_mask_value(13, l_min_speed > speed_kph);
 	set_collision_mask_value(14, xl_min_speed > speed_kph);
-	
+
 	#if speed_kph > wheel_trail_speed:
 	#	wheel_trails.show();
 	#else:
@@ -146,7 +151,7 @@ func _physics_process(delta):
 	#	light_trails.show();
 	#else:
 	#	light_trails.hide();
-	
+
 
 func calc_rpm():
 	var selectedRatio = gears_ratio[selected_gear];
@@ -168,5 +173,14 @@ func ResetCarFlipped():
 
 
 func _on_body_entered(body):
-	hitStreamPlayer.play()
-	pass # Replace with function body.
+	if body.is_in_group("Destroyable"):
+		hitStreamPlayer.play();
+
+	if body.is_in_group("Collectable"):
+		collectStreamPlayer.play();
+
+		body.get_parent().queue_free();
+		game_manager.add_treasure();
+
+	pass; # Replace with function body.
+
