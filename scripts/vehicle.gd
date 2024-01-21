@@ -155,7 +155,7 @@ func ResetCarFlipped():
 
 func _on_body_entered(body):
 	#print("Destroyable body entered");
-	if body.is_in_group("Destroyables"):
+	if body.get_parent().get_parent().is_in_group("Destroyables"):
 		body.get_parent().get_parent().Explode();
 		#Stop car a bit
 		#add points to scene
