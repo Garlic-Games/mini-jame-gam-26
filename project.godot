@@ -29,6 +29,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="Mini-jame-gam-26"
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 accelerate={
@@ -77,6 +81,12 @@ handbrake={
 3d_physics/layer_2="Actual Ground"
 3d_physics/layer_3="Car"
 3d_physics/layer_4="Destroyables"
+3d_physics/layer_5="Rest in pices"
+3d_physics/layer_10="destroyable-xs"
+3d_physics/layer_11="destroyable-s"
+3d_physics/layer_12="destroyable-m"
+3d_physics/layer_13="destroyable-l"
+3d_physics/layer_14="destroyable-xl"
 
 [rendering]
 

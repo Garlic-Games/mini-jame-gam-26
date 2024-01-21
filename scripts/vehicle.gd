@@ -5,17 +5,19 @@ extends VehicleBody3D
 const STEER_SPEED = 1.5
 const STEER_LIMIT = 0.4
 
+@export_category("Control")
 @export var engine_force_value = 3000;
 @export var speed_limit = 340;
 @export var brake_force_multiplier = 4;
-
 @export var reset_time_seconds = 2;
 
+@export_category("Wheels")
 @export var wheel_fr: VehicleWheel3D;
 @export var wheel_br: VehicleWheel3D;
 @export var wheel_fl: VehicleWheel3D;
 @export var wheel_bl: VehicleWheel3D;
 
+@export_category("Motor configuration")
 @export var rpm_pitch_min = 0.8;
 @export var rpm_pitch_max = 5;
 @export var gear_down_percent = 10;
@@ -25,6 +27,18 @@ const STEER_LIMIT = 0.4
 @export var rpm_down = 4000;
 @export var gears_ratio = [3.85, 2.04, 1.28, 0.951, 0.76];
 @export var motorStreamPlayer: AudioStreamPlayer;
+
+@export_category("Interaction with destroyables")
+@export var xs_min_speed = 25;
+@export var s_min_speed = 35;
+@export var m_min_speed = 50;
+@export var l_min_speed = 70;
+@export var xl_min_speed = 120;
+@export var xs_mask_layer = 10;
+@export var s_mask_layer = 11;
+@export var m_mask_layer = 12;
+@export var l_mask_layer = 13;
+@export var xl_mask_layer = 14;
 
 var steer_target = 0
 var speed_kph = 0;
@@ -39,6 +53,10 @@ var is_upside_down = false;
 var reset_count = 0;
 
 signal upside_down_changed(value)
+
+
+func _ready():
+	add_to_group("Car");
 
 func _process(delta):
 	if(is_upside_down):
@@ -109,6 +127,12 @@ func _physics_process(delta):
 		print("Upside down changed to ", now_upside_down)
 		is_upside_down = now_upside_down;
 		upside_down_changed.emit(now_upside_down);
+	
+	set_collision_mask_value(xs_mask_layer, xs_min_speed > speed_kph);
+	set_collision_mask_value(s_mask_layer, s_min_speed > speed_kph);
+	set_collision_mask_value(m_mask_layer, m_min_speed > speed_kph);
+	set_collision_mask_value(l_mask_layer, l_min_speed > speed_kph);
+	set_collision_mask_value(xl_mask_layer, xl_min_speed > speed_kph);
 
 func calc_rpm():
 	var selectedRatio = gears_ratio[selected_gear];
@@ -123,14 +147,7 @@ func calc_rpm():
 	rpm_percent = rpm_value  / rpm_max * 100;
 		
 
-func _on_body_entered(body):
-	print("BODYLMAO", body);
-	if body.get_parent().get_parent().is_in_group("Destroyables"):
-		var destroyable = body.get_parent().get_parent();
-
-		if (speed_kph >= destroyable.minimumSpeed):
-			destroyable.Explode();
-
 func ResetCarFlipped():
 	transform.basis = Basis();
 	translate(Vector3(0, 0.03, 0));
+
