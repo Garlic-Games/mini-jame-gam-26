@@ -1,4 +1,4 @@
-extends TextureRect
+extends MarginContainer
 
 func _ready():
 	hide();

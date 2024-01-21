@@ -29,8 +29,8 @@ colors = PackedColorArray(1, 0, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3g4n6"]
 gradient = SubResource("Gradient_df10g")
-width = 512
-height = 512
+width = 128
+height = 128
 fill_from = Vector2(0.5, 0)
 fill_to = Vector2(0.517094, 0.987179)
 
@@ -40,8 +40,8 @@ colors = PackedColorArray(0.0666667, 0.0941176, 0.301961, 1, 0.435294, 0.894118,
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_k5lg2"]
 gradient = SubResource("Gradient_cnnsg")
-width = 448
-height = 448
+width = 128
+height = 128
 fill_from = Vector2(0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p06em"]
@@ -71,14 +71,15 @@ clip_contents = true
 layout_mode = 2
 
 [node name="MainBackground" type="TextureRect" parent="AspectRatioContainer/PanelContainer"]
-clip_contents = true
 layout_mode = 2
 texture = ExtResource("1_tu1xq")
+expand_mode = 3
 
 [node name="Glitch" type="TextureRect" parent="AspectRatioContainer/PanelContainer"]
 material = SubResource("ShaderMaterial_dfff5")
 layout_mode = 2
 texture = SubResource("GradientTexture2D_sg87k")
+expand_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/PanelContainer"]
 layout_mode = 2
@@ -89,18 +90,18 @@ theme_override_constants/margin_bottom = 100
 
 [node name="Holder" type="VBoxContainer" parent="AspectRatioContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 300
 
 [node name="MainTitle" type="RichTextLabel" parent="AspectRatioContainer/PanelContainer/MarginContainer/Holder"]
-custom_minimum_size = Vector2(0, 180)
+custom_minimum_size = Vector2(0, 220)
 layout_mode = 2
 theme = ExtResource("2_f3fat")
 theme_override_colors/font_shadow_color = Color(1, 1, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 bbcode_enabled = true
-text = "[center][font_size=140]SPEED[/font_size]
-[font_size=40]Style Performance Exhilarating Extreme Destruction[/font_size][/center]
+text = "[center][font_size=100]SPEED[/font_size]
+[font_size=20
+]Style Performance Exhilarating Extreme Destruction[/font_size][/center]
 "
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/PanelContainer/MarginContainer/Holder"]
@@ -139,27 +140,20 @@ theme_override_colors/font_color = Color(0.996078, 0.996078, 0.996078, 1)
 theme_override_font_sizes/font_size = 40
 text = "Exit"
 
-[node name="OptionsMenu" type="TextureRect" parent="AspectRatioContainer"]
-custom_minimum_size = Vector2(512, 512)
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = SubResource("GradientTexture2D_3g4n6")
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
 script = ExtResource("6_pf22d")
 
-[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/OptionsMenu"]
-custom_minimum_size = Vector2(448, 448)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture2D_k5lg2")
+[node name="OptionsMenu" type="TextureRect" parent="AspectRatioContainer/MarginContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_3g4n6")
+expand_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/OptionsMenu/TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/MarginContainer/OptionsMenu"]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -172,10 +166,23 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/OptionsMenu/TextureRect/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/MarginContainer/OptionsMenu/MarginContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_k5lg2")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/MarginContainer/OptionsMenu/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/MarginContainer/OptionsMenu/MarginContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="FullScreen" type="CheckButton" parent="AspectRatioContainer/OptionsMenu/TextureRect/MarginContainer/VBoxContainer"]
+[node name="FullScreen" type="CheckButton" parent="AspectRatioContainer/MarginContainer/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_f3fat")
 theme_override_colors/font_color = Color(0.968627, 0.882353, 0, 1)
@@ -185,7 +192,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_p06em")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xm7r4")
 text = "FullScreen"
 
-[node name="Return" type="Button" parent="AspectRatioContainer/OptionsMenu/TextureRect/MarginContainer/VBoxContainer"]
+[node name="Return" type="Button" parent="AspectRatioContainer/MarginContainer/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 theme = ExtResource("2_f3fat")
@@ -210,9 +217,9 @@ bus = &"Music"
 [connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Start" to="ChangeButton" method="play" binds= [0.0]]
 [connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Start" to="EnterGame" method="play" binds= [0.0]]
 [connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Options" to="ChangeButton" method="play" binds= [0.0]]
-[connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Options" to="AspectRatioContainer/OptionsMenu" method="show"]
+[connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Options" to="AspectRatioContainer/MarginContainer" method="show"]
 [connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Exit" to="ChangeButton" method="play" binds= [0.0]]
 [connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="toggled" from="AspectRatioContainer/OptionsMenu/TextureRect/MarginContainer/VBoxContainer/FullScreen" to="AspectRatioContainer/OptionsMenu" method="set_fullscreen"]
-[connection signal="pressed" from="AspectRatioContainer/OptionsMenu/TextureRect/MarginContainer/VBoxContainer/Return" to="AspectRatioContainer/OptionsMenu" method="hide"]
+[connection signal="toggled" from="AspectRatioContainer/MarginContainer/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer/FullScreen" to="AspectRatioContainer/MarginContainer/OptionsMenu" method="set_fullscreen"]
+[connection signal="pressed" from="AspectRatioContainer/MarginContainer/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer/Return" to="AspectRatioContainer/MarginContainer" method="hide"]
 [connection signal="finished" from="EnterGame" to="." method="_on_start_pressed"]
