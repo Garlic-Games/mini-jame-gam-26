@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dq07b4db0n1if"]
+[gd_scene load_steps=14 format=3 uid="uid://dq07b4db0n1if"]
 
 [ext_resource type="Script" path="res://scripts/ui/Hud.gd" id="1_1sxma"]
 [ext_resource type="Script" path="res://scripts/ui/RevolutionsHud.gd" id="2_0hs4w"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dl5pid43m3gey" path="res://art/textures/hud.tga" id="6_ai4t0"]
 [ext_resource type="Script" path="res://scripts/ui/TimeLabel.gd" id="7_jmhs7"]
 [ext_resource type="Script" path="res://scripts/ui/PointTracker.gd" id="7_myk6s"]
+[ext_resource type="Script" path="res://scripts/ui/TreasuresLabel.gd" id="9_hp2c4"]
 
 [sub_resource type="Gradient" id="Gradient_hl650"]
 colors = PackedColorArray(0.356863, 0, 1, 1, 1, 0, 1, 1)
@@ -87,10 +88,26 @@ anchor_right = 0.116
 anchor_bottom = 0.067
 offset_left = 12.2
 offset_top = 24.84
-offset_right = 12.52
+offset_right = -12.48
 offset_bottom = 24.76
 theme_override_fonts/font = ExtResource("3_nq2vs")
 theme_override_font_sizes/font_size = 20
 text = "1:30"
 vertical_alignment = 1
 script = ExtResource("7_jmhs7")
+
+[node name="Treasures" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.885
+anchor_top = 0.064
+anchor_right = 0.951
+anchor_bottom = 0.103
+offset_left = 0.199951
+offset_top = -0.0800018
+offset_right = -0.280029
+offset_bottom = -0.160004
+theme_override_fonts/font = ExtResource("3_nq2vs")
+theme_override_font_sizes/font_size = 20
+text = "1/10"
+vertical_alignment = 1
+script = ExtResource("9_hp2c4")

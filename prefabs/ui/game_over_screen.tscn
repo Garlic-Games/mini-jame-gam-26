@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctvqifyknhevw"]
+[gd_scene load_steps=11 format=3 uid="uid://ctvqifyknhevw"]
 
 [ext_resource type="Script" path="res://scripts/ui/GameOverScreen.gd" id="1_cafsr"]
 [ext_resource type="Theme" uid="uid://dpqda1rl4km7n" path="res://art/theme/main.tres" id="2_vy71p"]
 [ext_resource type="Script" path="res://scripts/ui/PointTracker.gd" id="3_p6648"]
+[ext_resource type="Script" path="res://scripts/ui/TreasuresLabel.gd" id="3_w7qbc"]
 [ext_resource type="Script" path="res://scripts/ui/TryAgainButton.gd" id="4_tcqlj"]
 [ext_resource type="AudioStream" uid="uid://dn7tugcpfssoq" path="res://art/music/gameOver.ogg" id="5_vag33"]
 
@@ -102,6 +103,7 @@ theme = ExtResource("2_vy71p")
 theme_override_font_sizes/font_size = 25
 text = "2/5"
 horizontal_alignment = 2
+script = ExtResource("3_w7qbc")
 
 [node name="Score" type="Label" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2

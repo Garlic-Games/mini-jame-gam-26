@@ -9,6 +9,8 @@ enum GAME_STATES {
 
 var time_remaining: float;
 var current_points: int = 0;
+var current_treasures: int = 0;
+var max_treasures: int = 10;
 var state: GAME_STATES = GAME_STATES.LOADING;
 signal game_finished();
 
@@ -30,3 +32,6 @@ func set_gameOver():
 
 func add_points(points: int):
 	current_points = current_points + points;
+
+func add_treasure():
+	current_treasures = current_treasures + 1;

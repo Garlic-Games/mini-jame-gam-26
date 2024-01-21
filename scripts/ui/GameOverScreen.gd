@@ -11,4 +11,3 @@ func _ready():
 func _on_game_over():
 	get_tree().paused = true;
 	show();
-
