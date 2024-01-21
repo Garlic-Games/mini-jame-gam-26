@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/ui/PointTracker.gd" id="3_p6648"]
 [ext_resource type="Script" path="res://scripts/ui/TreasuresLabel.gd" id="3_w7qbc"]
 [ext_resource type="Script" path="res://scripts/ui/TryAgainButton.gd" id="4_tcqlj"]
-[ext_resource type="AudioStream" uid="uid://cyo6f0okq77gv" path="res://art/music/GameOver.ogg" id="6_0hy5c"]
+[ext_resource type="AudioStream" uid="uid://cyo6f0okq77gv" path="res://art/music/gameOver.ogg" id="6_0hy5c"]
 
 [sub_resource type="Gradient" id="Gradient_df10g"]
 colors = PackedColorArray(1, 0, 1, 1, 1, 1, 1, 1)
@@ -27,10 +27,11 @@ width = 128
 height = 128
 fill_from = Vector2(0, 1)
 
-[node name="GameOverScreen" type="CanvasLayer"]
+[node name="GameOverScreen" type="CanvasLayer" node_paths=PackedStringArray("winLabel")]
 process_mode = 3
 layer = 9
 script = ExtResource("1_cafsr")
+winLabel = NodePath("MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GameOverTitle/WinSubtitle")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 process_mode = 2
@@ -39,10 +40,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 60
-theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 60
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_top = 180
+theme_override_constants/margin_right = 180
+theme_override_constants/margin_bottom = 180
 
 [node name="GameOver" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
@@ -84,6 +85,17 @@ theme = ExtResource("2_vy71p")
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="WinSubtitle" type="Label" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GameOverTitle"]
+offset_left = 130.0
+offset_top = 62.0
+offset_right = 608.0
+offset_bottom = 104.0
+theme = ExtResource("2_vy71p")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "you win!"
 horizontal_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer"]

@@ -13,6 +13,7 @@ var current_treasures: int = 0;
 var max_treasures: int = 10;
 var state: GAME_STATES = GAME_STATES.LOADING;
 signal game_finished();
+signal game_won();
 signal points_added();
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,6 +23,10 @@ func _process(delta):
 		if time_remaining < 0:
 			state = GAME_STATES.GAMEOVER;
 			game_finished.emit();
+		
+		if current_treasures >= 10:
+			state = GAME_STATES.GAMEOVER;
+			game_won.emit();
 
 func set_playing(game_time:float):
 	state = GAME_STATES.PLAYING;

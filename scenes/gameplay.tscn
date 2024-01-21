@@ -574,63 +574,63 @@ transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 
 [node name="Building 3" parent="Map/CityBuildings/Group 1" instance=ExtResource("5_ahnyy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 30)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 6" parent="Map/CityBuildings/Group 1" instance=ExtResource("5_ahnyy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, 30)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 1" parent="Map/CityBuildings/Group 1" instance=ExtResource("7_et75q")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 0.034, 19.983)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 14" parent="Map/CityBuildings/Group 1" instance=ExtResource("7_et75q")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19, 0.034, 4.783)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 2" parent="Map/CityBuildings/Group 1" instance=ExtResource("7_et75q")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 20)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 4" parent="Map/CityBuildings/Group 1" instance=ExtResource("7_et75q")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 3, 0, 14)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 5" parent="Map/CityBuildings/Group 1" instance=ExtResource("7_et75q")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -3, 0, 14)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 7" parent="Map/CityBuildings/Group 1" instance=ExtResource("6_hexdo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 24.5)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 8" parent="Map/CityBuildings/Group 1" instance=ExtResource("6_hexdo")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19, 0, 24.5)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 9" parent="Map/CityBuildings/Group 1" instance=ExtResource("4_kun0v")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.5, 0, 14.5)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 10" parent="Map/CityBuildings/Group 1" instance=ExtResource("4_kun0v")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10.3, 0, 4.76748)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 11" parent="Map/CityBuildings/Group 1" instance=ExtResource("4_kun0v")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -3.7, 0, 4.76748)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 12" parent="Map/CityBuildings/Group 1" instance=ExtResource("6_hexdo")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13.2, 0, 4.8)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 13" parent="Map/CityBuildings/Group 1" instance=ExtResource("5_ahnyy")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19.2, 0, 14.8)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 15" parent="Map/CityBuildings/Group 1" instance=ExtResource("6_hexdo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.6, 0, 4.8)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Group 2" type="Node3D" parent="Map/CityBuildings"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6076, 0, 7.87711)
@@ -658,57 +658,57 @@ transform = Transform3D(-0.0660461, 0, -0.0230087, 0, 0.0699391, 0, 0.0230087, 0
 
 [node name="Building 3" parent="Map/CityBuildings/Group 2" instance=ExtResource("5_ahnyy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -46.0126)
-buildingSize = 13
+buildingSize = 12
 
 [node name="Building 4" parent="Map/CityBuildings/Group 2" instance=ExtResource("5_ahnyy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.26467, 0, -55.3747)
-buildingSize = 13
+buildingSize = 12
 
 [node name="Building 5" parent="Map/CityBuildings/Group 2" instance=ExtResource("5_ahnyy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.8647, 0, -55.3747)
-buildingSize = 13
+buildingSize = 12
 
 [node name="Building 6" parent="Map/CityBuildings/Group 2" instance=ExtResource("5_ahnyy")]
 transform = Transform3D(1, 0, -5.68434e-15, 0, 1, 0, 5.68434e-15, 0, 1, 21.8647, 0, -45.7747)
-buildingSize = 13
+buildingSize = 12
 
 [node name="Building 7" parent="Map/CityBuildings/Group 2" instance=ExtResource("5_ahnyy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.4647, 0, -36.5747)
-buildingSize = 13
+buildingSize = 12
 
 [node name="Building 8" parent="Map/CityBuildings/Group 2" instance=ExtResource("5_ahnyy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.86467, 0, -36.5747)
-buildingSize = 13
+buildingSize = 12
 
 [node name="Building 2" parent="Map/CityBuildings/Group 2" instance=ExtResource("6_hexdo")]
 transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 10.2497, 0.0999985, -45.9993)
-buildingSize = 14
+buildingSize = 12
 
 [node name="Group 3" type="Node3D" parent="Map/CityBuildings"]
 
 [node name="Building 4" parent="Map/CityBuildings/Group 3" instance=ExtResource("4_kun0v")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 81.6356, 0, 30.5365)
-buildingSize = 13
+buildingSize = 11
 
 [node name="Building 5" parent="Map/CityBuildings/Group 3" instance=ExtResource("4_kun0v")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 95.2356, 0, 30.5365)
-buildingSize = 13
+buildingSize = 11
 
 [node name="Building 6" parent="Map/CityBuildings/Group 3" instance=ExtResource("4_kun0v")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 108.836, 0, 30.5365)
-buildingSize = 13
+buildingSize = 11
 
 [node name="Building 14" parent="Map/CityBuildings/Group 3" instance=ExtResource("4_kun0v")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 81.6356, 0, -47.4635)
-buildingSize = 13
+buildingSize = 11
 
 [node name="Building 15" parent="Map/CityBuildings/Group 3" instance=ExtResource("4_kun0v")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 95.2356, 0, -47.4635)
-buildingSize = 13
+buildingSize = 11
 
 [node name="Building 16" parent="Map/CityBuildings/Group 3" instance=ExtResource("4_kun0v")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 108.836, 0, -47.4635)
-buildingSize = 13
+buildingSize = 11
 
 [node name="Building 1" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 86.4, 0, 4)
@@ -736,33 +736,35 @@ buildingSize = 11
 
 [node name="Building 17" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 114, 0, -23.4)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 18" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 114, 0, -28.2)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 19" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 114, 0, -33)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 20" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 114, 0, -7.4)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 21" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 114, 0, -12.2)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 22" parent="Map/CityBuildings/Group 3" instance=ExtResource("7_et75q")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 114, 0, -17)
-buildingSize = 12
+buildingSize = 11
 
 [node name="Building 10" parent="Map/CityBuildings/Group 3" instance=ExtResource("6_hexdo")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 108.457, 0, 7.0695)
+buildingSize = 11
 
 [node name="Building 11" parent="Map/CityBuildings/Group 3" instance=ExtResource("6_hexdo")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 103.657, 0, 7.0695)
+buildingSize = 11
 
 [node name="Building 23" parent="Map/CityBuildings/Group 3" instance=ExtResource("5_ahnyy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 102.547, -1.2, -15.2891)
@@ -790,6 +792,7 @@ buildingSize = 11
 
 [node name="Building 12" parent="Map/CityBuildings/Group 3" instance=ExtResource("6_hexdo")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 98.4568, 0, 7.0695)
+buildingSize = 11
 
 [node name="Building 13" parent="Map/CityBuildings/Group 3" instance=ExtResource("5_ahnyy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 84.6, 0, -15.8)
@@ -1206,6 +1209,33 @@ autoplay = true
 [node name="Collectables" type="Node3D" parent="."]
 
 [node name="Collectable" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238907, 0.249996, 453.843)
+
+[node name="Collectable11" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238907, 0.249996, 453.843)
+
+[node name="Collectable12" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238907, 0.249996, 453.843)
+
+[node name="Collectable13" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238907, 0.249996, 453.843)
+
+[node name="Collectable14" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238907, 0.249996, 453.843)
+
+[node name="Collectable15" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238907, 0.249996, 453.843)
+
+[node name="Collectable16" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238907, 0.249996, 453.843)
+
+[node name="Collectable17" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238907, 0.249996, 453.843)
+
+[node name="Collectable19" parent="Collectables" instance=ExtResource("19_vp3ty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238907, 0.249996, 453.843)
+
+[node name="Collectable18" parent="Collectables" instance=ExtResource("19_vp3ty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238907, 0.249996, 453.843)
 
 [node name="Collectable2" parent="Collectables" instance=ExtResource("19_vp3ty")]
