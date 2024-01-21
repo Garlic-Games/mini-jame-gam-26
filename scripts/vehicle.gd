@@ -50,9 +50,11 @@ var reset_count = 0;
 
 signal upside_down_changed(value)
 
+var game_manager : GameManager;
 
 func _ready():
 	add_to_group("Car");
+	game_manager = get_node("/root/Gamemanager");
 
 func _process(delta):
 	if(is_upside_down):
@@ -152,5 +154,12 @@ func ResetCarFlipped():
 
 
 func _on_body_entered(body):
-	hitStreamPlayer.play()
-	pass # Replace with function body.
+	if body.is_in_group("Destroyable"):
+		hitStreamPlayer.play();
+
+	if body.is_in_group("Collectable"):
+		body.get_parent().queue_free();
+		game_manager.add_treasure();
+		
+	pass; # Replace with function body.
+	
