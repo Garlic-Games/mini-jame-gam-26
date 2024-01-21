@@ -24,22 +24,22 @@ shader_parameter/shake_color_rate = 0.02
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_sg87k"]
 gradient = SubResource("Gradient_ygmua")
 
-[sub_resource type="Gradient" id="Gradient_df10g"]
+[sub_resource type="Gradient" id="Gradient_t5agr"]
 colors = PackedColorArray(1, 0, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3g4n6"]
-gradient = SubResource("Gradient_df10g")
+gradient = SubResource("Gradient_t5agr")
 width = 128
 height = 128
 fill_from = Vector2(0.5, 0)
 fill_to = Vector2(0.517094, 0.987179)
 
-[sub_resource type="Gradient" id="Gradient_cnnsg"]
+[sub_resource type="Gradient" id="Gradient_pr553"]
 offsets = PackedFloat32Array(0, 0.513369, 0.997326)
 colors = PackedColorArray(0.0666667, 0.0941176, 0.301961, 1, 0.435294, 0.894118, 0.882353, 1, 0.0627451, 0.0823529, 0.294118, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_k5lg2"]
-gradient = SubResource("Gradient_cnnsg")
+gradient = SubResource("Gradient_pr553")
 width = 128
 height = 128
 fill_from = Vector2(0, 1)

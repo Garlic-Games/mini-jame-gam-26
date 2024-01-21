@@ -1,0 +1,127 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctvqifyknhevw"]
+
+[ext_resource type="Script" path="res://scripts/ui/GameOverScreen.gd" id="1_cafsr"]
+[ext_resource type="Theme" uid="uid://dpqda1rl4km7n" path="res://art/theme/main.tres" id="2_vy71p"]
+[ext_resource type="Script" path="res://scripts/ui/PointTracker.gd" id="3_p6648"]
+[ext_resource type="Script" path="res://scripts/ui/TryAgainButton.gd" id="4_tcqlj"]
+
+[sub_resource type="Gradient" id="Gradient_df10g"]
+colors = PackedColorArray(1, 0, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xfllc"]
+gradient = SubResource("Gradient_df10g")
+width = 128
+height = 128
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.517094, 0.987179)
+
+[sub_resource type="Gradient" id="Gradient_cnnsg"]
+offsets = PackedFloat32Array(0, 0.513369, 0.997326)
+colors = PackedColorArray(0.0666667, 0.0941176, 0.301961, 1, 0.435294, 0.894118, 0.882353, 1, 0.0627451, 0.0823529, 0.294118, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l3i0u"]
+gradient = SubResource("Gradient_cnnsg")
+width = 128
+height = 128
+fill_from = Vector2(0, 1)
+
+[node name="GameOverScreen" type="CanvasLayer"]
+process_mode = 3
+layer = 9
+script = ExtResource("1_cafsr")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+process_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="GameOver" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_xfllc")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/GameOver"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/GameOver/MarginContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_l3i0u")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/GameOver/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/GameOver/MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="GameOverTitle" type="Label" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_vy71p")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="Treasures" type="Label" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_vy71p")
+theme_override_font_sizes/font_size = 25
+text = "Treasures"
+
+[node name="TreasuresAmmount" type="Label" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_vy71p")
+theme_override_font_sizes/font_size = 25
+text = "2/5"
+horizontal_alignment = 2
+
+[node name="Score" type="Label" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_vy71p")
+theme_override_font_sizes/font_size = 25
+text = "Score"
+horizontal_alignment = 2
+
+[node name="ScoreAmmount" type="Label" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_vy71p")
+theme_override_font_sizes/font_size = 25
+text = "10000000
+"
+horizontal_alignment = 2
+script = ExtResource("3_p6648")
+
+[node name="TryAgainBtn" type="Button" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_vy71p")
+theme_override_font_sizes/font_size = 25
+text = "TRY AGAIN"
+script = ExtResource("4_tcqlj")
