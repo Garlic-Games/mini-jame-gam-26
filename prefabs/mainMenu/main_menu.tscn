@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bkwmiu271cxf8"]
+[gd_scene load_steps=23 format=3 uid="uid://bkwmiu271cxf8"]
 
 [ext_resource type="Script" path="res://scripts/mainMenu/main_menu.gd" id="1_8805b"]
 [ext_resource type="Texture2D" uid="uid://w246lk2eqrg" path="res://art/backgrounds/vaporwave-background-10.png" id="1_tu1xq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://nl3ly4i4vwy" path="res://scenes/gameplay.tscn" id="2_v7yms"]
 [ext_resource type="Shader" path="res://art/shaders/glitch.gdshader" id="4_5f5nj"]
 [ext_resource type="AudioStream" uid="uid://dcnytumipye5u" path="res://art/sounds/Menu Sounds/wav/menu_19.wav" id="6_afl2u"]
+[ext_resource type="Script" path="res://scripts/mainMenu/CreditsMenu.gd" id="6_fsf6p"]
 [ext_resource type="Script" path="res://scripts/mainMenu/OptionsMenu.gd" id="6_pf22d"]
 [ext_resource type="FontFile" uid="uid://dvxlgpgvvlyx" path="res://art/fonts/SyntheticText.ttf" id="6_qgd4r"]
 [ext_resource type="AudioStream" uid="uid://08glyqutlt1y" path="res://art/sounds/Menu Sounds/wav/menu_1.wav" id="7_dmuv4"]
@@ -44,15 +45,15 @@ width = 128
 height = 128
 fill_from = Vector2(0, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p06em"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xm7r4"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wi53w"]
 bg_color = Color(0.941176, 0.172549, 0.945098, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5ma1"]
 bg_color = Color(0.788235, 0.172549, 0.945098, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p06em"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xm7r4"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_8805b")
@@ -92,7 +93,6 @@ theme_override_constants/margin_bottom = 100
 layout_mode = 2
 
 [node name="MainTitle" type="RichTextLabel" parent="AspectRatioContainer/PanelContainer/MarginContainer/Holder"]
-custom_minimum_size = Vector2(0, 220)
 layout_mode = 2
 theme = ExtResource("2_f3fat")
 theme_override_colors/font_shadow_color = Color(1, 1, 0, 1)
@@ -103,6 +103,7 @@ text = "[center][font_size=100]SPEED[/font_size]
 [font_size=20
 ]Style Performance Exhilarating Extreme Destruction[/font_size][/center]
 "
+fit_content = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/PanelContainer/MarginContainer/Holder"]
 layout_mode = 2
@@ -130,6 +131,16 @@ theme_override_colors/font_color = Color(0.996078, 0.996078, 0.996078, 1)
 theme_override_font_sizes/font_size = 40
 text = "Options"
 
+[node name="Credits" type="Button" parent="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../Exit")
+theme = ExtResource("2_f3fat")
+theme_override_colors/font_color = Color(0.996078, 0.996078, 0.996078, 1)
+theme_override_font_sizes/font_size = 40
+text = "credits"
+
 [node name="Exit" type="Button" parent="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -140,7 +151,77 @@ theme_override_colors/font_color = Color(0.996078, 0.996078, 0.996078, 1)
 theme_override_font_sizes/font_size = 40
 text = "Exit"
 
+[node name="Credits" type="MarginContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
+script = ExtResource("6_fsf6p")
+
+[node name="OptionsMenu" type="TextureRect" parent="AspectRatioContainer/Credits"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_3g4n6")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/Credits/OptionsMenu"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/Credits/OptionsMenu/MarginContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_k5lg2")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/Credits/OptionsMenu/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/Credits/OptionsMenu/MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AspectRatioContainer/Credits/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[url=https://soteck.itch.io/]Soteck
+[url=https://bocdagla.itch.io/]Bocdagla
+[url=https://nanocirs.itch.io/]Nanocirs
+
+[font_size=20][b]External  Assets[/b][/font_size]
+[url=https://davidkbd.itch.io/pink-bloom-synthwave-music-pack]Music: DavidCBK[/url]
+[url=https://jotson.itch.io/gravity-pixel-font]Cool Main menu Font: Jotson[/url]
+[url=https://coffeevalenbat.itch.io/sweet-sounds-sfx-pack]Various sound effects: Coffeevalenbat[/url]
+[url=https://freesound.org/people/qubodup/sounds/147242/]Engine sound1: Qubodup[/url]
+[url=https://freesound.org/people/Lumamorph/sounds/636066/]Engine sound2: Lumamorph[/url]
+[url=https://foster-azrael.itch.io/low-poly-cars-5-total]Low poly car model: Foster-azrael[/url]"
+fit_content = true
+
+[node name="Return" type="Button" parent="AspectRatioContainer/Credits/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("2_f3fat")
+theme_override_colors/font_color = Color(0.968627, 0.882353, 0, 1)
+theme_override_fonts/font = ExtResource("6_qgd4r")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_wi53w")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h5ma1")
+text = "Return"
+
 [node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 60
 theme_override_constants/margin_top = 60
@@ -217,8 +298,12 @@ bus = &"Music"
 [connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Start" to="EnterGame" method="play" binds= [0.0]]
 [connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Options" to="ChangeButton" method="play" binds= [0.0]]
 [connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Options" to="AspectRatioContainer/MarginContainer" method="show"]
+[connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Credits" to="ChangeButton" method="play" binds= [0.0]]
+[connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Credits" to="AspectRatioContainer/Credits" method="show"]
 [connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Exit" to="ChangeButton" method="play" binds= [0.0]]
 [connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="meta_clicked" from="AspectRatioContainer/Credits/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer/RichTextLabel" to="AspectRatioContainer/Credits" method="open_link"]
+[connection signal="pressed" from="AspectRatioContainer/Credits/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer/Return" to="AspectRatioContainer/Credits" method="hide"]
 [connection signal="toggled" from="AspectRatioContainer/MarginContainer/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer/FullScreen" to="AspectRatioContainer/MarginContainer/OptionsMenu" method="set_fullscreen"]
 [connection signal="pressed" from="AspectRatioContainer/MarginContainer/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer/Return" to="AspectRatioContainer/MarginContainer" method="hide"]
 [connection signal="finished" from="EnterGame" to="." method="_on_start_pressed"]

@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cne6pr2amcuke" path="res://prefabs/levelSections/palm_row.tscn" id="7_mqyte"]
 [ext_resource type="Texture2D" uid="uid://bb5plvmeleg46" path="res://art/textures/sunwave.png" id="8_tija1"]
 [ext_resource type="PackedScene" uid="uid://dq07b4db0n1if" path="res://prefabs/ui/hud.tscn" id="10_nyf0r"]
-[ext_resource type="PackedScene" uid="uid://dy717lk4h7tar" path="res://prefabs/levelSections/palm_line.tscn" id="11_6dcik"]
+[ext_resource type="PackedScene" path="res://prefabs/levelSections/palm_line.tscn" id="11_6dcik"]
 [ext_resource type="PackedScene" uid="uid://ggtceocos6b3" path="res://prefabs/game/game_setter.tscn" id="12_l2vmp"]
 [ext_resource type="PackedScene" uid="uid://ctvqifyknhevw" path="res://prefabs/ui/game_over_screen.tscn" id="15_wb25l"]
 [ext_resource type="AudioStream" uid="uid://dn7tugcpfssoq" path="res://art/music/Play.ogg" id="18_bn4w5"]
