@@ -118,5 +118,5 @@ void fragment() {
     // Adjust the base color based on the metallic factor
 
 	METALLIC = metallic;
+	EMISSION = grid;
 }
-
