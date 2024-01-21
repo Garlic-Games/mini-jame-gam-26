@@ -155,6 +155,7 @@ mesh = SubResource("ArrayMesh_8u5tn")
 surface_material_override/0 = ExtResource("3_5pg4s")
 
 [node name="VehicleUi" parent="." node_paths=PackedStringArray("vehicle") instance=ExtResource("5_c4uwo")]
+visible = false
 vehicle = NodePath("..")
 
 [node name="center_mass_reference" type="Node3D" parent="."]
@@ -191,3 +192,5 @@ near = 0.1
 script = ExtResource("3_tc8wa")
 min_distance = 3.0
 height = 0.1
+
+[connection signal="upside_down_changed" from="." to="VehicleUi" method="set_visible"]
