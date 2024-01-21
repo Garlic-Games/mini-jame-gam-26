@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dq07b4db0n1if"]
+[gd_scene load_steps=19 format=3 uid="uid://dq07b4db0n1if"]
 
 [ext_resource type="Script" path="res://scripts/ui/Hud.gd" id="1_1sxma"]
 [ext_resource type="Script" path="res://scripts/ui/RevolutionsHud.gd" id="2_0hs4w"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://scripts/ui/TimeLabel.gd" id="7_jmhs7"]
 [ext_resource type="Script" path="res://scripts/ui/PointTracker.gd" id="7_myk6s"]
 [ext_resource type="Script" path="res://scripts/ui/TreasuresLabel.gd" id="9_hp2c4"]
+[ext_resource type="Shader" path="res://art/shaders/glitch_ondemand.gdshader" id="10_eb80d"]
+[ext_resource type="Script" path="res://scripts/ui/GlitchOnPoints.gd" id="11_41ltt"]
 
 [sub_resource type="Gradient" id="Gradient_hl650"]
 colors = PackedColorArray(0.356863, 0, 1, 1, 1, 0, 1, 1)
@@ -21,6 +23,20 @@ texture = SubResource("GradientTexture2D_rg7hs")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ys2ex"]
 shader = ExtResource("5_470ax")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1iris"]
+shader = ExtResource("10_eb80d")
+shader_parameter/shake_power = 0.04
+shader_parameter/shake_rate = 0.02
+shader_parameter/shake_speed = 1.0
+shader_parameter/shake_block_size = 10.0
+shader_parameter/shake_color_rate = 0.02
+shader_parameter/doeet = false
+
+[sub_resource type="Gradient" id="Gradient_ygmua"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_607dw"]
+gradient = SubResource("Gradient_ygmua")
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_1sxma")
@@ -111,3 +127,15 @@ theme_override_font_sizes/font_size = 20
 text = "1/10"
 vertical_alignment = 1
 script = ExtResource("9_hp2c4")
+
+[node name="Glitch" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_1iris")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_607dw")
+expand_mode = 3
+script = ExtResource("11_41ltt")
+duration = 0.5
