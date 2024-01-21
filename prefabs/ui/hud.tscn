@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dq07b4db0n1if"]
+[gd_scene load_steps=13 format=3 uid="uid://dq07b4db0n1if"]
 
 [ext_resource type="Script" path="res://scripts/ui/Hud.gd" id="1_1sxma"]
 [ext_resource type="Script" path="res://scripts/ui/RevolutionsHud.gd" id="2_0hs4w"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://scripts/ui/Speed.gd" id="4_flwjb"]
 [ext_resource type="Shader" path="res://art/shaders/speedmetter.gdshader" id="5_470ax"]
 [ext_resource type="Texture2D" uid="uid://dl5pid43m3gey" path="res://art/textures/hud.tga" id="6_ai4t0"]
+[ext_resource type="Script" path="res://scripts/ui/TimeLabel.gd" id="7_jmhs7"]
+[ext_resource type="Script" path="res://scripts/ui/PointTracker.gd" id="7_myk6s"]
 
 [sub_resource type="Gradient" id="Gradient_hl650"]
 colors = PackedColorArray(0.356863, 0, 1, 1, 1, 0, 1, 1)
@@ -19,9 +21,8 @@ texture = SubResource("GradientTexture2D_rg7hs")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ys2ex"]
 shader = ExtResource("5_470ax")
 
-[node name="Hud" type="CanvasLayer" node_paths=PackedStringArray("delorean")]
+[node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_1sxma")
-delorean = NodePath("")
 
 [node name="Revolutions" type="ProgressBar" parent="."]
 anchors_preset = -1
@@ -53,9 +54,13 @@ script = ExtResource("4_flwjb")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_ys2ex")
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("6_ai4t0")
+expand_mode = 2
 
 [node name="Points" type="Label" parent="."]
 anchors_preset = -1
@@ -63,28 +68,29 @@ anchor_left = 0.141
 anchor_top = 0.062
 anchor_right = 0.281
 anchor_bottom = 0.09
-offset_left = -0.720001
-offset_top = 0.0399933
-offset_right = 0.47998
-offset_bottom = -0.200005
+offset_left = -4.48001
+offset_top = -1.64
+offset_right = -3.67999
+offset_bottom = 6.2
 theme_override_fonts/font = ExtResource("3_nq2vs")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 20
 text = "100000000"
+horizontal_alignment = 2
 vertical_alignment = 1
-script = ExtResource("4_flwjb")
+script = ExtResource("7_myk6s")
 
-[node name="Treasures" type="Label" parent="."]
+[node name="Time" type="Label" parent="."]
 anchors_preset = -1
-anchor_left = 0.027
-anchor_top = 0.06
-anchor_right = 0.117
-anchor_bottom = 0.088
-offset_left = 4.16
-offset_top = 0.199997
-offset_right = 0.359985
-offset_bottom = -0.0400085
+anchor_left = 0.035
+anchor_top = 0.028
+anchor_right = 0.116
+anchor_bottom = 0.067
+offset_left = 12.2
+offset_top = 24.84
+offset_right = 12.52
+offset_bottom = 24.76
 theme_override_fonts/font = ExtResource("3_nq2vs")
-theme_override_font_sizes/font_size = 28
-text = "05/30"
+theme_override_font_sizes/font_size = 20
+text = "1:30"
 vertical_alignment = 1
-script = ExtResource("4_flwjb")
+script = ExtResource("7_jmhs7")

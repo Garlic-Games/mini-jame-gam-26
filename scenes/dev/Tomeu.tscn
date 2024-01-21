@@ -1,32 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://dbj7y1m7ryrtn"]
+[gd_scene load_steps=11 format=3 uid="uid://dbj7y1m7ryrtn"]
 
 [ext_resource type="PackedScene" uid="uid://bkwmiu271cxf8" path="res://prefabs/mainMenu/main_menu.tscn" id="1_evwpy"]
-[ext_resource type="Script" path="res://scripts/ui/RevolutionsHud.gd" id="2_8tlw2"]
-[ext_resource type="FontFile" uid="uid://c7kkllaqq3iir" path="res://art/fonts/GravityRegular5.ttf" id="2_f74ss"]
-[ext_resource type="Script" path="res://scripts/ui/Hud.gd" id="2_s4mdk"]
-[ext_resource type="Texture2D" uid="uid://dl5pid43m3gey" path="res://art/textures/hud.tga" id="3_ai56c"]
-[ext_resource type="Shader" path="res://art/shaders/speedmetter.gdshader" id="3_q7t4j"]
-[ext_resource type="Script" path="res://scripts/ui/Speed.gd" id="3_vcs1a"]
+[ext_resource type="PackedScene" uid="uid://dq07b4db0n1if" path="res://prefabs/ui/hud.tscn" id="2_jy20f"]
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="7_hmbix"]
 [ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/environment/building1.tscn" id="9_goiiy"]
 [ext_resource type="PackedScene" uid="uid://d0pam8jlu6dcl" path="res://prefabs/environment/building2.tscn" id="10_2ycsg"]
 [ext_resource type="PackedScene" uid="uid://ungaqd0sni1n" path="res://prefabs/environment/building4.tscn" id="11_g1rir"]
+[ext_resource type="Script" path="res://scripts/gamemanager/gameSetter.gd" id="12_j243s"]
 
 [sub_resource type="Environment" id="Environment_8xg1a"]
 fog_light_color = Color(0.396078, 0.25098, 0.905882, 1)
 fog_density = 0.3153
-
-[sub_resource type="Gradient" id="Gradient_hl650"]
-colors = PackedColorArray(0.356863, 0, 1, 1, 1, 0, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rg7hs"]
-gradient = SubResource("Gradient_hl650")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37bg7"]
-texture = SubResource("GradientTexture2D_rg7hs")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ys2ex"]
-shader = ExtResource("3_q7t4j")
 
 [sub_resource type="BoxMesh" id="BoxMesh_4fefs"]
 size = Vector3(5000, 0.5, 5000)
@@ -42,79 +26,10 @@ environment = SubResource("Environment_8xg1a")
 [node name="MainMenu" parent="." instance=ExtResource("1_evwpy")]
 visible = false
 
-[node name="Hud" type="CanvasLayer" parent="." node_paths=PackedStringArray("delorean")]
-script = ExtResource("2_s4mdk")
+[node name="Hud" parent="." node_paths=PackedStringArray("delorean") instance=ExtResource("2_jy20f")]
 delorean = NodePath("../Delorean")
 
-[node name="Revolutions" type="ProgressBar" parent="Hud"]
-anchors_preset = -1
-anchor_left = 0.778
-anchor_top = 0.832
-anchor_right = 0.978
-anchor_bottom = 0.967
-offset_left = 0.239868
-offset_top = 0.440002
-offset_right = -0.760132
-offset_bottom = -0.360107
-theme_override_styles/fill = SubResource("StyleBoxTexture_37bg7")
-value = 50.0
-show_percentage = false
-script = ExtResource("2_8tlw2")
-
-[node name="MettersPerSeccond" type="Label" parent="Hud/Revolutions"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_f74ss")
-theme_override_font_sizes/font_size = 30
-text = " 30 KM/H"
-vertical_alignment = 1
-script = ExtResource("3_vcs1a")
-
-[node name="TextureRect" type="TextureRect" parent="Hud"]
-material = SubResource("ShaderMaterial_ys2ex")
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("3_ai56c")
-
-[node name="Points" type="Label" parent="Hud"]
-anchors_preset = -1
-anchor_left = 0.141
-anchor_top = 0.062
-anchor_right = 0.281
-anchor_bottom = 0.09
-offset_left = -0.720001
-offset_top = 0.0399933
-offset_right = 0.47998
-offset_bottom = -0.200005
-theme_override_fonts/font = ExtResource("2_f74ss")
-theme_override_font_sizes/font_size = 28
-text = "100000000"
-vertical_alignment = 1
-script = ExtResource("3_vcs1a")
-
-[node name="Treasures" type="Label" parent="Hud"]
-anchors_preset = -1
-anchor_left = 0.027
-anchor_top = 0.06
-anchor_right = 0.117
-anchor_bottom = 0.088
-offset_left = 4.16
-offset_top = 0.199997
-offset_right = 0.359985
-offset_bottom = -0.0400085
-theme_override_fonts/font = ExtResource("2_f74ss")
-theme_override_font_sizes/font_size = 28
-text = "05/30"
-vertical_alignment = 1
-script = ExtResource("3_vcs1a")
-
 [node name="Delorean" parent="." instance=ExtResource("7_hmbix")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15539, 0)
-collision_mask = 11
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_4fefs")
@@ -133,3 +48,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.475, 0.249996, 19.4413)
 
 [node name="Building 4" parent="." instance=ExtResource("11_g1rir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60934, 0.249996, 33.8854)
+
+[node name="GameSetter" type="Node" parent="."]
+script = ExtResource("12_j243s")
