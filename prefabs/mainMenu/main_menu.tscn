@@ -211,7 +211,6 @@ bus = &"Effects"
 stream = ExtResource("7_dmuv4")
 
 [node name="IntroMusic" parent="." instance=ExtResource("8_coyqn")]
-volume_db = -15.53
 bus = &"Music"
 
 [connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Start" to="ChangeButton" method="play" binds= [0.0]]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctvqifyknhevw"]
+[gd_scene load_steps=10 format=3 uid="uid://ctvqifyknhevw"]
 
 [ext_resource type="Script" path="res://scripts/ui/GameOverScreen.gd" id="1_cafsr"]
 [ext_resource type="Theme" uid="uid://dpqda1rl4km7n" path="res://art/theme/main.tres" id="2_vy71p"]
 [ext_resource type="Script" path="res://scripts/ui/PointTracker.gd" id="3_p6648"]
 [ext_resource type="Script" path="res://scripts/ui/TryAgainButton.gd" id="4_tcqlj"]
+[ext_resource type="AudioStream" uid="uid://dn7tugcpfssoq" path="res://art/music/gameOver.ogg" id="5_vag33"]
 
 [sub_resource type="Gradient" id="Gradient_df10g"]
 colors = PackedColorArray(1, 0, 1, 1, 1, 1, 1, 1)
@@ -125,3 +126,8 @@ theme = ExtResource("2_vy71p")
 theme_override_font_sizes/font_size = 25
 text = "TRY AGAIN"
 script = ExtResource("4_tcqlj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer"]
+stream = ExtResource("5_vag33")
+autoplay = true
+bus = &"Music"
