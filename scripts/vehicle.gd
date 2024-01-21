@@ -34,6 +34,7 @@ const STEER_LIMIT = 0.4
 @export var m_min_speed = 50;
 @export var l_min_speed = 70;
 @export var xl_min_speed = 120;
+@export var hitStreamPlayer: AudioStreamPlayer;
 
 var steer_target = 0
 var speed_kph = 0;
@@ -146,3 +147,8 @@ func ResetCarFlipped():
 	transform.basis = Basis();
 	translate(Vector3(0, 0.03, 0));
 
+
+
+func _on_body_entered(body):
+	hitStreamPlayer.play()
+	pass # Replace with function body.
