@@ -1,12 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://cdukdf8fl5ccm"]
+[gd_scene load_steps=13 format=3 uid="uid://cdukdf8fl5ccm"]
 
 [ext_resource type="Script" path="res://scripts/vehicle.gd" id="1_2hxfg"]
 [ext_resource type="Material" uid="uid://bd5tq3oe6nrij" path="res://art/Materials/cement.tres" id="3_5pg4s"]
 [ext_resource type="Script" path="res://scripts/follow_camera.gd" id="3_tc8wa"]
 [ext_resource type="Material" uid="uid://dlyvi6u87qoj5" path="res://art/Materials/car_red_body.tres" id="4_svikk"]
 [ext_resource type="PackedScene" uid="uid://dpwiasqc2c0kk" path="res://prefabs/ui/vehicle_ui.tscn" id="5_c4uwo"]
+[ext_resource type="AudioStream" uid="uid://d3vsh0osb71ey" path="res://art/sounds/Car/147242__qubodup__car-engine-loop.wav" id="6_0bhmy"]
 [ext_resource type="ArrayMesh" uid="uid://bwci23srglq6j" path="res://art/car/race_car_Plane_009.res" id="6_w88hb"]
-[ext_resource type="AudioStream" uid="uid://bkw3wd37g2smq" path="res://art/sounds/Car/636066__lumamorph__eight-cylinder-engine-idling.wav" id="8_2wgnu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dj6v0"]
 size = Vector3(2, 1.15, 4.2)
@@ -66,91 +66,6 @@ _surfaces = [{
 "vertex_count": 72,
 "vertex_data": PackedByteArray(0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 190, 0, 160, 123, 189, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 61, 0, 64, 122, 189, 0, 128, 105, 62, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 190, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 62, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 190, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 61, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 189, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 61, 0, 160, 123, 61, 0, 128, 105, 62, 0, 64, 122, 189, 0, 160, 123, 189, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 189, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 61, 0, 224, 42, 190, 0, 224, 42, 190, 0, 160, 123, 61, 0, 128, 105, 190, 0, 64, 122, 189, 0, 160, 123, 189, 0, 224, 42, 62, 0, 224, 42, 62, 0, 160, 123, 189, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 61, 0, 64, 122, 61, 0, 128, 105, 62, 0, 160, 123, 61, 0, 224, 42, 62, 0, 224, 42, 62, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 28, 209, 0, 0, 28, 209, 0, 0, 28, 209, 0, 0, 28, 209, 0, 0, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 127, 29, 81, 255, 127, 29, 81, 255, 127, 29, 81, 255, 127, 29, 81, 28, 209, 255, 255, 28, 209, 255, 255, 28, 209, 255, 255, 28, 209, 255, 255, 255, 127, 226, 46, 255, 127, 226, 46, 255, 127, 226, 46, 255, 127, 226, 46, 225, 174, 255, 255, 225, 174, 255, 255, 225, 174, 255, 255, 225, 174, 255, 255, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 28, 209, 255, 127, 28, 209, 255, 127, 28, 209, 255, 127, 28, 209, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 225, 174, 0, 0, 225, 174, 0, 0, 225, 174, 0, 0, 225, 174, 0, 0, 255, 127, 225, 174, 255, 127, 225, 174, 255, 127, 225, 174, 255, 127, 225, 174)
 }]
-
-[sub_resource type="Animation" id="Animation_p7s7y"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:linear_velocity")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_ttu0m"]
-resource_name = "TOTHEMOON"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 2.5, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1.86607),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath(".:linear_velocity")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 50, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_42rmc"]
-_data = {
-"RESET": SubResource("Animation_p7s7y"),
-"TOTHEMOON": SubResource("Animation_ttu0m")
-}
 
 [node name="Delorean" type="VehicleBody3D" node_paths=PackedStringArray("wheel_fr", "wheel_br", "wheel_fl", "wheel_bl", "motorStreamPlayer")]
 collision_layer = 4
@@ -247,7 +162,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0.25)
 visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_2wgnu")
+stream = ExtResource("6_0bhmy")
 autoplay = true
 bus = &"Effects"
 
@@ -277,10 +192,5 @@ script = ExtResource("3_tc8wa")
 min_distance = 3.0
 height = 0.1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-active = false
-libraries = {
-"": SubResource("AnimationLibrary_42rmc")
-}
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="upside_down_changed" from="." to="VehicleUi" method="set_visible"]

@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpwiasqc2c0kk"]
+[gd_scene load_steps=5 format=3 uid="uid://dpwiasqc2c0kk"]
 
 [ext_resource type="Script" path="res://scripts/ui/SpeedOMeter.gd" id="1_ekmlj"]
 [ext_resource type="Script" path="res://scripts/ui/VehicleUi.gd" id="1_n6t14"]
 [ext_resource type="Script" path="res://scripts/ui/VehicleResetBar.gd" id="3_bwc4c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkmye"]
+bg_color = Color(0, 0.635294, 0.745098, 1)
 
 [node name="VehicleUi" type="Control"]
 layout_mode = 3
@@ -14,6 +17,7 @@ grow_vertical = 2
 script = ExtResource("1_n6t14")
 
 [node name="Button" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
@@ -26,11 +30,30 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -51.895
-offset_top = -119.055
-offset_right = 58.09
-offset_bottom = -92.055
+offset_left = -138.0
+offset_top = -99.0
+offset_right = 88.0
+offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(3.61, 0)
+theme_override_styles/fill = SubResource("StyleBoxFlat_dkmye")
+show_percentage = false
 script = ExtResource("3_bwc4c")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -97.0
+offset_top = -128.0
+offset_right = 44.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press Space to flip"
+horizontal_alignment = 1
+vertical_alignment = 1
