@@ -9,6 +9,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	var metersSecond = get_node("Revolutions");
-	metersSecond.change_revolutions(delorean.rpm_percent);
+	var revolutions = get_node("Revolutions");
+	var metersSecond = get_node("Revolutions/MettersPerSeccond");
+	revolutions.change_revolutions(delorean.rpm_percent);
+	metersSecond.change_speed(delorean.speed_kph);
 

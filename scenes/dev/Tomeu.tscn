@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dbj7y1m7ryrtn"]
+[gd_scene load_steps=19 format=3 uid="uid://dbj7y1m7ryrtn"]
 
 [ext_resource type="PackedScene" uid="uid://bkwmiu271cxf8" path="res://prefabs/mainMenu/main_menu.tscn" id="1_evwpy"]
 [ext_resource type="Script" path="res://scripts/ui/RevolutionsHud.gd" id="2_8tlw2"]
@@ -8,6 +8,9 @@
 [ext_resource type="Shader" path="res://art/shaders/speedmetter.gdshader" id="3_q7t4j"]
 [ext_resource type="Script" path="res://scripts/ui/Speed.gd" id="3_vcs1a"]
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="7_hmbix"]
+[ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/environment/building1.tscn" id="9_goiiy"]
+[ext_resource type="PackedScene" uid="uid://d0pam8jlu6dcl" path="res://prefabs/environment/building2.tscn" id="10_2ycsg"]
+[ext_resource type="PackedScene" uid="uid://ungaqd0sni1n" path="res://prefabs/environment/building4.tscn" id="11_g1rir"]
 
 [sub_resource type="Environment" id="Environment_8xg1a"]
 fog_light_color = Color(0.396078, 0.25098, 0.905882, 1)
@@ -111,6 +114,7 @@ script = ExtResource("3_vcs1a")
 
 [node name="Delorean" parent="." instance=ExtResource("7_hmbix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15539, 0)
+collision_mask = 11
 engine_force_value = 3000
 
 [node name="Floor" type="MeshInstance3D" parent="."]
@@ -121,3 +125,12 @@ mesh = SubResource("BoxMesh_4fefs")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235332, -3.8147e-06, -0.30834)
 shape = SubResource("BoxShape3D_uftgj")
+
+[node name="Building 1" parent="." instance=ExtResource("9_goiiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.31813, 0.249996, 12.7882)
+
+[node name="Building 2" parent="." instance=ExtResource("10_2ycsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.475, 0.249996, 19.4413)
+
+[node name="Building 4" parent="." instance=ExtResource("11_g1rir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60934, 0.249996, 33.8854)

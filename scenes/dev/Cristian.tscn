@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bssxgewo7esuk"]
+[gd_scene load_steps=11 format=3 uid="uid://bssxgewo7esuk"]
 
 [ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/environment/building1.tscn" id="1_e25s7"]
 [ext_resource type="PackedScene" uid="uid://d0pam8jlu6dcl" path="res://prefabs/environment/building2.tscn" id="2_e1dgj"]

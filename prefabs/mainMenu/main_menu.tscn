@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkwmiu271cxf8"]
+[gd_scene load_steps=22 format=3 uid="uid://bkwmiu271cxf8"]
 
 [ext_resource type="Script" path="res://scripts/mainMenu/main_menu.gd" id="1_8805b"]
 [ext_resource type="Texture2D" uid="uid://w246lk2eqrg" path="res://art/backgrounds/vaporwave-background-10.png" id="1_tu1xq"]
 [ext_resource type="Theme" uid="uid://dpqda1rl4km7n" path="res://art/theme/main.tres" id="2_f3fat"]
-[ext_resource type="PackedScene" uid="uid://eo18yjsvfw7e" path="res://scenes/main.tscn" id="2_v7yms"]
+[ext_resource type="PackedScene" uid="uid://nl3ly4i4vwy" path="res://scenes/gameplay.tscn" id="2_v7yms"]
 [ext_resource type="Shader" path="res://art/shaders/glitch.gdshader" id="4_5f5nj"]
 [ext_resource type="AudioStream" uid="uid://dcnytumipye5u" path="res://art/sounds/Menu Sounds/wav/menu_19.wav" id="6_afl2u"]
+[ext_resource type="Script" path="res://scripts/mainMenu/OptionsMenu.gd" id="6_pf22d"]
+[ext_resource type="FontFile" uid="uid://dvxlgpgvvlyx" path="res://art/fonts/SyntheticText.ttf" id="6_qgd4r"]
 [ext_resource type="AudioStream" uid="uid://08glyqutlt1y" path="res://art/sounds/Menu Sounds/wav/menu_1.wav" id="7_dmuv4"]
 [ext_resource type="PackedScene" uid="uid://c8i7dlv0ns4jl" path="res://prefabs/mainMenu/intro_music.tscn" id="8_coyqn"]
 
@@ -21,6 +23,36 @@ shader_parameter/shake_color_rate = 0.02
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_sg87k"]
 gradient = SubResource("Gradient_ygmua")
+
+[sub_resource type="Gradient" id="Gradient_df10g"]
+colors = PackedColorArray(1, 0, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3g4n6"]
+gradient = SubResource("Gradient_df10g")
+width = 512
+height = 512
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.517094, 0.987179)
+
+[sub_resource type="Gradient" id="Gradient_cnnsg"]
+offsets = PackedFloat32Array(0, 0.513369, 0.997326)
+colors = PackedColorArray(0.0666667, 0.0941176, 0.301961, 1, 0.435294, 0.894118, 0.882353, 1, 0.0627451, 0.0823529, 0.294118, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k5lg2"]
+gradient = SubResource("Gradient_cnnsg")
+width = 448
+height = 448
+fill_from = Vector2(0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p06em"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xm7r4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wi53w"]
+bg_color = Color(0.941176, 0.172549, 0.945098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5ma1"]
+bg_color = Color(0.788235, 0.172549, 0.945098, 1)
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_8805b")
@@ -59,18 +91,17 @@ theme_override_constants/margin_bottom = 100
 layout_mode = 2
 theme_override_constants/separation = 300
 
-[node name="MainTitle" type="Label" parent="AspectRatioContainer/PanelContainer/MarginContainer/Holder"]
+[node name="MainTitle" type="RichTextLabel" parent="AspectRatioContainer/PanelContainer/MarginContainer/Holder"]
+custom_minimum_size = Vector2(0, 180)
 layout_mode = 2
 theme = ExtResource("2_f3fat")
-theme_override_colors/font_color = Color(0.960784, 0.792157, 1, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
-theme_override_font_sizes/font_size = 100
-text = "SUPER RAPID MOVEMENT"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
+bbcode_enabled = true
+text = "[center][font_size=140]SPEED[/font_size]
+[font_size=40]Style Performance Exhilarating Extreme Destruction[/font_size][/center]
+"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/PanelContainer/MarginContainer/Holder"]
 layout_mode = 2
@@ -108,6 +139,63 @@ theme_override_colors/font_color = Color(0.996078, 0.996078, 0.996078, 1)
 theme_override_font_sizes/font_size = 40
 text = "Exit"
 
+[node name="OptionsMenu" type="TextureRect" parent="AspectRatioContainer"]
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("GradientTexture2D_3g4n6")
+script = ExtResource("6_pf22d")
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/OptionsMenu"]
+custom_minimum_size = Vector2(448, 448)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_k5lg2")
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer/OptionsMenu/TextureRect"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/OptionsMenu/TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="FullScreen" type="CheckButton" parent="AspectRatioContainer/OptionsMenu/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_f3fat")
+theme_override_colors/font_color = Color(0.968627, 0.882353, 0, 1)
+theme_override_fonts/font = ExtResource("6_qgd4r")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p06em")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xm7r4")
+text = "FullScreen"
+
+[node name="Return" type="Button" parent="AspectRatioContainer/OptionsMenu/TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("2_f3fat")
+theme_override_colors/font_color = Color(0.968627, 0.882353, 0, 1)
+theme_override_fonts/font = ExtResource("6_qgd4r")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_wi53w")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h5ma1")
+text = "Return"
+
 [node name="ChangeButton" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_afl2u")
 bus = &"Effects"
@@ -116,12 +204,15 @@ bus = &"Effects"
 stream = ExtResource("7_dmuv4")
 
 [node name="IntroMusic" parent="." instance=ExtResource("8_coyqn")]
-volume_db = -31.059
+volume_db = -15.53
 bus = &"Music"
 
 [connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Start" to="ChangeButton" method="play" binds= [0.0]]
 [connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Start" to="EnterGame" method="play" binds= [0.0]]
 [connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Options" to="ChangeButton" method="play" binds= [0.0]]
+[connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Options" to="AspectRatioContainer/OptionsMenu" method="show"]
 [connection signal="mouse_entered" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Exit" to="ChangeButton" method="play" binds= [0.0]]
 [connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="toggled" from="AspectRatioContainer/OptionsMenu/TextureRect/MarginContainer/VBoxContainer/FullScreen" to="AspectRatioContainer/OptionsMenu" method="set_fullscreen"]
+[connection signal="pressed" from="AspectRatioContainer/OptionsMenu/TextureRect/MarginContainer/VBoxContainer/Return" to="AspectRatioContainer/OptionsMenu" method="hide"]
 [connection signal="finished" from="EnterGame" to="." method="_on_start_pressed"]
