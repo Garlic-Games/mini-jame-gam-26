@@ -89,6 +89,7 @@ text = "GAME OVER"
 horizontal_alignment = 1
 
 [node name="WinSubtitle" type="Label" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GameOverTitle"]
+layout_mode = 0
 offset_left = 130.0
 offset_top = 62.0
 offset_right = 608.0
