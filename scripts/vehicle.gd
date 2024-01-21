@@ -8,6 +8,8 @@ const STEER_LIMIT = 0.4
 @export var speed_limit = 340;
 @export var brake_force_multiplier = 4;
 
+@export var reset_time_seconds = 2;
+
 @export var wheel_fr: VehicleWheel3D;
 @export var wheel_br: VehicleWheel3D;
 @export var wheel_fl: VehicleWheel3D;
@@ -33,8 +35,20 @@ var radio_rueda_metros = 0.4;
 var factor_conversion = 60;
 var is_upside_down = false;
 
+var reset_count = 0;
+
 signal upside_down_changed(value)
 
+func _process(delta):
+	if(is_upside_down):
+		if Input.is_action_pressed("handbrake"):
+			reset_count += delta;
+		else:
+			reset_count = 0;
+	else:
+		reset_count = 0;
+	if(reset_count > reset_time_seconds):
+		ResetCarFlipped();	
 
 func _physics_process(delta):
 	var fwd_mps = (linear_velocity) * transform.basis.x
@@ -79,8 +93,19 @@ func _physics_process(delta):
 	var pichToSet =  clamp(rpm_percent * rpm_pitch_max / 100, rpm_pitch_min, rpm_pitch_max);
 	print("KPH %d Gear %d RPM %d - %d MotorPitch %f" % [speed_kph, selected_gear+1, rpm_value, rpm_percent, pichToSet])
 	motorStreamPlayer.pitch_scale = pichToSet;
-	var now_upside_down = (wheel_fr.is_in_contact() == null)  && (wheel_fl.is_in_contact() == null)  && (wheel_br.is_in_contact() == null) && (wheel_bl.is_in_contact() == null);
+	var ud_count = 0;
+	if (!wheel_fr.is_in_contact()):
+		ud_count += 1;
+	if (!wheel_fl.is_in_contact()):
+		ud_count += 1;
+	if (!wheel_br.is_in_contact()):
+		ud_count += 1;
+	if (!wheel_bl.is_in_contact()):
+		ud_count += 1;
+		
+	var now_upside_down =  ud_count == 4 || (ud_count > 2 && speed_kph < 10);
 	if(is_upside_down != now_upside_down):
+		print("Upside down changed to ", now_upside_down)
 		is_upside_down = now_upside_down;
 		upside_down_changed.emit(now_upside_down);
 
@@ -103,3 +128,7 @@ func _on_body_entered(body):
 
 		if (speed_kph >= destroyable.minimumSpeed):
 			destroyable.Explode();
+
+func ResetCarFlipped():
+	transform.basis = Basis();
+	translate(Vector3(0, 0.03, 0));

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpwiasqc2c0kk"]
+[gd_scene load_steps=4 format=3 uid="uid://dpwiasqc2c0kk"]
 
 [ext_resource type="Script" path="res://scripts/ui/SpeedOMeter.gd" id="1_ekmlj"]
 [ext_resource type="Script" path="res://scripts/ui/VehicleUi.gd" id="1_n6t14"]
+[ext_resource type="Script" path="res://scripts/ui/VehicleResetBar.gd" id="3_bwc4c"]
 
 [node name="VehicleUi" type="Control"]
 layout_mode = 3
@@ -17,3 +18,19 @@ layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 script = ExtResource("1_ekmlj")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -51.895
+offset_top = -119.055
+offset_right = 58.09
+offset_bottom = -92.055
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(3.61, 0)
+script = ExtResource("3_bwc4c")
