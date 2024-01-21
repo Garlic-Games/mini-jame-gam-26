@@ -1,9 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://nl3ly4i4vwy"]
+[gd_scene load_steps=30 format=3 uid="uid://nl3ly4i4vwy"]
 
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="1_eubgb"]
 [ext_resource type="Shader" path="res://art/shaders/sky.gdshader" id="1_k2uxh"]
 [ext_resource type="PackedScene" uid="uid://c8v5q3e3y8gau" path="res://prefabs/environment/palm_tree.tscn" id="2_5bjpl"]
-[ext_resource type="PackedScene" uid="uid://csgos2qhplxcq" path="res://prefabs/levelSections/floor.tscn" id="2_cjqll"]
+[ext_resource type="PackedScene" uid="uid://bwmqiscnpytqf" path="res://prefabs/levelSections/floor.tscn" id="2_cjqll"]
 [ext_resource type="PackedScene" uid="uid://dkpwsovdhmw7y" path="res://prefabs/environment/mountain.tscn" id="3_685rj"]
 [ext_resource type="PackedScene" uid="uid://cdmh7uku4n623" path="res://prefabs/levelSections/entry_path.tscn" id="3_sf7vv"]
 [ext_resource type="PackedScene" uid="uid://vrtido521pmn" path="res://art/models/mountain.glb" id="3_wu4cd"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dq07b4db0n1if" path="res://prefabs/ui/hud.tscn" id="10_nyf0r"]
 [ext_resource type="PackedScene" uid="uid://dy717lk4h7tar" path="res://prefabs/levelSections/palm_line.tscn" id="11_6dcik"]
 [ext_resource type="PackedScene" uid="uid://ggtceocos6b3" path="res://prefabs/game/game_setter.tscn" id="12_l2vmp"]
-[ext_resource type="PackedScene" uid="uid://ctvqifyknhevw" path="res://prefabs/ui/game_over_screen.tscn" id="15_wb25l"]
+[ext_resource type="PackedScene" path="res://prefabs/ui/game_over_screen.tscn" id="15_wb25l"]
 [ext_resource type="AudioStream" uid="uid://dn7tugcpfssoq" path="res://art/music/Play.ogg" id="18_bn4w5"]
 [ext_resource type="PackedScene" uid="uid://cgtf2hrjpsqsa" path="res://prefabs/collectables/collectable.tscn" id="19_vp3ty"]
 
@@ -51,6 +51,196 @@ size = Vector3(18.357, 15.35, 28.2026)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0cpgq"]
 size = Vector3(1.049, 1, 1.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87357"]
+bg_color = Color(0, 0, 0, 0.862745)
+
+[sub_resource type="Animation" id="Animation_upldc"]
+resource_name = "tutorial"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel/MarginContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 6, 10, 15, 25, 32.6, 36, 38, 42, 48, 54),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "Hello, fellow pirate.", "You must steal all the NFT's to enter cryptoheaven. You have to be quick! We don't have a lot of energy so time will be limited!", "Destroy any cryptobuilding that gets in your way, don't worry, it will help your algorithm to mine more.", "Each building will generate cryptoscore. As fast you collide with it, more hashes will you win.", "Each building will require more speed depending of its size.", "For example, this one will require slightly low speed to destroy.", "
+", "However, those, will require you to crash very, very hard to them.", "Collect the maximum amount of cryptoscore possible within time and have fun.", "Ah! Don't forget to pick up the NFT's!", "Drive with W, A, S, D and SPACE as hand brake."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 20, 25, 46, 48, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.5, 6, 10, 11.5, 15, 16.5, 20, 21, 22.9, 24, 25, 28, 29, 31, 36, 37, 38, 42, 44, 45, 46, 48, 54, 56, 58),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(94.829, 5.923, -88.839), Vector3(94.829, 5.923, -88.839), Vector3(94.829, 5.948, -101.924), Vector3(94.829, 5.948, -101.924), Vector3(84.609, 5.948, -101.924), Vector3(84.609, 5.948, -101.924), Vector3(84.609, 5.948, -90.829), Vector3(84.609, 5.948, -90.829), Vector3(94.829, 31.358, -88.839), Vector3(94.829, 31.358, -88.839), Vector3(175.529, 3.438, -139.554), Vector3(175.529, 3.438, -139.554), Vector3(175.529, 3.438, 68.316), Vector3(175.529, 57.423, 68.316), Vector3(66.204, 14.773, 65.386), Vector3(66.204, 14.773, 65.386), Vector3(65.5242, 15.4192, 4.55342), Vector3(11.649, 36.658, -23.999), Vector3(11.649, 36.658, -23.999), Vector3(11.649, 65.443, -23.999), Vector3(0, 65.443, 120), Vector3(0, 4, 120), Vector3(0, 4, 450.41), Vector3(0, 4, 450.41), Vector3(0, 4, 470), Vector3(0, 1.5, 470)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4.5, 6, 10, 11.5, 15, 16.5, 20, 21, 22.9, 24, 25, 28, 29, 31, 36, 38, 42),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.261799, 0.834267, 0), Vector3(-0.261799, 0.834267, 0), Vector3(-0.261799, 2.26544, 0), Vector3(-0.261799, 2.26544, 0), Vector3(-0.261799, 3.73151, 0), Vector3(-0.261799, 3.73151, 0), Vector3(-0.261799, 5.30231, 0), Vector3(-0.261799, 5.30231, 0), Vector3(-0.261799, 5.3634, 0), Vector3(-0.261799, 5.3634, 0), Vector3(-0.261799, 5.3634, 0), Vector3(-0.261799, 3.14159, 0), Vector3(-0.261799, 3.14159, 0), Vector3(-0.261799, 0, 0), Vector3(-0.261799, 1.48353, 0), Vector3(-0.261799, 1.48353, 0), Vector3(-0.261799, 3.14159, 0), Vector3(-0.261799, 3.14159, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera3D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 60),
+"transitions": PackedFloat32Array(1, 7.20997e-05),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera3D:current")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 60),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hud:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 60),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ue2ds"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel/MarginContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(12.7683, 6.00838, 13.3346)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.261799, 0.834267, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera3D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera3D:current")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hud:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xlidu"]
+resource_name = "test"
+length = 2.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wos5u"]
+_data = {
+"RESET": SubResource("Animation_ue2ds"),
+"test": SubResource("Animation_xlidu"),
+"tutorial": SubResource("Animation_upldc")
+}
 
 [node name="Gameplay" type="Node3D"]
 
@@ -1142,11 +1332,43 @@ texture = ExtResource("8_tija1")
 [node name="Hud" parent="." node_paths=PackedStringArray("delorean") instance=ExtResource("10_nyf0r")]
 delorean = NodePath("../Delorean")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 74.0
+offset_top = -133.0
+offset_right = 843.64
+offset_bottom = -59.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_87357")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+autowrap_mode = 3
+
 [node name="Delorean" parent="." instance=ExtResource("1_eubgb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 475)
 collision_mask = 10
 
-[node name="GameSetter" parent="." instance=ExtResource("12_l2vmp")]
+[node name="GameSetter" parent="." node_paths=PackedStringArray("animationPlayer") instance=ExtResource("12_l2vmp")]
+animationPlayer = NodePath("../AnimationPlayer")
 
 [node name="GameOverScreen" parent="." instance=ExtResource("15_wb25l")]
 
@@ -1156,3 +1378,8 @@ autoplay = true
 
 [node name="Collectable" parent="." instance=ExtResource("19_vp3ty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.238907, 0.249996, 453.843)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wos5u")
+}
