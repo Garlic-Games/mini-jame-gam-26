@@ -58,12 +58,14 @@ func _process(delta):
 	if(is_upside_down):
 		if Input.is_action_pressed("handbrake"):
 			reset_count += delta;
+			if(reset_count > reset_time_seconds):
+				ResetCarFlipped();	
 		else:
 			reset_count = 0;
 	else:
 		reset_count = 0;
-	if(reset_count > reset_time_seconds):
-		ResetCarFlipped();	
+
+
 
 func _physics_process(delta):
 	var fwd_mps = (linear_velocity) * transform.basis.x

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0jv0cq7u6qcd"]
+[gd_scene load_steps=11 format=3 uid="uid://b0jv0cq7u6qcd"]
 
 [ext_resource type="PackedScene" uid="uid://dq07b4db0n1if" path="res://prefabs/ui/hud.tscn" id="1_1fy4q"]
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="1_7qtxn"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ungaqd0sni1n" path="res://prefabs/environment/building4.tscn" id="3_17qkl"]
 [ext_resource type="PackedScene" uid="uid://d0pam8jlu6dcl" path="res://prefabs/environment/building2.tscn" id="5_36601"]
 [ext_resource type="PackedScene" uid="uid://1lbn8hxgtmuy" path="res://prefabs/environment/building3.tscn" id="6_kouqp"]
+[ext_resource type="PackedScene" uid="uid://dy717lk4h7tar" path="res://prefabs/levelSections/palm_line.tscn" id="7_mt563"]
+[ext_resource type="PackedScene" uid="uid://cdmh7uku4n623" path="res://prefabs/levelSections/entry_path.tscn" id="8_3nlww"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p3qla"]
 size = Vector3(5000, 0.5, 5000)
@@ -19,7 +21,7 @@ size = Vector3(5000, 0.5, 5000)
 delorean = NodePath("../Delorean")
 
 [node name="Delorean" parent="." instance=ExtResource("1_7qtxn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.159142, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43361, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -45,3 +47,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10117, 0.249996, 36.3801)
 
 [node name="Building 3" parent="." instance=ExtResource("6_kouqp")]
 transform = Transform3D(0.0533816, 0, 0.998574, 0, 1, 0, -0.998574, 0, 0.0533816, 0.305906, 0.249996, 47.1367)
+
+[node name="PalmLine" parent="." instance=ExtResource("7_mt563")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4394, 0.249996, 20.8012)
+
+[node name="EntryPath" parent="." instance=ExtResource("8_3nlww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7596, 0.249996, 11.8419)

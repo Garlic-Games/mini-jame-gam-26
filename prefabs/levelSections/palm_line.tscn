@@ -1,11 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy717lk4h7tar"]
+[gd_scene load_steps=5 format=3 uid="uid://dy717lk4h7tar"]
 
+[ext_resource type="Script" path="res://scripts/LightActivatorArea.gd" id="1_e1oqj"]
 [ext_resource type="PackedScene" uid="uid://c8v5q3e3y8gau" path="res://prefabs/environment/palm_tree.tscn" id="1_jvfgj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qe66"]
+size = Vector3(70, 15, 70)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0cpgq"]
 size = Vector3(1.049, 1, 1.5)
 
-[node name="PalmLine" type="Node3D"]
+[node name="PalmLine" type="Area3D"]
+collision_mask = 4
+script = ExtResource("1_e1oqj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.681688, 0, 5.614)
+shape = SubResource("BoxShape3D_1qe66")
 
 [node name="PalmRow" type="Node3D" parent="."]
 
@@ -165,3 +175,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980857, -0.330055, 0)
 light_color = Color(0.894118, 0, 0.596078, 1)
 light_energy = 60.0
 light_size = 0.305
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
