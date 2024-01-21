@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://nl3ly4i4vwy"]
+[gd_scene load_steps=20 format=3 uid="uid://nl3ly4i4vwy"]
 
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="1_eubgb"]
 [ext_resource type="Shader" path="res://art/shaders/sky.gdshader" id="1_k2uxh"]
 [ext_resource type="PackedScene" uid="uid://c8v5q3e3y8gau" path="res://prefabs/environment/palm_tree.tscn" id="2_5bjpl"]
 [ext_resource type="Shader" path="res://art/shaders/ground.gdshader" id="2_shu0x"]
 [ext_resource type="PackedScene" uid="uid://dkpwsovdhmw7y" path="res://prefabs/environment/mountain.tscn" id="3_685rj"]
+[ext_resource type="PackedScene" uid="uid://cdmh7uku4n623" path="res://prefabs/levelSections/entry_path.tscn" id="3_sf7vv"]
 [ext_resource type="PackedScene" uid="uid://ungaqd0sni1n" path="res://prefabs/environment/building4.tscn" id="4_kun0v"]
 [ext_resource type="PackedScene" uid="uid://1lbn8hxgtmuy" path="res://prefabs/environment/building3.tscn" id="5_ahnyy"]
 [ext_resource type="PackedScene" uid="uid://d0pam8jlu6dcl" path="res://prefabs/environment/building2.tscn" id="6_hexdo"]
@@ -103,6 +104,63 @@ collision_layer = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Floor/RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235332, -3.8147e-06, -0.30834)
 shape = SubResource("BoxShape3D_850kl")
+
+[node name="MainRoad" type="Node3D" parent="Map"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -115.893)
+
+[node name="EntryPath15" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 282.413)
+
+[node name="EntryPath16" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 270.428)
+
+[node name="EntryPath17" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 258.458)
+
+[node name="EntryPath18" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 246.472)
+
+[node name="EntryPath19" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 234.517)
+
+[node name="EntryPath20" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 222.531)
+
+[node name="EntryPath21" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 210.589)
+
+[node name="EntryPath22" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 198.603)
+
+[node name="EntryPath23" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 186.648)
+
+[node name="EntryPath24" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 174.662)
+
+[node name="EntryPath25" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 162.681)
+
+[node name="EntryPath26" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 150.695)
+
+[node name="EntryPath27" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 138.74)
+
+[node name="EntryPath28" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 126.754)
+
+[node name="EntryPath29" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 114.812)
+
+[node name="EntryPath30" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 102.826)
+
+[node name="EntryPath31" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 90.8707)
+
+[node name="EntryPath32" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 78.8853)
 
 [node name="Palm tree" parent="Map" instance=ExtResource("2_5bjpl")]
 transform = Transform3D(0.291413, 0, 0, 0, 0.291413, 0, 0, 0, 0.291413, 6.02296, -0.01019, 0.931549)
@@ -205,6 +263,7 @@ texture = ExtResource("8_tija1")
 delorean = NodePath("../Delorean")
 
 [node name="Delorean" parent="." instance=ExtResource("1_eubgb")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 474.35)
 collision_mask = 10
 
 [node name="GameSetter" parent="." instance=ExtResource("12_l2vmp")]
