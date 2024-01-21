@@ -99,9 +99,9 @@ theme_override_colors/font_shadow_color = Color(1, 1, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 bbcode_enabled = true
-text = "[center][font_size=100]SPEED[/font_size]
+text = "[center][font_size=100]CRYPTOGEDDON[/font_size]
 [font_size=20
-]Style Performance Exhilarating Extreme Destruction[/font_size][/center]
+]The moon is mine now[/font_size][/center]
 "
 fit_content = true
 
@@ -152,6 +152,7 @@ theme_override_font_sizes/font_size = 40
 text = "Exit"
 
 [node name="Credits" type="MarginContainer" parent="AspectRatioContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 60
 theme_override_constants/margin_top = 60
@@ -304,6 +305,6 @@ bus = &"Music"
 [connection signal="pressed" from="AspectRatioContainer/PanelContainer/MarginContainer/Holder/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="meta_clicked" from="AspectRatioContainer/Credits/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer/RichTextLabel" to="AspectRatioContainer/Credits" method="open_link"]
 [connection signal="pressed" from="AspectRatioContainer/Credits/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer/Return" to="AspectRatioContainer/Credits" method="hide"]
-[connection signal="toggled" from="AspectRatioContainer/MarginContainer/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer/FullScreen" to="AspectRatioContainer/MarginContainer/OptionsMenu" method="set_fullscreen"]
+[connection signal="toggled" from="AspectRatioContainer/MarginContainer/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer/FullScreen" to="AspectRatioContainer/MarginContainer" method="set_fullscreen"]
 [connection signal="pressed" from="AspectRatioContainer/MarginContainer/OptionsMenu/MarginContainer/MarginContainer/VBoxContainer/Return" to="AspectRatioContainer/MarginContainer" method="hide"]
 [connection signal="finished" from="EnterGame" to="." method="_on_start_pressed"]

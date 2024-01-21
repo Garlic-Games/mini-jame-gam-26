@@ -31,7 +31,7 @@ fill_from = Vector2(0, 1)
 process_mode = 3
 layer = 9
 script = ExtResource("1_cafsr")
-winLabel = NodePath("MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GameOverTitle/WinSubtitle")
+winLabel = NodePath("MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/WinSubtitle")
 nftLabel = NodePath("MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GridContainer/TreasuresAmmount")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -88,16 +88,12 @@ theme_override_font_sizes/font_size = 50
 text = "GAME OVER"
 horizontal_alignment = 1
 
-[node name="WinSubtitle" type="Label" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GameOverTitle"]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 62.0
-offset_right = 608.0
-offset_bottom = 104.0
+[node name="WinSubtitle" type="Label" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("2_vy71p")
 theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "you win!"
+theme_override_font_sizes/font_size = 20
+text = "Congratz you stole ALL internet NFTs"
 horizontal_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer"]
@@ -123,7 +119,7 @@ script = ExtResource("3_w7qbc")
 layout_mode = 2
 theme = ExtResource("2_vy71p")
 theme_override_font_sizes/font_size = 25
-text = "Score:"
+text = "Cryptoscore:"
 horizontal_alignment = 2
 
 [node name="ScoreAmmount" type="Label" parent="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GridContainer"]
