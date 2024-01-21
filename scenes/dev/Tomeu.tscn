@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bkwmiu271cxf8" path="res://prefabs/mainMenu/main_menu.tscn" id="1_evwpy"]
 [ext_resource type="PackedScene" uid="uid://dq07b4db0n1if" path="res://prefabs/ui/hud.tscn" id="2_jy20f"]
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="7_hmbix"]
+[ext_resource type="PackedScene" uid="uid://ggtceocos6b3" path="res://prefabs/game/game_setter.tscn" id="7_q76yv"]
 [ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/environment/building1.tscn" id="9_goiiy"]
 [ext_resource type="PackedScene" uid="uid://d0pam8jlu6dcl" path="res://prefabs/environment/building2.tscn" id="10_2ycsg"]
 [ext_resource type="PackedScene" uid="uid://ungaqd0sni1n" path="res://prefabs/environment/building4.tscn" id="11_g1rir"]
-[ext_resource type="Script" path="res://scripts/gamemanager/gameSetter.gd" id="12_j243s"]
 
 [sub_resource type="Environment" id="Environment_8xg1a"]
 fog_light_color = Color(0.396078, 0.25098, 0.905882, 1)
@@ -30,6 +30,7 @@ visible = false
 delorean = NodePath("../Delorean")
 
 [node name="Delorean" parent="." instance=ExtResource("7_hmbix")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 3.37456, 0)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_4fefs")
@@ -49,5 +50,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.475, 0.249996, 19.4413)
 [node name="Building 4" parent="." instance=ExtResource("11_g1rir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60934, 0.249996, 33.8854)
 
-[node name="GameSetter" type="Node" parent="."]
-script = ExtResource("12_j243s")
+[node name="GameSetter" parent="." instance=ExtResource("7_q76yv")]
