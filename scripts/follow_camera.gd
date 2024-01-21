@@ -6,6 +6,11 @@ extends Camera3D
 @export var angle_v_adjust = 0.0
 
 @export var height = 1.5
+
+@export var min_fov = 75;
+@export var max_fov = 100;
+var car: Vehicle;
+
 var collision_exception = []
 
 
@@ -21,7 +26,10 @@ func _ready():
 
 	# This detaches the camera transform from the parent spatial node.
 	set_as_top_level(true)
+	car = get_node("../..");
 
+func _process(_delta):
+	fov = min_fov + ((max_fov-min_fov) * (car.speed_kph / 144.0));
 
 func _physics_process(_delta):
 	var target = get_parent().get_global_transform().origin
