@@ -29,3 +29,19 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
 shape = SubResource("BoxShape3D_0cpgq")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.911683, 0.0185606, 0.410474, 0.410894, -0.0411818, -0.910753, 1.29098e-09, 0.998979, -0.0451712, -1.54768, 0.133238, 0.00305784)
+light_color = Color(0, 1, 1, 1)
+light_energy = 16.0
+light_size = 0.305
+light_specular = 2.329
+spot_range = 10.767
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(0.973455, -0.0103387, -0.228644, -0.228878, -0.0439721, -0.972462, 1.49012e-08, 0.998979, -0.0451712, 1.71721, 0.133238, 0.00305784)
+light_color = Color(0.894118, 0, 0.780392, 1)
+light_energy = 16.0
+light_size = 0.305
+light_specular = 2.329
+spot_range = 10.767
