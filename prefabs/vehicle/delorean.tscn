@@ -178,7 +178,7 @@ bus = &"Effects"
 
 [node name="HitAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_d6syg")
-volume_db = -8.0
+volume_db = -8.988
 pitch_scale = 0.8
 max_polyphony = 2
 bus = &"Effects"
