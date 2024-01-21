@@ -582,7 +582,7 @@ audioPlayer = NodePath("AudioStreamPlayer")
 
 [node name="Model" parent="." instance=ExtResource("3_4i7sh")]
 
-[node name="AreaBody" type="Area3D" parent="Model"]
+[node name="AreaBody" type="Area3D" parent="Model" groups=["Destroyable"]]
 collision_layer = 8
 collision_mask = 4
 gravity_point_center = Vector3(0, 0, 0)
