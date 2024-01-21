@@ -216,6 +216,9 @@ transform = Transform3D(-6.52608, 0, -0.54503, 0, 6.5488, 0, 0.54503, 0, -6.5260
 [node name="Mountain31" parent="Map/BackgroundMountains" instance=ExtResource("3_685rj")]
 transform = Transform3D(-1.05369, 0, 6.46348, 0, 6.5488, 0, -6.46348, 0, -1.05369, -620.13, 13.8453, 236.684)
 
+[node name="MainBuilding" parent="Map" instance=ExtResource("6_hexdo")]
+transform = Transform3D(-1.09278e-07, 0, -2.5, 0, 2.5, 0, 2.5, 0, -1.09278e-07, 0, 0, 104.381)
+
 [node name="MainRoad" type="Node3D" parent="Map"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.3, -115.893)
 
@@ -276,8 +279,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 126.754)
 [node name="EntryPath29" parent="Map/MainRoad" instance=ExtResource("3_sf7vv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 114.812)
 
-[node name="RoadBuilding" parent="Map" instance=ExtResource("6_hexdo")]
-transform = Transform3D(-1.09278e-07, 0, -2.5, 0, 2.5, 0, 2.5, 0, -1.09278e-07, 0, 0, 104.381)
+[node name="Road" type="Node3D" parent="Map"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -100.365, 0, -90.3555)
+
+[node name="EntryPath19" parent="Map/Road" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 74.5175)
+
+[node name="EntryPath20" parent="Map/Road" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 62.5326)
+
+[node name="EntryPath21" parent="Map/Road" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 50.5625)
+
+[node name="EntryPath22" parent="Map/Road" instance=ExtResource("3_sf7vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9491, 0.25, 38.5765)
 
 [node name="Palm tree" parent="Map" instance=ExtResource("2_5bjpl")]
 transform = Transform3D(0.291413, 0, 0, 0, 0.291413, 0, 0, 0, 0.291413, 6.02296, -0.01019, 0.931549)
@@ -285,47 +300,97 @@ transform = Transform3D(0.291413, 0, 0, 0, 0.291413, 0, 0, 0, 0.291413, 6.02296,
 [node name="CityBuildings" type="Node3D" parent="Map"]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 
-[node name="Building 3" parent="Map/CityBuildings" instance=ExtResource("5_ahnyy")]
+[node name="Group 1" type="Node3D" parent="Map/CityBuildings"]
+
+[node name="Building 3" parent="Map/CityBuildings/Group 1" instance=ExtResource("5_ahnyy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 30)
 
-[node name="Building 6" parent="Map/CityBuildings" instance=ExtResource("5_ahnyy")]
+[node name="Building 6" parent="Map/CityBuildings/Group 1" instance=ExtResource("5_ahnyy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 0, 30)
 
-[node name="Building 1" parent="Map/CityBuildings" instance=ExtResource("7_et75q")]
+[node name="Building 1" parent="Map/CityBuildings/Group 1" instance=ExtResource("7_et75q")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 0.034, 19.983)
 
-[node name="Building 14" parent="Map/CityBuildings" instance=ExtResource("7_et75q")]
+[node name="Building 14" parent="Map/CityBuildings/Group 1" instance=ExtResource("7_et75q")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19, 0.034, 4.783)
 
-[node name="Building 2" parent="Map/CityBuildings" instance=ExtResource("7_et75q")]
+[node name="Building 2" parent="Map/CityBuildings/Group 1" instance=ExtResource("7_et75q")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 20)
 
-[node name="Building 4" parent="Map/CityBuildings" instance=ExtResource("7_et75q")]
+[node name="Building 4" parent="Map/CityBuildings/Group 1" instance=ExtResource("7_et75q")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 3, 0, 14)
 
-[node name="Building 5" parent="Map/CityBuildings" instance=ExtResource("7_et75q")]
+[node name="Building 5" parent="Map/CityBuildings/Group 1" instance=ExtResource("7_et75q")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -3, 0, 14)
 
-[node name="Building 7" parent="Map/CityBuildings" instance=ExtResource("6_hexdo")]
+[node name="Building 7" parent="Map/CityBuildings/Group 1" instance=ExtResource("6_hexdo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 24.5)
 
-[node name="Building 8" parent="Map/CityBuildings" instance=ExtResource("6_hexdo")]
+[node name="Building 8" parent="Map/CityBuildings/Group 1" instance=ExtResource("6_hexdo")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19, 0, 24.5)
 
-[node name="Building 9" parent="Map/CityBuildings" instance=ExtResource("4_kun0v")]
+[node name="Building 9" parent="Map/CityBuildings/Group 1" instance=ExtResource("4_kun0v")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.5, 0, 14.5)
 
-[node name="Building 10" parent="Map/CityBuildings" instance=ExtResource("4_kun0v")]
+[node name="Building 10" parent="Map/CityBuildings/Group 1" instance=ExtResource("4_kun0v")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10.3, 0, 4.76748)
 
-[node name="Building 11" parent="Map/CityBuildings" instance=ExtResource("4_kun0v")]
+[node name="Building 11" parent="Map/CityBuildings/Group 1" instance=ExtResource("4_kun0v")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -3.7, 0, 4.76748)
 
-[node name="Building 12" parent="Map/CityBuildings" instance=ExtResource("6_hexdo")]
+[node name="Building 12" parent="Map/CityBuildings/Group 1" instance=ExtResource("6_hexdo")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13.2, 0, 4.8)
 
-[node name="Building 13" parent="Map/CityBuildings" instance=ExtResource("5_ahnyy")]
+[node name="Building 13" parent="Map/CityBuildings/Group 1" instance=ExtResource("5_ahnyy")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19.2, 0, 14.8)
+
+[node name="Building 15" parent="Map/CityBuildings/Group 1" instance=ExtResource("6_hexdo")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.6, 0, 4.8)
+
+[node name="Group 2" type="Node3D" parent="Map/CityBuildings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.0948, 0, 22.242)
+
+[node name="Palm tree2" parent="Map/CityBuildings/Group 2" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(0.0699391, 0, 0, 0, 0.0699391, 0, 0, 0, 0.0699391, 7.83062, -0.004076, -47.004)
+
+[node name="Palm tree3" parent="Map/CityBuildings/Group 2" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(0.0316614, 0, -0.0623622, 0, 0.0699391, 0, 0.0623622, 0, 0.0316614, 7.83062, -0.004076, -45.2592)
+
+[node name="Palm tree4" parent="Map/CityBuildings/Group 2" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(0.0674693, 0, 0.0184221, 0, 0.0699391, 0, -0.0184221, 0, 0.0674693, 8.90064, -0.004076, -43.9621)
+
+[node name="Palm tree5" parent="Map/CityBuildings/Group 2" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(0.0493879, 0, 0.0495209, 0, 0.0699391, 0, -0.0495209, 0, 0.0493879, 11.3974, -0.004076, -43.8694)
+
+[node name="Palm tree6" parent="Map/CityBuildings/Group 2" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(0.0183691, 0, 0.0674838, 0, 0.0699391, 0, -0.0674838, 0, 0.0183691, 13.3974, -0.004076, -45.8694)
+
+[node name="Palm tree7" parent="Map/CityBuildings/Group 2" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(-0.0492581, 0, 0.04965, 0, 0.0699391, 0, -0.04965, 0, -0.0492581, 11.8683, -0.004076, -48.3596)
+
+[node name="Palm tree8" parent="Map/CityBuildings/Group 2" instance=ExtResource("2_5bjpl")]
+transform = Transform3D(-0.0660461, 0, -0.0230087, 0, 0.0699391, 0, 0.0230087, 0, -0.0660461, 9.37917, -0.004076, -48.1079)
+
+[node name="Building 3" parent="Map/CityBuildings/Group 2" instance=ExtResource("5_ahnyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -46.0126)
+
+[node name="Building 4" parent="Map/CityBuildings/Group 2" instance=ExtResource("5_ahnyy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.26467, 0, -55.3747)
+
+[node name="Building 5" parent="Map/CityBuildings/Group 2" instance=ExtResource("5_ahnyy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.8647, 0, -55.3747)
+
+[node name="Building 6" parent="Map/CityBuildings/Group 2" instance=ExtResource("5_ahnyy")]
+transform = Transform3D(1, 0, -5.68434e-15, 0, 1, 0, 5.68434e-15, 0, 1, 21.8647, 0, -45.7747)
+
+[node name="Building 7" parent="Map/CityBuildings/Group 2" instance=ExtResource("5_ahnyy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.4647, 0, -36.5747)
+
+[node name="Building 8" parent="Map/CityBuildings/Group 2" instance=ExtResource("5_ahnyy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.86467, 0, -36.5747)
+
+[node name="Building 2" parent="Map/CityBuildings/Group 2" instance=ExtResource("6_hexdo")]
+transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 10.2497, 0.0999985, -45.9993)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(47.4975, 0, 0, 0, 47.4975, 0, 0, 0, 1, 0, 348.833, -1650.59)
