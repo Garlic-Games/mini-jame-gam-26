@@ -4,7 +4,8 @@ extends Node
 enum GAME_STATES {
 	LOADING,
 	PLAYING,
-	GAMEOVER
+	GAMEOVER,
+	WIN
 }
 
 var time_remaining: float;
@@ -24,9 +25,9 @@ func _process(delta):
 			state = GAME_STATES.GAMEOVER;
 			game_finished.emit();
 		
-		if current_treasures >= 10:
-			state = GAME_STATES.GAMEOVER;
-			game_won.emit();
+		if current_treasures >= max_treasures:
+			state = GAME_STATES.WIN;
+			game_finished.emit();
 
 func set_playing(game_time:float):
 	state = GAME_STATES.PLAYING;
