@@ -71,7 +71,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.188039, 0.249996, 464.951)
 
 [node name="Collectable2" parent="Collectables" instance=ExtResource("19_vp3ty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0114429, 9.80226, 42.3822)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0114429, 0.510989, 42.3822)
 
 [node name="Collectable3" parent="Collectables" instance=ExtResource("19_vp3ty")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.4285, 0.249996, 3.6947)
