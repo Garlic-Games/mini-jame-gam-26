@@ -1,9 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://nl3ly4i4vwy"]
+[gd_scene load_steps=20 format=3 uid="uid://nl3ly4i4vwy"]
 
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="1_eubgb"]
 [ext_resource type="Shader" path="res://art/shaders/sky.gdshader" id="1_k2uxh"]
 [ext_resource type="PackedScene" uid="uid://c8v5q3e3y8gau" path="res://prefabs/environment/palm_tree.tscn" id="2_5bjpl"]
-[ext_resource type="Shader" path="res://art/shaders/ground.gdshader" id="2_shu0x"]
+[ext_resource type="PackedScene" uid="uid://csgos2qhplxcq" path="res://prefabs/levelSections/floor.tscn" id="2_cjqll"]
 [ext_resource type="PackedScene" uid="uid://dkpwsovdhmw7y" path="res://prefabs/environment/mountain.tscn" id="3_685rj"]
 [ext_resource type="PackedScene" uid="uid://cdmh7uku4n623" path="res://prefabs/levelSections/entry_path.tscn" id="3_sf7vv"]
 [ext_resource type="PackedScene" uid="uid://vrtido521pmn" path="res://art/models/mountain.glb" id="3_wu4cd"]
@@ -12,8 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://d0pam8jlu6dcl" path="res://prefabs/environment/building2.tscn" id="6_hexdo"]
 [ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/environment/building1.tscn" id="7_et75q"]
 [ext_resource type="Texture2D" uid="uid://bb5plvmeleg46" path="res://art/textures/sunwave.png" id="8_tija1"]
-[ext_resource type="PackedScene" uid="uid://dq07b4db0n1if" path="res://prefabs/ui/hud.tscn" id="10_nyf0r"]
+[ext_resource type="PackedScene" path="res://prefabs/ui/hud.tscn" id="10_nyf0r"]
 [ext_resource type="PackedScene" uid="uid://ggtceocos6b3" path="res://prefabs/game/game_setter.tscn" id="12_l2vmp"]
+[ext_resource type="PackedScene" uid="uid://ctvqifyknhevw" path="res://prefabs/ui/game_over_screen.tscn" id="15_wb25l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tfkgv"]
 shader = ExtResource("1_k2uxh")
@@ -41,38 +42,6 @@ fog_light_color = Color(0.027451, 0.0352941, 0.0431373, 1)
 fog_light_energy = 3.73
 adjustment_brightness = 4.41
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_stua4"]
-render_priority = 0
-shader = ExtResource("2_shu0x")
-shader_parameter/metallic = 1.0
-shader_parameter/subdivisions = 400.0
-shader_parameter/grid_width = 0.02
-shader_parameter/background_color = Color(0, 0, 0, 1)
-shader_parameter/background_color_two = Color(0, 0, 0, 1)
-shader_parameter/grid_color = Color(1, 0.705882, 1, 1)
-shader_parameter/dashed_scale_x = 0.0
-shader_parameter/dashed_scale_y = 0.0
-shader_parameter/dashed_count_x = 1.0
-shader_parameter/dashed_count_y = 1.0
-shader_parameter/point_width = 0.021
-shader_parameter/point_color = Color(0, 0, 0, 1)
-shader_parameter/point_scale_x = 0.05
-shader_parameter/point_scale_y = 0.05
-shader_parameter/inside_width = 0.01
-shader_parameter/inside_subdivisions = 6.0
-shader_parameter/inside_color = Color(0.4, 0.4, 0.4, 1)
-shader_parameter/in_dashed_scale_x = 0.3
-shader_parameter/in_dashed_scale_y = 0.3
-shader_parameter/in_dashed_count_x = 6.0
-shader_parameter/in_dashed_count_y = 6.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_4kpj7"]
-material = SubResource("ShaderMaterial_stua4")
-size = Vector3(1000, 0.5, 1000)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_850kl"]
-size = Vector3(5000, 0.5, 5000)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_1c2am"]
 size = Vector3(18.357, 15.35, 28.2026)
 
@@ -97,18 +66,7 @@ light_color = Color(0.92549, 0.266667, 0.8, 1)
 light_energy = 8.162
 omni_range = 1033.85
 
-[node name="Floor" type="MeshInstance3D" parent="Map"]
-transform = Transform3D(1.49102, 0, 0, 0, 1, 0, 0, 0, 1.49102, 0, 0, 0)
-layers = 2
-mesh = SubResource("BoxMesh_4kpj7")
-skeleton = NodePath("../..")
-
-[node name="RigidBody3D" type="StaticBody3D" parent="Map/Floor"]
-collision_layer = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Floor/RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235332, -3.8147e-06, -0.30834)
-shape = SubResource("BoxShape3D_850kl")
+[node name="Floor" parent="Map" instance=ExtResource("2_cjqll")]
 
 [node name="BackgroundMountains" type="Node3D" parent="Map"]
 transform = Transform3D(-0.0805513, 0, -1.11043, 0, 1.11335, 0, 1.11043, 0, -0.0805513, 191.157, 0, -92.3118)
@@ -381,3 +339,5 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 collision_mask = 10
 
 [node name="GameSetter" parent="." instance=ExtResource("12_l2vmp")]
+
+[node name="GameOverScreen" parent="." instance=ExtResource("15_wb25l")]

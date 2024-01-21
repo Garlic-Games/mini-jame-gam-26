@@ -1,10 +1,13 @@
-[gd_scene load_steps=44 format=3 uid="uid://d0pam8jlu6dcl"]
+[gd_scene load_steps=45 format=3 uid="uid://d0pam8jlu6dcl"]
 
 [ext_resource type="Script" path="res://scripts/destroyable/destroyable.gd" id="2_a7h0m"]
 [ext_resource type="PackedScene" uid="uid://n7r0bvkmr1fc" path="res://art/models/building2.glb" id="3_g7tqk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_or8yp"]
-size = Vector3(5.2334, 9, 5.28125)
+size = Vector3(5, 9, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6ism"]
+size = Vector3(5.3, 9, 5.3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pr0cf"]
 resource_name = "Antena"
@@ -992,18 +995,28 @@ script = ExtResource("2_a7h0m")
 
 [node name="Model" parent="." instance=ExtResource("3_g7tqk")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Model"]
+[node name="AreaBody" type="Area3D" parent="Model"]
 collision_layer = 8
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/AreaBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.30121, 0)
 shape = SubResource("BoxShape3D_or8yp")
+
+[node name="TooSlowHitBox" type="StaticBody3D" parent="Model"]
+collision_layer = 512
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/TooSlowHitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.30121, 0)
+shape = SubResource("BoxShape3D_l6ism")
 
 [node name="Rest in Pieces" type="Node3D" parent="."]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Rest in Pieces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95505, 6.11659, 0.649327)
+collision_layer = 16
+collision_mask = 27
 
 [node name="Edificio_001_cell" type="MeshInstance3D" parent="Rest in Pieces/RigidBody3D"]
 mesh = SubResource("ArrayMesh_dfb5w")
@@ -1024,6 +1037,8 @@ shape = SubResource("ConvexPolygonShape3D_ocbuh")
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="Rest in Pieces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.693927, 2.37753, -1.45776)
+collision_layer = 16
+collision_mask = 27
 
 [node name="Edificio_001_cell_002" type="MeshInstance3D" parent="Rest in Pieces/RigidBody3D2"]
 mesh = SubResource("ArrayMesh_dgw0c")
@@ -1034,6 +1049,8 @@ shape = SubResource("ConvexPolygonShape3D_a8e2p")
 
 [node name="RigidBody3D3" type="RigidBody3D" parent="Rest in Pieces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88743, 4.69376, 2.09906)
+collision_layer = 16
+collision_mask = 27
 
 [node name="Edificio_001_cell_003" type="MeshInstance3D" parent="Rest in Pieces/RigidBody3D3"]
 mesh = SubResource("ArrayMesh_isx0y")
@@ -1044,6 +1061,8 @@ shape = SubResource("ConvexPolygonShape3D_qm8th")
 
 [node name="RigidBody3D4" type="RigidBody3D" parent="Rest in Pieces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.436181, 3.10992, 0.841162)
+collision_layer = 16
+collision_mask = 27
 
 [node name="Edificio_001_cell_004" type="MeshInstance3D" parent="Rest in Pieces/RigidBody3D4"]
 mesh = SubResource("ArrayMesh_qfokq")
@@ -1054,6 +1073,8 @@ shape = SubResource("ConvexPolygonShape3D_cwwx4")
 
 [node name="RigidBody3D5" type="RigidBody3D" parent="Rest in Pieces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.134338, 6.2204, -1.89896)
+collision_layer = 16
+collision_mask = 27
 
 [node name="Edificio_001_cell_005" type="MeshInstance3D" parent="Rest in Pieces/RigidBody3D5"]
 mesh = SubResource("ArrayMesh_5hsv4")
@@ -1064,6 +1085,8 @@ shape = SubResource("ConvexPolygonShape3D_u5yv8")
 
 [node name="RigidBody3D6" type="RigidBody3D" parent="Rest in Pieces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56965, 8.93858, -0.0201035)
+collision_layer = 16
+collision_mask = 27
 
 [node name="Edificio_001_cell_007" type="MeshInstance3D" parent="Rest in Pieces/RigidBody3D6"]
 mesh = SubResource("ArrayMesh_jmy4j")
@@ -1074,6 +1097,8 @@ shape = SubResource("ConvexPolygonShape3D_v0p1e")
 
 [node name="RigidBody3D7" type="RigidBody3D" parent="Rest in Pieces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13608, 4.97124, -1.49184)
+collision_layer = 16
+collision_mask = 27
 
 [node name="Edificio_001_cell_008" type="MeshInstance3D" parent="Rest in Pieces/RigidBody3D7"]
 mesh = SubResource("ArrayMesh_q0hpv")
@@ -1084,6 +1109,8 @@ shape = SubResource("ConvexPolygonShape3D_x8ldd")
 
 [node name="RigidBody3D8" type="RigidBody3D" parent="Rest in Pieces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80028, 4.96348, 2.37893)
+collision_layer = 16
+collision_mask = 27
 
 [node name="Edificio_001_cell_006" type="MeshInstance3D" parent="Rest in Pieces/RigidBody3D8"]
 mesh = SubResource("ArrayMesh_c0u6g")
@@ -1094,6 +1121,8 @@ shape = SubResource("ConvexPolygonShape3D_k7ilp")
 
 [node name="RigidBody3D9" type="RigidBody3D" parent="Rest in Pieces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.37229, 4.46049, 1.15087)
+collision_layer = 16
+collision_mask = 27
 
 [node name="Edificio_001_cell_009" type="MeshInstance3D" parent="Rest in Pieces/RigidBody3D9"]
 mesh = SubResource("ArrayMesh_cmdjb")
@@ -1104,6 +1133,8 @@ shape = SubResource("ConvexPolygonShape3D_fwyrs")
 
 [node name="RigidBody3D10" type="RigidBody3D" parent="Rest in Pieces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25316, 6.62568, 1.43147)
+collision_layer = 16
+collision_mask = 27
 
 [node name="Edificio_001_cell_010" type="MeshInstance3D" parent="Rest in Pieces/RigidBody3D10"]
 mesh = SubResource("ArrayMesh_blq4i")
@@ -1114,6 +1145,8 @@ shape = SubResource("ConvexPolygonShape3D_maoqd")
 
 [node name="RigidBody3D11" type="RigidBody3D" parent="Rest in Pieces"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.559127, 9.64896, -0.0201035)
+collision_layer = 16
+collision_mask = 27
 
 [node name="Edificio_001_cell_011" type="MeshInstance3D" parent="Rest in Pieces/RigidBody3D11"]
 mesh = SubResource("ArrayMesh_sryht")
@@ -1121,3 +1154,5 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rest in Pieces/RigidBody3D11"]
 shape = SubResource("ConvexPolygonShape3D_1ew65")
+
+[connection signal="body_entered" from="Model/AreaBody" to="." method="_on_body_entered"]
