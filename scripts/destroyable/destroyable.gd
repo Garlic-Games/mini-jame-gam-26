@@ -87,10 +87,8 @@ func _on_body_entered(body):
 		Explode();
 		if audioPlayer.playing == false:
 			var pitch = randf_range(pitchMin, pitchMax);
-			print(pitch)
 			audioPlayer.pitch_scale = pitch;
 			audioPlayer.play();
-			print(audioPlayer.playing)
 		if body is Vehicle:
 			var direction = (body.global_transform.origin - global_transform.origin).normalized();
 			body.apply_force(direction * buildingSize * destroyedForceMultiplier)
