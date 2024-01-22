@@ -1414,6 +1414,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63.905
 transform = Transform3D(47.4975, 0, 0, 0, 47.4975, 0, 0, 0, 1, 0, 348.833, -1650.59)
 texture = ExtResource("8_tija1")
 
+[node name="FPS counter" parent="." instance=ExtResource("1_okxki")]
+
 [node name="Hud" parent="." node_paths=PackedStringArray("delorean") instance=ExtResource("10_nyf0r")]
 delorean = NodePath("../Delorean")
 
@@ -1471,5 +1473,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0642087, 0.249996, 550.827)
 libraries = {
 "": SubResource("AnimationLibrary_wos5u")
 }
-
-[node name="CanvasLayer2" parent="." instance=ExtResource("1_okxki")]
