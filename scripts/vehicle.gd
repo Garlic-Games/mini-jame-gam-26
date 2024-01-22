@@ -2,8 +2,8 @@ class_name Vehicle
 extends VehicleBody3D
 
 
-const STEER_SPEED = 1.5
-const STEER_LIMIT = 0.4
+const STEER_SPEED = 1.5;
+const STEER_LIMIT = 0.4;
 
 @export_category("Control")
 @export var engine_force_value = 3000;
@@ -45,7 +45,7 @@ const STEER_LIMIT = 0.4
 @export_category("Interaction with collectables")
 @export var collectStreamPlayer: AudioStreamPlayer;
 
-var steer_target = 0
+var steer_target = 0;
 var speed_kph = 0;
 var rpm_value = 0;
 var rpm_percent = 0;
@@ -57,7 +57,7 @@ var is_upside_down = false;
 
 var reset_count = 0;
 
-signal upside_down_changed(value)
+signal upside_down_changed(value);
 
 var game_manager : GameManager;
 
@@ -70,7 +70,7 @@ func _process(delta):
 		if Input.is_action_pressed("handbrake"):
 			reset_count += delta;
 			if(reset_count > reset_time_seconds):
-				ResetCarFlipped();	
+				ResetCarFlipped();
 		else:
 			reset_count = 0;
 	else:
@@ -79,33 +79,37 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	var fwd_mps = (linear_velocity) * transform.basis.x
+	
+	if game_manager.state != game_manager.GAME_STATES.PLAYING:
+		return;
+		
+	var fwd_mps = (linear_velocity) * transform.basis.x;
 
-	steer_target = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right")
-	steer_target *= STEER_LIMIT
+	steer_target = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right");
+	steer_target *= STEER_LIMIT;
 
 	if Input.is_action_pressed("accelerate"):
 		# Increase engine force at low speeds to make the initial acceleration faster.
-		var speed = linear_velocity.length()
+		var speed = linear_velocity.length();
 		if speed < 5 and speed != 0:
-			engine_force = clamp(engine_force_value * brake_force_multiplier / speed, 0, engine_force_value)
+			engine_force = clamp(engine_force_value * brake_force_multiplier / speed, 0, engine_force_value);
 		else:
-			engine_force = engine_force_value
+			engine_force = engine_force_value;
 	else:
-		engine_force = 0
+		engine_force = 0;
 
 	if Input.is_action_pressed("reverse"):
 		# Increase engine force at low speeds to make the initial acceleration faster.
 		if fwd_mps >= Vector3.LEFT:
-			var speed = linear_velocity.length()
+			var speed = linear_velocity.length();
 			if speed < 5 and speed != 0:
-				engine_force = -clamp(engine_force_value * brake_force_multiplier / speed, 0, engine_force_value)
+				engine_force = -clamp(engine_force_value * brake_force_multiplier / speed, 0, engine_force_value);
 			else:
-				engine_force = -engine_force_value
+				engine_force = -engine_force_value;
 		else:
-			brake = engine_force_value * brake_force_multiplier
+			brake = engine_force_value * brake_force_multiplier;
 	else:
-		brake = 0.0
+		brake = 0.0;
 
 	if Input.is_action_pressed("handbrake"):
 		wheel_br.brake = engine_force_value * brake_force_multiplier;
@@ -115,7 +119,7 @@ func _physics_process(delta):
 		wheel_bl.brake = 0;
 		
 		
-	steering = move_toward(steering, steer_target, STEER_SPEED * delta)
+	steering = move_toward(steering, steer_target, STEER_SPEED * delta);
 	speed_kph = linear_velocity.length() * 3.6;
 	calc_rpm();
 	var pichToSet =  clamp(rpm_percent * rpm_pitch_max / 100, rpm_pitch_min, rpm_pitch_max);
@@ -133,7 +137,7 @@ func _physics_process(delta):
 		
 	var now_upside_down =  ud_count == 4 || (ud_count > 2 && speed_kph < 10);
 	if(is_upside_down != now_upside_down):
-		print("Upside down changed to ", now_upside_down)
+		print("Upside down changed to ", now_upside_down);
 		is_upside_down = now_upside_down;
 		upside_down_changed.emit(now_upside_down);
 	
@@ -155,7 +159,7 @@ func _physics_process(delta):
 
 func calc_rpm():
 	var selectedRatio = gears_ratio[selected_gear];
-	rpm_value = (speed_kph * 1000) / (radio_rueda_metros / selectedRatio * factor_conversion)
+	rpm_value = (speed_kph * 1000) / (radio_rueda_metros / selectedRatio * factor_conversion);
 	if(rpm_value > rpm_up && selected_gear < gears_ratio.size() -1):
 		selected_gear += 1;
 	elif (rpm_value < rpm_down && selected_gear > 0):
@@ -165,15 +169,11 @@ func calc_rpm():
 		rpm_value = rpm_idle;
 	rpm_percent = rpm_value  / rpm_max * 100;
 		
-
 func ResetCarFlipped():
 	transform.basis = Basis();
 	translate(Vector3(0, 0.03, 0));
 
-
-
 func _on_body_entered(body):
-
 	if body.is_in_group("Collectable"):
 		collectStreamPlayer.play();
 
@@ -181,7 +181,3 @@ func _on_body_entered(body):
 		game_manager.add_treasure();
 	else:
 		hitStreamPlayer.play();
-	
-
-	pass; # Replace with function body.
-
