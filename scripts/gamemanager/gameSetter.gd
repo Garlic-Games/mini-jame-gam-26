@@ -1,18 +1,25 @@
 extends Node
 
 @export var play_time: float = 6 * 60;
-@export var animationPlayer: AnimationPlayer;
+@export var animation_player: AnimationPlayer;
 
 var game_manager: GameManager;
-# Called when the node enters the scene tree for the first time.
+
+var tutorial_started : bool = false; 
+
+
 func _ready():
 	game_manager = get_node("/root/Gamemanager");
 	game_manager.injectPlayTime(play_time);
-	game_manager.animationPlayer = animationPlayer;
-	call_deferred("setGameLoaded");
+	game_manager.animation_player = animation_player;
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func setGameLoaded():
+func _process(delta):
+	if not tutorial_started and get_parent().is_scene_loaded():
+		set_game_loaded();
+
+
+func set_game_loaded():
+	tutorial_started = true;
 	game_manager.set_tutorial();
 	get_tree().paused = false;

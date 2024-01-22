@@ -14,7 +14,7 @@ var current_points: int = 0;
 var current_treasures: int = 0;
 var max_treasures: int = 10;
 var state: GAME_STATES = GAME_STATES.LOADING;
-var animationPlayer: AnimationPlayer;
+var animation_player: AnimationPlayer;
 var tutorialPlayed = false;
 var skip_tutorial_seconds = 3;
 var skip_tutorial_count = 0;
@@ -39,7 +39,7 @@ func _process(delta):
 		if Input.is_action_pressed("handbrake"):
 			skip_tutorial_count += delta;
 			if(skip_tutorial_count > skip_tutorial_seconds):
-				animationPlayer.play("RESET");
+				animation_player.play("RESET");
 		else:
 			skip_tutorial_count = 0;
 
@@ -48,13 +48,15 @@ func set_tutorial():
 	if (tutorialPlayed):
 		set_playing();
 		return;
+		
 	state = GAME_STATES.TUTORIAL;
-	animationPlayer.play("tutorial")
-	animationPlayer.connect("animation_finished", AnimationFinished);
+	animation_player.play("tutorial")
+
+	animation_player.connect("animation_finished", AnimationFinished);
 
 func AnimationFinished(algo):
 	tutorialPlayed = true;
-	animationPlayer.disconnect("animation_finished", AnimationFinished);
+	animation_player.disconnect("animation_finished", AnimationFinished);
 	set_playing();
 
 func set_playing():
