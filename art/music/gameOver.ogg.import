@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cyo6f0okq77gv"
-path="res://.godot/imported/GameOver.ogg-2b80040dc96bf7fea73c16fd62fb1c26.oggvorbisstr"
+path="res://.godot/imported/gameOver.ogg-ec02d91d001369dc567b4a3d17df8898.oggvorbisstr"
 
 [deps]
 
-source_file="res://art/music/GameOver.ogg"
-dest_files=["res://.godot/imported/GameOver.ogg-2b80040dc96bf7fea73c16fd62fb1c26.oggvorbisstr"]
+source_file="res://art/music/gameOver.ogg"
+dest_files=["res://.godot/imported/gameOver.ogg-ec02d91d001369dc567b4a3d17df8898.oggvorbisstr"]
 
 [params]
 
