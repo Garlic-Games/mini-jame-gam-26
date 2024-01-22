@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://nl3ly4i4vwy"]
+[gd_scene load_steps=31 format=3 uid="uid://nl3ly4i4vwy"]
 
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="1_eubgb"]
 [ext_resource type="Shader" path="res://art/shaders/sky.gdshader" id="1_k2uxh"]
+[ext_resource type="PackedScene" uid="uid://dtwculcckrvnt" path="res://prefabs/ui/FPSCounter.tscn" id="1_okxki"]
 [ext_resource type="PackedScene" uid="uid://c8v5q3e3y8gau" path="res://prefabs/environment/palm_tree.tscn" id="2_5bjpl"]
 [ext_resource type="PackedScene" uid="uid://csgos2qhplxcq" path="res://prefabs/levelSections/floor.tscn" id="2_cjqll"]
 [ext_resource type="PackedScene" uid="uid://dkpwsovdhmw7y" path="res://prefabs/environment/mountain.tscn" id="3_685rj"]
@@ -243,6 +244,8 @@ _data = {
 }
 
 [node name="Gameplay" type="Node3D"]
+
+[node name="FpsCounter" parent="." instance=ExtResource("1_okxki")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)

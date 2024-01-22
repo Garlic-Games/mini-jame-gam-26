@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtwculcckrvnt"]
+
+[ext_resource type="Script" path="res://scripts/ui/FPSCounter.gd" id="1_hyns4"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 397.0
+offset_bottom = 132.0
+script = ExtResource("1_hyns4")
