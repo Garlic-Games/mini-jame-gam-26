@@ -15,7 +15,7 @@ func _ready():
 
 
 func _process(delta):
-	if not tutorial_started and get_parent().is_scene_loaded():
+	if not tutorial_started and get_parent().scene_ready:
 		set_game_loaded();
 
 

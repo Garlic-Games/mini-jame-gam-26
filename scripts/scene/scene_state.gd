@@ -1,11 +1,7 @@
 extends Node
 
-var _scene_loaded : bool = false;
+var scene_ready : bool = false;
 
 
 func _ready():
-	_scene_loaded = true;
-
-
-func is_scene_loaded():
-	return _scene_loaded;
+	scene_ready = true;
