@@ -175,9 +175,13 @@ func ResetCarFlipped():
 
 func _on_body_entered(body):
 	if body.is_in_group("Collectable"):
-		collectStreamPlayer.play();
-
-		body.get_parent().queue_free();
-		game_manager.add_treasure();
+		pass;
 	else:
 		hitStreamPlayer.play();
+
+func _on_area_3d_area_entered(area):
+	if area.is_in_group("Collectable"):
+		collectStreamPlayer.play();
+
+		area.get_parent().queue_free();
+		game_manager.add_treasure();

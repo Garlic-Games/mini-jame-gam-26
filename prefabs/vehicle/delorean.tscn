@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/follow_camera.gd" id="3_tc8wa"]
 [ext_resource type="PackedScene" uid="uid://bjyeachxcglil" path="res://art/particles/light_trail.tscn" id="3_tyxii"]
 [ext_resource type="PackedScene" uid="uid://d0yc53hpqphhb" path="res://art/particles/wheel_trail.tscn" id="4_sk4p5"]
-[ext_resource type="Material" path="res://art/Materials/car_red_body.tres" id="4_svikk"]
+[ext_resource type="Material" uid="uid://dlyvi6u87qoj5" path="res://art/Materials/car_red_body.tres" id="4_svikk"]
 [ext_resource type="PackedScene" uid="uid://dpwiasqc2c0kk" path="res://prefabs/ui/vehicle_ui.tscn" id="5_c4uwo"]
 [ext_resource type="AudioStream" uid="uid://chkaxo8fo73xw" path="res://art/sounds/Menu Sounds/wav/menu_11.wav" id="5_ijv85"]
 [ext_resource type="AudioStream" uid="uid://7mwruodkyjdh" path="res://art/sounds/Car/Crunch.wav" id="6_d6syg"]
@@ -91,6 +91,14 @@ hitStreamPlayer = NodePath("HitAudio")
 wheel_trails = NodePath("trails/wheel")
 light_trails = NodePath("trails/lights")
 collectStreamPlayer = NodePath("CollectAudio")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 13
+collision_mask = 13
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58658, 0.077)
+shape = SubResource("BoxShape3D_dj6v0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58658, 0.077)
@@ -251,3 +259,4 @@ height = 0.1
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="upside_down_changed" from="." to="VehicleUi" method="set_visible"]
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
