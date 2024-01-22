@@ -956,5 +956,3 @@ shape = SubResource("ConvexPolygonShape3D_uehmv")
 stream = ExtResource("3_4gupp")
 volume_db = -5.0
 bus = &"Effects"
-
-[connection signal="body_entered" from="Model/AreaBody" to="." method="_on_body_entered"]

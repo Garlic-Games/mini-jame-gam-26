@@ -1,3 +1,4 @@
+class_name Destroyable
 extends Node3D
 
 enum Building_size {XS = 10, S = 11, M = 12 , L = 13, XL = 14}
@@ -25,7 +26,7 @@ var game_manager: GameManager;
 
 var isDestroyed = false;
 
-func _ready():
+func _ready():	
 	add_to_group("Destroyables");
 	FindRigidBodies(self, pieces);
 	#print(slowHitBoxNode, buildingSize)
@@ -64,6 +65,11 @@ func Explode():
 		forceDirection = explosionCenter.direction_to(piece.position);
 		randomVector = Vector3(randf_range(0, 1), randf_range(0, 1), randf_range(0, 1)) * forceDirection;
 		piece.apply_impulse(randomVector, forceDirection * explosionForce * 100.0);
+		
+	if audioPlayer.playing == false:
+		var pitch = randf_range(pitchMin, pitchMax);
+		audioPlayer.pitch_scale = pitch;
+		audioPlayer.play();
 
 func FindRigidBodies(node : Node, pieceContainer : Array):
 	for child in node.get_children():
@@ -79,19 +85,3 @@ func FindRigidBodies(node : Node, pieceContainer : Array):
 					pz.gravity_scale = 0.0;	
 					
 					pieceContainer.append(pz);
-		
-
-func _on_body_entered(body):
-	print("Destroyable body entered");
-	if body.is_in_group("Car"):
-		Explode();
-		if audioPlayer.playing == false:
-			var pitch = randf_range(pitchMin, pitchMax);
-			audioPlayer.pitch_scale = pitch;
-			audioPlayer.play();
-		if body is Vehicle:
-			var direction = (body.global_transform.origin - global_transform.origin).normalized();
-			body.apply_force(direction * buildingSize * destroyedForceMultiplier)
-			game_manager.add_points(buildingSize + ((body.speed_kph - buildingSize) * pointMultiplier))
-		pass
-

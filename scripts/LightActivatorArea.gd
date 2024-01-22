@@ -5,11 +5,11 @@ var lights: Array[OmniLight3D];
 
 func _ready():
 	lights = getAllLights(self)
-	print("Light count", lights.size())
+	#print("Light count", lights.size())
 	setLightsEnabled(false);
 	
 func setLightsEnabled(enabled: bool):
-	print("Changing lights to ", enabled)
+	#print("Changing lights to ", enabled)
 	for light in lights:
 		if enabled:
 			light.show()

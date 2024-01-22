@@ -137,7 +137,7 @@ func _physics_process(delta):
 		
 	var now_upside_down =  ud_count == 4 || (ud_count > 2 && speed_kph < 10);
 	if(is_upside_down != now_upside_down):
-		print("Upside down changed to ", now_upside_down);
+		#print("Upside down changed to ", now_upside_down);
 		is_upside_down = now_upside_down;
 		upside_down_changed.emit(now_upside_down);
 	
@@ -173,15 +173,20 @@ func ResetCarFlipped():
 	transform.basis = Basis();
 	translate(Vector3(0, 0.03, 0));
 
-func _on_body_entered(body):
-	if body.is_in_group("Collectable"):
-		pass;
-	else:
-		hitStreamPlayer.play();
-
 func _on_area_3d_area_entered(area):
 	if area.is_in_group("Collectable"):
 		collectStreamPlayer.play();
-
 		area.get_parent().queue_free();
 		game_manager.add_treasure();
+		
+	elif area.is_in_group("Destroyable"):
+		hitStreamPlayer.play();
+
+		var destroyable = area.get_parent().get_parent();
+
+		if destroyable is Destroyable:
+			destroyable.Explode();
+			print("Destroyable body entered");
+			var direction = (global_transform.origin - destroyable.global_transform.origin).normalized();
+			apply_force(direction * destroyable.buildingSizeValue * destroyable.destroyedForceMultiplier);
+			game_manager.add_points(destroyable.buildingSizeValue + ((speed_kph - destroyable.buildingSizeValue) * destroyable.pointMultiplier));
