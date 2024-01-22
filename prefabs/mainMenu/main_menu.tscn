@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/mainMenu/main_menu.gd" id="1_8805b"]
 [ext_resource type="Texture2D" uid="uid://w246lk2eqrg" path="res://art/backgrounds/vaporwave-background-10.png" id="1_tu1xq"]
+[ext_resource type="PackedScene" uid="uid://nl3ly4i4vwy" path="res://art/models/gameplay.tscn" id="2_37pos"]
 [ext_resource type="Theme" uid="uid://dpqda1rl4km7n" path="res://art/theme/main.tres" id="2_f3fat"]
-[ext_resource type="PackedScene" uid="uid://nl3ly4i4vwy" path="res://scenes/gameplay.tscn" id="2_v7yms"]
 [ext_resource type="Shader" path="res://art/shaders/glitch.gdshader" id="4_5f5nj"]
 [ext_resource type="AudioStream" uid="uid://dcnytumipye5u" path="res://art/sounds/Menu Sounds/wav/menu_19.wav" id="6_afl2u"]
 [ext_resource type="Script" path="res://scripts/mainMenu/CreditsMenu.gd" id="6_fsf6p"]
@@ -57,7 +57,7 @@ bg_color = Color(0.788235, 0.172549, 0.945098, 1)
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_8805b")
-game = ExtResource("2_v7yms")
+game = ExtResource("2_37pos")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 clip_contents = true
