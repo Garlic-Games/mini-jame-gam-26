@@ -188,5 +188,5 @@ func _on_area_3d_area_entered(area):
 			destroyable.Explode();
 			print("Destroyable body entered");
 			var direction = (global_transform.origin - destroyable.global_transform.origin).normalized();
-			apply_force(direction * destroyable.buildingSizeValue * destroyable.destroyedForceMultiplier);
-			game_manager.add_points(destroyable.buildingSizeValue + ((speed_kph - destroyable.buildingSizeValue) * destroyable.pointMultiplier));
+			apply_force(direction * destroyable.buildingSize * destroyable.destroyedForceMultiplier);
+			game_manager.add_points(destroyable.buildingSize + ((speed_kph - destroyable.buildingSize) * destroyable.pointMultiplier));
