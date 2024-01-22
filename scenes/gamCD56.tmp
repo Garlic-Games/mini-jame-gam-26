@@ -1415,7 +1415,6 @@ transform = Transform3D(47.4975, 0, 0, 0, 47.4975, 0, 0, 0, 1, 0, 348.833, -1650
 texture = ExtResource("8_tija1")
 
 [node name="FPS counter" parent="." instance=ExtResource("1_okxki")]
-visible = false
 
 [node name="Hud" parent="." node_paths=PackedStringArray("delorean") instance=ExtResource("10_nyf0r")]
 delorean = NodePath("../Delorean")
