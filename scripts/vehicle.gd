@@ -185,8 +185,7 @@ func _on_area_3d_area_entered(area):
 		var destroyable = area.get_parent().get_parent();
 
 		if destroyable is Destroyable:
-			destroyable.Explode();
-			print("Destroyable body entered");
 			var direction = (global_transform.origin - destroyable.global_transform.origin).normalized();
 			apply_force(direction * destroyable.buildingSize * destroyable.destroyedForceMultiplier);
 			game_manager.add_points(destroyable.buildingSize + ((speed_kph - destroyable.buildingSize) * destroyable.pointMultiplier));
+			destroyable.Explode();
