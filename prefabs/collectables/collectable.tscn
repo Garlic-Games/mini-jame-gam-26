@@ -1,29 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgtf2hrjpsqsa"]
+[gd_scene load_steps=4 format=3 uid="uid://cgtf2hrjpsqsa"]
 
-[ext_resource type="Script" path="res://scripts/collectable_constant_velocity.gd" id="1_1m3q3"]
 [ext_resource type="PackedScene" uid="uid://r1t0fejsamp5" path="res://art/models/collectable.glb" id="2_1ps1p"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fdort"]
-size = Vector3(3.13647, 9.70514, 3.13574)
+[ext_resource type="Script" path="res://scripts/collectable_animation.gd" id="2_5gmdf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kpmug"]
 size = Vector3(2, 3.92285, 2)
 
 [node name="Collectable" type="Node3D"]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["Collectable"]]
-collision_layer = 8
-collision_mask = 4
-mass = 0.01
-gravity_scale = 0.0
-script = ExtResource("1_1m3q3")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10791, 0)
-shape = SubResource("BoxShape3D_fdort")
-
-[node name="collectable" parent="RigidBody3D" instance=ExtResource("2_1ps1p")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 2.527, 0)
+[node name="Model" parent="." instance=ExtResource("2_1ps1p")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 2.82105, 0)
+script = ExtResource("2_5gmdf")
+floatingAmplitude = 0.25
+floatingPeriod = 1.5
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(0.980392, 0, 0.572549, 1)
@@ -36,7 +25,9 @@ light_color = Color(0, 1, 0.666667, 1)
 light_energy = 16.0
 omni_range = 12.2833
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." groups=["Collectable"]]
+collision_layer = 8
+collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96143, 0)
