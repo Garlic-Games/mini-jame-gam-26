@@ -15,7 +15,7 @@ enum GAME_STATES {
 var time_remaining: float;
 var current_points: int = 0;
 var current_treasures: int = 0;
-var max_treasures: int = 1;
+var max_treasures: int = 10;
 var state: GAME_STATES = GAME_STATES.LOADING;
 var animation_player: AnimationPlayer;
 var tutorial_played = false;
