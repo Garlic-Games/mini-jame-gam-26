@@ -22,7 +22,6 @@ var tutorial_played = false;
 var skip_tutorial_seconds = 3;
 var skip_tutorial_count = 0;
 
-
 func _process(delta):
 	if state == GAME_STATES.TUTORIAL:
 		if Input.is_action_pressed("handbrake"):

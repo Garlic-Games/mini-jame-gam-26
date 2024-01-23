@@ -14,9 +14,11 @@ var timer_blinking : float = 0.0;
 var loading_progress : Array[float] = [];
 var loading_completed : bool = false;
 
+
 func _ready():
 	transition_canvas = get_node("TransitionFadeOut");
 	transition_canvas.connect("transition_finished", emit_finished_loading);
+
 
 func _process(delta):
 	loading_animation(delta);
@@ -41,7 +43,7 @@ func loading_animation(delta):
 func finish_loading_animation():
 	transition_canvas.show();
 	transition_canvas.find_child("Animation").play("fade_out");
-	
+
 
 func emit_finished_loading():
 	transition_canvas.hide();
