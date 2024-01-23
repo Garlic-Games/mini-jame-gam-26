@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dq07b4db0n1if"]
+[gd_scene load_steps=20 format=3 uid="uid://dq07b4db0n1if"]
 
 [ext_resource type="Script" path="res://scripts/ui/Hud.gd" id="1_1sxma"]
 [ext_resource type="Script" path="res://scripts/ui/RevolutionsHud.gd" id="2_0hs4w"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scripts/ui/TreasuresLabel.gd" id="9_hp2c4"]
 [ext_resource type="Shader" path="res://art/shaders/glitch_ondemand.gdshader" id="10_eb80d"]
 [ext_resource type="Script" path="res://scripts/ui/GlitchOnPoints.gd" id="11_41ltt"]
+[ext_resource type="Texture2D" uid="uid://8rmt1oi3c1up" path="res://art/textures/moai_icon.png" id="12_pr2hi"]
 
 [sub_resource type="Gradient" id="Gradient_hl650"]
 colors = PackedColorArray(0.356863, 0, 1, 1, 1, 0, 1, 1)
@@ -69,7 +70,7 @@ text = " 30 KM/H"
 vertical_alignment = 1
 script = ExtResource("4_flwjb")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureHUD" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_ys2ex")
 anchors_preset = 15
 anchor_right = 1.0
@@ -128,6 +129,15 @@ text = "1/10"
 vertical_alignment = 1
 script = ExtResource("9_hp2c4")
 
+[node name="TextureNFT" type="TextureRect" parent="."]
+offset_left = 1052.0
+offset_top = 34.0
+offset_right = 1121.0
+offset_bottom = 118.0
+texture = ExtResource("12_pr2hi")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="Glitch" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_1iris")
 anchors_preset = 15
@@ -138,4 +148,3 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_607dw")
 expand_mode = 3
 script = ExtResource("11_41ltt")
-duration = 0.5
