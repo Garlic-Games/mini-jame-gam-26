@@ -24,7 +24,6 @@ var skip_tutorial_count = 0;
 
 
 func _process(delta):
-	print(tutorial_played);
 	if state == GAME_STATES.TUTORIAL:
 		if Input.is_action_pressed("handbrake"):
 			skip_tutorial_count += delta;
@@ -33,17 +32,15 @@ func _process(delta):
 		else:
 			skip_tutorial_count = 0;
 			
-	if state == GAME_STATES.PLAYING:
+	elif state == GAME_STATES.PLAYING:
 		time_remaining -= delta;
 		if time_remaining < 0:
 			state = GAME_STATES.GAMEOVER;
 			game_finished.emit();
-			#call_deferred("emit_game_finished");
 
 		if current_treasures >= max_treasures:
 			state = GAME_STATES.WIN;
 			game_finished.emit();
-			#call_deferred("emit_game_finished");
 			
 
 func set_tutorial():
@@ -80,6 +77,3 @@ func add_treasure():
 
 func inject_play_time(game_time):
 	time_remaining = game_time;
-
-func emit_game_finished():
-	game_finished.emit();

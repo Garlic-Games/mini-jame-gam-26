@@ -1475,7 +1475,4 @@ visible = false
 stream = ExtResource("21_kjmnv")
 autoplay = true
 
-[node name="Collectable" parent="." instance=ExtResource("3_we50t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0642087, 0.249996, 550.827)
-
 [node name="TransitionFadeIn" parent="." instance=ExtResource("3_ue10v")]

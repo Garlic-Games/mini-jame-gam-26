@@ -1,9 +1,9 @@
 extends CanvasLayer
 
-var game_manager: GameManager;
-
 @export var winLabel : Label;
 @export var nftLabel : Label;
+
+var game_manager: GameManager;
 
 func _ready():
 	game_manager = get_node("/root/Gamemanager");
@@ -11,8 +11,7 @@ func _ready():
 	hide();
 
 
-func _on_game_over():
-	get_tree().paused = true;
+func _on_game_over():	
 	nftLabel.text = str(game_manager.current_treasures, "/", game_manager.max_treasures);
 	
 	if game_manager.state == game_manager.GAME_STATES.WIN:
@@ -23,3 +22,8 @@ func _on_game_over():
 		winLabel.hide();
 	
 	show();
+	
+	call_deferred("pause_tree");
+
+func pause_tree():
+	get_tree().paused = true;
