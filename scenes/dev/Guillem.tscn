@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://ungaqd0sni1n" path="res://prefabs/environment/building4.tscn" id="3_17qkl"]
 [ext_resource type="PackedScene" uid="uid://d0pam8jlu6dcl" path="res://prefabs/environment/building2.tscn" id="5_36601"]
 [ext_resource type="PackedScene" uid="uid://1lbn8hxgtmuy" path="res://prefabs/environment/building3.tscn" id="6_kouqp"]
-[ext_resource type="PackedScene" uid="uid://dy717lk4h7tar" path="res://prefabs/levelSections/palm_line.tscn" id="7_mt563"]
-[ext_resource type="PackedScene" uid="uid://cdmh7uku4n623" path="res://prefabs/levelSections/entry_path.tscn" id="8_3nlww"]
+[ext_resource type="PackedScene" uid="uid://dy717lk4h7tar" path="res://prefabs/environment/levelSections/palm_line.tscn" id="7_mt563"]
+[ext_resource type="PackedScene" uid="uid://cdmh7uku4n623" path="res://prefabs/environment/levelSections/entry_path.tscn" id="8_3nlww"]
 [ext_resource type="PackedScene" uid="uid://cgtf2hrjpsqsa" path="res://prefabs/collectables/collectable.tscn" id="9_eut4c"]
-[ext_resource type="PackedScene" uid="uid://csgos2qhplxcq" path="res://prefabs/levelSections/floor.tscn" id="10_rbvww"]
+[ext_resource type="PackedScene" uid="uid://csgos2qhplxcq" path="res://prefabs/environment/levelSections/floor.tscn" id="10_rbvww"]
+
 
 [node name="Guillem" type="Node3D"]
 

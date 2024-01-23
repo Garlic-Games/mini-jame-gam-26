@@ -13,4 +13,3 @@ func _process(_delta):
 	var metersSecond = get_node("Revolutions/MettersPerSeccond");
 	revolutions.change_revolutions(delorean.rpm_percent);
 	metersSecond.change_speed(delorean.speed_kph);
-

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdmh7uku4n623"]
 
-[ext_resource type="PackedScene" uid="uid://cne6pr2amcuke" path="res://prefabs/levelSections/palm_row.tscn" id="1_3iehb"]
+[ext_resource type="PackedScene" uid="uid://cne6pr2amcuke" path="res://prefabs/environment/levelSections/palm_row.tscn" id="1_3iehb"]
 [ext_resource type="Script" path="res://scripts/light_activator_area.gd" id="1_3lmr8"]
 
 
