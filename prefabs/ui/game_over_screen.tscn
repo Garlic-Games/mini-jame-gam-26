@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://dpqda1rl4km7n" path="res://art/theme/main.tres" id="2_vy71p"]
 [ext_resource type="Script" path="res://scripts/ui/PointTracker.gd" id="3_p6648"]
 [ext_resource type="Script" path="res://scripts/ui/TreasuresLabel.gd" id="3_w7qbc"]
-[ext_resource type="Script" path="res://scripts/ui/TryAgainButton.gd" id="4_tcqlj"]
+[ext_resource type="Script" path="res://scripts/ui/try_again_button.gd" id="5_c6657"]
 [ext_resource type="AudioStream" uid="uid://cyo6f0okq77gv" path="res://art/music/gameOver.ogg" id="6_0hy5c"]
 
 [sub_resource type="Gradient" id="Gradient_df10g"]
@@ -137,7 +137,7 @@ layout_mode = 2
 theme = ExtResource("2_vy71p")
 theme_override_font_sizes/font_size = 25
 text = "TRY AGAIN"
-script = ExtResource("4_tcqlj")
+script = ExtResource("5_c6657")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer"]
 stream = ExtResource("6_0hy5c")
