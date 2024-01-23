@@ -8,9 +8,9 @@
 [ext_resource type="Material" uid="uid://dlyvi6u87qoj5" path="res://art/Materials/car_red_body.tres" id="4_svikk"]
 [ext_resource type="PackedScene" uid="uid://dpwiasqc2c0kk" path="res://prefabs/ui/vehicle_ui.tscn" id="5_c4uwo"]
 [ext_resource type="AudioStream" uid="uid://chkaxo8fo73xw" path="res://art/sounds/Menu Sounds/wav/menu_11.wav" id="5_ijv85"]
-[ext_resource type="AudioStream" uid="uid://7mwruodkyjdh" path="res://art/sounds/Car/Crunch.wav" id="6_d6syg"]
+[ext_resource type="AudioStream" uid="uid://7mwruodkyjdh" path="res://art/sounds/car/Crunch.wav" id="6_d6syg"]
 [ext_resource type="ArrayMesh" uid="uid://bwci23srglq6j" path="res://art/car/race_car_Plane_009.res" id="6_w88hb"]
-[ext_resource type="AudioStream" uid="uid://bkw3wd37g2smq" path="res://art/sounds/Car/636066__lumamorph__eight-cylinder-engine-idling.wav" id="8_2wgnu"]
+[ext_resource type="AudioStream" uid="uid://bkw3wd37g2smq" path="res://art/sounds/car/636066__lumamorph__eight-cylinder-engine-idling.wav" id="8_2wgnu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dj6v0"]
 size = Vector3(2, 1.15, 4.2)

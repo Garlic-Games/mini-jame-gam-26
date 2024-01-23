@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/destroyable/destroyable.gd" id="2_a7h0m"]
 [ext_resource type="PackedScene" uid="uid://n7r0bvkmr1fc" path="res://art/models/building2.glb" id="3_g7tqk"]
-[ext_resource type="AudioStream" uid="uid://80n30814t1mf" path="res://art/sounds/Car/Explosion.wav" id="3_su5ge"]
+[ext_resource type="AudioStream" uid="uid://80n30814t1mf" path="res://art/sounds/car/Explosion.wav" id="3_su5ge"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_or8yp"]
 size = Vector3(5, 9, 5)

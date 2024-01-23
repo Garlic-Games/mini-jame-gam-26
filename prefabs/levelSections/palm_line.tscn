@@ -1,7 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dy717lk4h7tar"]
 
-[ext_resource type="Script" path="res://scripts/LightActivatorArea.gd" id="1_e1oqj"]
+[ext_resource type="Script" path="res://scripts/light_activator_area.gd" id="1_e1oqj"]
 [ext_resource type="PackedScene" uid="uid://c8v5q3e3y8gau" path="res://prefabs/environment/palm_tree.tscn" id="1_jvfgj"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1qe66"]
 size = Vector3(70, 15, 70)

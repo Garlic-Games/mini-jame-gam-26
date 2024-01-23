@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpwiasqc2c0kk"]
 
-[ext_resource type="Script" path="res://scripts/ui/SpeedOMeter.gd" id="1_ekmlj"]
-[ext_resource type="Script" path="res://scripts/ui/VehicleUi.gd" id="1_n6t14"]
-[ext_resource type="Script" path="res://scripts/ui/VehicleResetBar.gd" id="3_bwc4c"]
+[ext_resource type="Script" path="res://scripts/ui/speed_o_meter.gd" id="1_ekmlj"]
+[ext_resource type="Script" path="res://scripts/ui/vehicle_ui.gd" id="1_n6t14"]
+[ext_resource type="Script" path="res://scripts/ui/vehicle_reset_bar.gd" id="3_bwc4c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkmye"]
 bg_color = Color(0, 0.635294, 0.745098, 1)

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bkw3wd37g2smq"
-path="res://.godot/imported/636066__lumamorph__eight-cylinder-engine-idling.wav-282e9667d6641a3e0aec9ae0ab7f8228.sample"
+path="res://.godot/imported/636066__lumamorph__eight-cylinder-engine-idling.wav-6c0a148dbd2582219ff12e44e13b82a2.sample"
 
 [deps]
 
-source_file="res://art/sounds/Car/636066__lumamorph__eight-cylinder-engine-idling.wav"
-dest_files=["res://.godot/imported/636066__lumamorph__eight-cylinder-engine-idling.wav-282e9667d6641a3e0aec9ae0ab7f8228.sample"]
+source_file="res://art/sounds/car/636066__lumamorph__eight-cylinder-engine-idling.wav"
+dest_files=["res://.godot/imported/636066__lumamorph__eight-cylinder-engine-idling.wav-6c0a148dbd2582219ff12e44e13b82a2.sample"]
 
 [params]
 

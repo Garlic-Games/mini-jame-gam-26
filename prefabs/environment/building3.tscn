@@ -1,7 +1,7 @@
 [gd_scene load_steps=48 format=3 uid="uid://1lbn8hxgtmuy"]
 
 [ext_resource type="Script" path="res://scripts/destroyable/destroyable.gd" id="2_pehe6"]
-[ext_resource type="AudioStream" uid="uid://80n30814t1mf" path="res://art/sounds/Car/Explosion.wav" id="3_1ihy4"]
+[ext_resource type="AudioStream" uid="uid://80n30814t1mf" path="res://art/sounds/car/Explosion.wav" id="3_1ihy4"]
 [ext_resource type="PackedScene" uid="uid://gmtkaq8a6a0l" path="res://art/models/building3.glb" id="3_7q3v7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jsjhc"]

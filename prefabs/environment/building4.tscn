@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/destroyable/destroyable.gd" id="2_lwl13"]
 [ext_resource type="PackedScene" uid="uid://bnvsotbepg3ew" path="res://art/models/building4.glb" id="3_4i7sh"]
-[ext_resource type="AudioStream" uid="uid://80n30814t1mf" path="res://art/sounds/Car/Explosion.wav" id="3_rrd05"]
+[ext_resource type="AudioStream" uid="uid://80n30814t1mf" path="res://art/sounds/car/Explosion.wav" id="3_rrd05"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bf7im"]
 margin = 5.845

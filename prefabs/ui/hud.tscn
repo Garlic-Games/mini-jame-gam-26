@@ -1,14 +1,14 @@
 [gd_scene load_steps=20 format=3 uid="uid://dq07b4db0n1if"]
 
-[ext_resource type="Script" path="res://scripts/ui/Hud.gd" id="1_1sxma"]
-[ext_resource type="Script" path="res://scripts/ui/RevolutionsHud.gd" id="2_0hs4w"]
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_xdulf"]
+[ext_resource type="Script" path="res://scripts/ui/revolutions_hud.gd" id="2_mfsi2"]
 [ext_resource type="FontFile" uid="uid://c7kkllaqq3iir" path="res://art/fonts/GravityRegular5.ttf" id="3_nq2vs"]
-[ext_resource type="Script" path="res://scripts/ui/Speed.gd" id="4_flwjb"]
+[ext_resource type="Script" path="res://scripts/ui/speed.gd" id="4_dvw7r"]
 [ext_resource type="Shader" path="res://art/shaders/speedmetter.gdshader" id="5_470ax"]
 [ext_resource type="Texture2D" uid="uid://dl5pid43m3gey" path="res://art/textures/hud.tga" id="6_ai4t0"]
-[ext_resource type="Script" path="res://scripts/ui/TimeLabel.gd" id="7_jmhs7"]
-[ext_resource type="Script" path="res://scripts/ui/PointTracker.gd" id="7_myk6s"]
-[ext_resource type="Script" path="res://scripts/ui/TreasuresLabel.gd" id="9_hp2c4"]
+[ext_resource type="Script" path="res://scripts/ui/point_tracker.gd" id="7_qo44m"]
+[ext_resource type="Script" path="res://scripts/ui/time_label.gd" id="8_rcv6c"]
+[ext_resource type="Script" path="res://scripts/ui/treasures_label.gd" id="9_hp2c4"]
 [ext_resource type="Shader" path="res://art/shaders/glitch_ondemand.gdshader" id="10_eb80d"]
 [ext_resource type="Script" path="res://scripts/ui/glitch_on_points.gd" id="12_3dldl"]
 [ext_resource type="Texture2D" uid="uid://8rmt1oi3c1up" path="res://art/textures/moai_icon.png" id="12_pr2hi"]
@@ -40,7 +40,7 @@ shader_parameter/doeet = false
 gradient = SubResource("Gradient_ygmua")
 
 [node name="Hud" type="CanvasLayer"]
-script = ExtResource("1_1sxma")
+script = ExtResource("1_xdulf")
 
 [node name="Revolutions" type="ProgressBar" parent="."]
 anchors_preset = -1
@@ -55,7 +55,7 @@ offset_bottom = -0.360107
 theme_override_styles/fill = SubResource("StyleBoxTexture_37bg7")
 value = 50.0
 show_percentage = false
-script = ExtResource("2_0hs4w")
+script = ExtResource("2_mfsi2")
 
 [node name="MettersPerSeccond" type="Label" parent="Revolutions"]
 layout_mode = 1
@@ -68,7 +68,7 @@ theme_override_fonts/font = ExtResource("3_nq2vs")
 theme_override_font_sizes/font_size = 30
 text = " 30 KM/H"
 vertical_alignment = 1
-script = ExtResource("4_flwjb")
+script = ExtResource("4_dvw7r")
 
 [node name="TextureHUD" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_ys2ex")
@@ -95,7 +95,7 @@ theme_override_font_sizes/font_size = 20
 text = "100000000"
 horizontal_alignment = 2
 vertical_alignment = 1
-script = ExtResource("7_myk6s")
+script = ExtResource("7_qo44m")
 
 [node name="Time" type="Label" parent="."]
 anchors_preset = -1
@@ -111,7 +111,7 @@ theme_override_fonts/font = ExtResource("3_nq2vs")
 theme_override_font_sizes/font_size = 20
 text = "1:30"
 vertical_alignment = 1
-script = ExtResource("7_jmhs7")
+script = ExtResource("8_rcv6c")
 
 [node name="Treasures" type="Label" parent="."]
 anchors_preset = -1

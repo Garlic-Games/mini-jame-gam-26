@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d3vsh0osb71ey"
-path="res://.godot/imported/147242__qubodup__car-engine-loop.wav-a7c99ab645e3800188a55d4e6506ada6.sample"
+path="res://.godot/imported/147242__qubodup__car-engine-loop.wav-6b2ae0a65ff709e0324f3e1b49636717.sample"
 
 [deps]
 
-source_file="res://art/sounds/Car/147242__qubodup__car-engine-loop.wav"
-dest_files=["res://.godot/imported/147242__qubodup__car-engine-loop.wav-a7c99ab645e3800188a55d4e6506ada6.sample"]
+source_file="res://art/sounds/car/147242__qubodup__car-engine-loop.wav"
+dest_files=["res://.godot/imported/147242__qubodup__car-engine-loop.wav-6b2ae0a65ff709e0324f3e1b49636717.sample"]
 
 [params]
 
