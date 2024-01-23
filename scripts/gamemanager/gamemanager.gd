@@ -50,8 +50,8 @@ func set_tutorial():
 		return;
 		
 	state = GAME_STATES.TUTORIAL;
+	
 	animation_player.play("tutorial")
-
 	animation_player.connect("animation_finished", AnimationFinished);
 
 func AnimationFinished(algo):

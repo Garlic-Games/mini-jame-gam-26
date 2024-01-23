@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://nl3ly4i4vwy"]
+[gd_scene load_steps=33 format=3 uid="uid://nl3ly4i4vwy"]
 
 [ext_resource type="Script" path="res://scripts/scene/scene_state.gd" id="1_5xvvs"]
 [ext_resource type="Shader" path="res://art/shaders/sky.gdshader" id="2_o7bey"]
+[ext_resource type="PackedScene" uid="uid://c0y6h82ulwufq" path="res://prefabs/ui/transition_fade.tscn" id="3_ue10v"]
 [ext_resource type="PackedScene" uid="uid://cgtf2hrjpsqsa" path="res://prefabs/collectables/collectable.tscn" id="3_we50t"]
 [ext_resource type="PackedScene" uid="uid://csgos2qhplxcq" path="res://prefabs/levelSections/floor.tscn" id="4_o1e8f"]
 [ext_resource type="PackedScene" uid="uid://vrtido521pmn" path="res://art/models/mountain.glb" id="5_av560"]
@@ -247,10 +248,11 @@ bg_color = Color(0, 0, 0, 0.862745)
 [node name="Gameplay" type="Node3D"]
 script = ExtResource("1_5xvvs")
 
-[node name="GameSetter" parent="." node_paths=PackedStringArray("animation_player") instance=ExtResource("19_sk8j1")]
-animation_player = NodePath("../AnimationPlayer")
+[node name="GameSetter" parent="." node_paths=PackedStringArray("tutorial_animation_player", "fade_in_canvas") instance=ExtResource("19_sk8j1")]
+tutorial_animation_player = NodePath("../TutorialAnimation")
+fade_in_canvas = NodePath("../TransitionFadeIn")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="TutorialAnimation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_wos5u")
 }
@@ -1475,3 +1477,5 @@ autoplay = true
 
 [node name="Collectable" parent="." instance=ExtResource("3_we50t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0642087, 0.249996, 550.827)
+
+[node name="TransitionFadeIn" parent="." instance=ExtResource("3_ue10v")]
