@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/ui/PointTracker.gd" id="3_p6648"]
 [ext_resource type="Script" path="res://scripts/ui/TreasuresLabel.gd" id="3_w7qbc"]
 [ext_resource type="Script" path="res://scripts/ui/TryAgainButton.gd" id="4_tcqlj"]
-[ext_resource type="AudioStream" uid="uid://cyo6f0okq77gv" path="res://art/music/GameOver.ogg" id="6_0hy5c"]
+[ext_resource type="AudioStream" uid="uid://cyo6f0okq77gv" path="res://art/music/gameOver.ogg" id="6_0hy5c"]
 
 [sub_resource type="Gradient" id="Gradient_df10g"]
 colors = PackedColorArray(1, 0, 1, 1, 1, 1, 1, 1)
