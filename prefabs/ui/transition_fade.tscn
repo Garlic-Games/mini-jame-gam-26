@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0y6h82ulwufq"]
+[gd_scene load_steps=6 format=3 uid="uid://c0y6h82ulwufq"]
+
+[ext_resource type="Script" path="res://scripts/ui/transition_fade.gd" id="1_ei5nc"]
 
 [sub_resource type="Animation" id="Animation_484gf"]
 length = 0.001
@@ -28,13 +30,31 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1)
 }
 
+[sub_resource type="Animation" id="Animation_8eq2c"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_il0vp"]
 _data = {
 "RESET": SubResource("Animation_484gf"),
-"fade_in": SubResource("Animation_o0ecg")
+"fade_in": SubResource("Animation_o0ecg"),
+"fade_out": SubResource("Animation_8eq2c")
 }
 
-[node name="TransitionFadeIn" type="CanvasLayer"]
+[node name="TransitionFade" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_ei5nc")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1280.0
@@ -45,3 +65,5 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_il0vp")
 }
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]

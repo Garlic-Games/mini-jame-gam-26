@@ -13,10 +13,12 @@ func _ready():
 	game_manager = get_node("/root/Gamemanager");
 	game_manager.inject_play_time(play_time);
 	game_manager.animation_player = tutorial_animation_player;
-
+	
+	fade_in_canvas.show();
+	
 
 func _process(delta):
-	if not tutorial_started and get_parent().scene_ready:
+	if not tutorial_started:
 		set_game_loaded();
 
 

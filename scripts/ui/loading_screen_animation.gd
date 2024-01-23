@@ -1,37 +1,25 @@
 extends Node
 
-@export var scene_to_load : PackedScene = null;
+signal loading_animation_finished;
 
 @export var rotating_icon : TextureRect;
 @export var rotating_speed : float = 0.0;
 @export var loading_text : LineEdit;
 @export var blinking_period : float = 1.0;
 
+var transition_canvas : CanvasLayer
+
 var timer_blinking : float = 0.0;
 
 var loading_progress : Array[float] = [];
 var loading_completed : bool = false;
 
-
 func _ready():
-	if scene_to_load:
-		ResourceLoader.load_threaded_request(scene_to_load.resource_path);
-
+	transition_canvas = get_node("TransitionFadeOut");
+	transition_canvas.connect("transition_finished", emit_finished_loading);
 
 func _process(delta):
 	loading_animation(delta);
-	print (loading_completed);
-	if not loading_completed:
-		check_loading_status();
-
-
-func check_loading_status():
-	var loading_status = ResourceLoader.load_threaded_get_status(scene_to_load.resource_path, loading_progress);
-	
-	match loading_status:
-		ResourceLoader.THREAD_LOAD_LOADED:
-			loading_completed = true;
-			get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(scene_to_load.resource_path));
 
 
 func loading_animation(delta):
@@ -48,3 +36,13 @@ func loading_animation(delta):
 		loading_text.hide();
 	else:
 		timer_blinking = 0.0;
+
+
+func finish_loading_animation():
+	transition_canvas.show();
+	transition_canvas.find_child("Animation").play("fade_out");
+	
+
+func emit_finished_loading():
+	transition_canvas.hide();
+	loading_animation_finished.emit();

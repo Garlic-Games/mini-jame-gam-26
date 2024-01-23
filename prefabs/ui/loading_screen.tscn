@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqfiyxgfekyqd"]
 
 [ext_resource type="Texture2D" uid="uid://2xal2nt2xp0" path="res://art/textures/moai_loading.png" id="1_4isj4"]
-[ext_resource type="PackedScene" uid="uid://nl3ly4i4vwy" path="res://scenes/gameplay.tscn" id="2_e37it"]
 [ext_resource type="Script" path="res://scripts/ui/loading_screen_animation.gd" id="2_qtfsx"]
 [ext_resource type="FontFile" uid="uid://dvxlgpgvvlyx" path="res://art/fonts/SyntheticText.ttf" id="3_stht5"]
+[ext_resource type="PackedScene" uid="uid://c0y6h82ulwufq" path="res://prefabs/ui/transition_fade.tscn" id="4_okiqf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmbhr"]
 
@@ -11,7 +11,6 @@
 
 [node name="LoadingScreen" type="CanvasLayer" node_paths=PackedStringArray("rotating_icon", "loading_text")]
 script = ExtResource("2_qtfsx")
-scene_to_load = ExtResource("2_e37it")
 rotating_icon = NodePath("TextureRect")
 rotating_speed = 200.0
 loading_text = NodePath("LineEdit")
@@ -50,3 +49,5 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_qmbhr")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nr0fu")
 text = "L O A D I N G"
 alignment = 1
+
+[node name="TransitionFadeOut" parent="." instance=ExtResource("4_okiqf")]

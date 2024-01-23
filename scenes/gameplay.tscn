@@ -1,6 +1,5 @@
-[gd_scene load_steps=33 format=3 uid="uid://nl3ly4i4vwy"]
+[gd_scene load_steps=32 format=3 uid="uid://nl3ly4i4vwy"]
 
-[ext_resource type="Script" path="res://scripts/scene/scene_state.gd" id="1_5xvvs"]
 [ext_resource type="Shader" path="res://art/shaders/sky.gdshader" id="2_o7bey"]
 [ext_resource type="PackedScene" uid="uid://c0y6h82ulwufq" path="res://prefabs/ui/transition_fade.tscn" id="3_ue10v"]
 [ext_resource type="PackedScene" uid="uid://cgtf2hrjpsqsa" path="res://prefabs/collectables/collectable.tscn" id="3_we50t"]
@@ -246,7 +245,6 @@ size = Vector3(1.049, 1, 1.5)
 bg_color = Color(0, 0, 0, 0.862745)
 
 [node name="Gameplay" type="Node3D"]
-script = ExtResource("1_5xvvs")
 
 [node name="GameSetter" parent="." node_paths=PackedStringArray("tutorial_animation_player", "fade_in_canvas") instance=ExtResource("19_sk8j1")]
 tutorial_animation_player = NodePath("../TutorialAnimation")
@@ -1468,11 +1466,11 @@ autowrap_mode = 3
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 475)
 collision_mask = 10
 
-[node name="GameOverScreen" parent="." instance=ExtResource("20_4gafm")]
-visible = false
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_063c7")
 autoplay = true
+
+[node name="GameOverScreen" parent="." instance=ExtResource("20_4gafm")]
+visible = false
 
 [node name="TransitionFadeIn" parent="." instance=ExtResource("3_ue10v")]

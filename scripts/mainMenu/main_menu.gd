@@ -4,7 +4,7 @@ extends CanvasLayer
 
 
 func _on_start_pressed():
-	get_tree().change_scene_to_packed(game);
+	SceneManager.load_scene(self, game.resource_path);
 
 
 func _on_exit_pressed():
