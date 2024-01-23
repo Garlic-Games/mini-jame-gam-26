@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://scripts/ui/PointTracker.gd" id="7_myk6s"]
 [ext_resource type="Script" path="res://scripts/ui/TreasuresLabel.gd" id="9_hp2c4"]
 [ext_resource type="Shader" path="res://art/shaders/glitch_ondemand.gdshader" id="10_eb80d"]
-[ext_resource type="Script" path="res://scripts/ui/GlitchOnPoints.gd" id="11_41ltt"]
+[ext_resource type="Script" path="res://scripts/ui/glitch_on_points.gd" id="12_3dldl"]
 [ext_resource type="Texture2D" uid="uid://8rmt1oi3c1up" path="res://art/textures/moai_icon.png" id="12_pr2hi"]
 
 [sub_resource type="Gradient" id="Gradient_hl650"]
@@ -147,4 +147,4 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_607dw")
 expand_mode = 3
-script = ExtResource("11_41ltt")
+script = ExtResource("12_3dldl")

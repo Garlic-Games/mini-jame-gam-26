@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ctvqifyknhevw"]
 
-[ext_resource type="Script" path="res://scripts/ui/GameOverScreen.gd" id="1_cafsr"]
+[ext_resource type="Script" path="res://scripts/ui/game_over_screen.gd" id="1_pjgt1"]
 [ext_resource type="Theme" uid="uid://dpqda1rl4km7n" path="res://art/theme/main.tres" id="2_vy71p"]
 [ext_resource type="Script" path="res://scripts/ui/PointTracker.gd" id="3_p6648"]
 [ext_resource type="Script" path="res://scripts/ui/TreasuresLabel.gd" id="3_w7qbc"]
@@ -30,7 +30,7 @@ fill_from = Vector2(0, 1)
 [node name="GameOverScreen" type="CanvasLayer" node_paths=PackedStringArray("winLabel", "nftLabel")]
 process_mode = 3
 layer = 9
-script = ExtResource("1_cafsr")
+script = ExtResource("1_pjgt1")
 winLabel = NodePath("MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/WinSubtitle")
 nftLabel = NodePath("MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GridContainer/TreasuresAmmount")
 
