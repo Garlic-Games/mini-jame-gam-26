@@ -14,8 +14,8 @@ enum GAME_STATES {
 
 var time_remaining: float;
 var current_points: int = 0;
-var current_treasures: int = 0;
-var max_treasures: int = 10;
+var current_nfts: int = 0;
+var max_nfts: int = 10;
 var state: GAME_STATES = GAME_STATES.LOADING;
 var animation_player: AnimationPlayer;
 var tutorial_played = false;
@@ -37,7 +37,7 @@ func _process(delta):
 			state = GAME_STATES.GAMEOVER;
 			game_finished.emit();
 
-		if current_treasures >= max_treasures:
+		if current_nfts >= max_nfts:
 			state = GAME_STATES.WIN;
 			game_finished.emit();
 			
@@ -62,7 +62,7 @@ func animation_finished(_algo):
 func set_playing():
 	state = GAME_STATES.PLAYING;
 	current_points = 0;
-	current_treasures = 0;
+	current_nfts = 0;
 	
 	
 func add_points(points: int):
@@ -71,7 +71,7 @@ func add_points(points: int):
 
 
 func add_treasure():
-	current_treasures = current_treasures + 1;
+	current_nfts = current_nfts + 1;
 
 
 func inject_play_time(game_time):
