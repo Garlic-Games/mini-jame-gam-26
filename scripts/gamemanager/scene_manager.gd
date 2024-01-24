@@ -24,8 +24,8 @@ func load_scene(caller_scene, scene_path):
 	ResourceLoader.load_threaded_request(current_scene_path);
 	
 	loading_scene_instance = loading_scene.instantiate();
-	loading_scene_instance.connect("loading_animation_finished", instantiate_scene);
 	get_tree().get_root().call_deferred("add_child", loading_scene_instance);
+	loading_scene_instance.connect("loading_animation_finished", instantiate_scene);
 
 	caller_scene.queue_free();
 
