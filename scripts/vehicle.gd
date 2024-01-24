@@ -185,6 +185,6 @@ func _on_area_3d_area_entered(area):
 
 		if destroyable is Destroyable:
 			var direction = (global_transform.origin - destroyable.global_transform.origin).normalized();
-			apply_force(direction * destroyable.buildingSize * destroyable.destroyedForceMultiplier);
-			GameManager.add_points(destroyable.buildingSize + ((speed_kph - destroyable.buildingSize) * destroyable.pointMultiplier));
+			apply_force(direction * destroyable.building_size * destroyable.destroyed_force_multiplier);
+			GameManager.add_points(destroyable.building_size + ((speed_kph - destroyable.building_size) * destroyable.point_multiplier));
 			destroyable.Explode();

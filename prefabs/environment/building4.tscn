@@ -576,9 +576,9 @@ shadow_mesh = SubResource("ArrayMesh_ghe07")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_prjtt"]
 points = PackedVector3Array(0.0216088, -0.19779, 0.0635047, 0.0216088, 0.0659043, -0.148831, 0.0216088, 0.0659043, 0.063089, 0.0216004, 0.0659301, 0.063089, -0.0648265, 0.0659301, 0.0222056, 0.0216004, 0.0659301, -0.148831)
 
-[node name="Building 4" type="Node3D" node_paths=PackedStringArray("audioPlayer")]
+[node name="Building 4" type="Node3D" node_paths=PackedStringArray("audio_player")]
 script = ExtResource("2_lwl13")
-audioPlayer = NodePath("AudioStreamPlayer")
+audio_player = NodePath("AudioStreamPlayer")
 
 [node name="Model" parent="." instance=ExtResource("3_4i7sh")]
 
