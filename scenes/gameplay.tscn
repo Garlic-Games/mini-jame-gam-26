@@ -1,6 +1,6 @@
 [gd_scene load_steps=50 format=3 uid="uid://nl3ly4i4vwy"]
 
-[ext_resource type="Script" path="res://scripts/gamemanager/game_setter.gd" id="1_nfvqm"]
+[ext_resource type="Script" path="res://scripts/game/game_setter.gd" id="1_nfvqm"]
 [ext_resource type="Shader" path="res://art/shaders/sky.gdshader" id="2_o7bey"]
 [ext_resource type="PackedScene" uid="uid://c0y6h82ulwufq" path="res://prefabs/ui/transition_fade.tscn" id="3_ue10v"]
 [ext_resource type="PackedScene" uid="uid://cgtf2hrjpsqsa" path="res://prefabs/collectables/collectable.tscn" id="3_we50t"]
