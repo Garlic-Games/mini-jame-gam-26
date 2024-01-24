@@ -13,7 +13,7 @@ enum GAME_STATES {
 }
 
 var time_remaining: float;
-var max_nfts: int = 2;
+var max_nfts: int = 10;
 var state: GAME_STATES = GAME_STATES.LOADING;
 var animation_player: AnimationPlayer;
 var tutorial_played = false;

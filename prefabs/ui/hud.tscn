@@ -21,6 +21,20 @@ texture = SubResource("GradientTexture2D_rg7hs")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ys2ex"]
 shader = ExtResource("5_470ax")
 
+[sub_resource type="Animation" id="Animation_dp8jf"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureNFT:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(34, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_45mpl"]
 resource_name = "bounce"
 length = 0.25
@@ -34,20 +48,6 @@ tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 2, 3),
 "points": PackedFloat32Array(34, -0.25, 0, 0.00465661, -3.33344, 30.0362, -0.0114087, -0.148643, 0.0455455, 0, 41.8876, -0.0209548, -2.52694, 0.0178884, 2.15717, 36.7675, -0.0746785, 0.894321, 0.0746785, -0.894321),
 "times": PackedFloat32Array(0, 0.0409782, 0.107335, 0.25)
-}
-
-[sub_resource type="Animation" id="Animation_dp8jf"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureNFT:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(34, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4mrqp"]
@@ -80,7 +80,7 @@ label_time = NodePath("Time/TimeLabel")
 icon_nft = NodePath("TextureNFT")
 
 [node name="Revolutions" type="ProgressBar" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 978.0
