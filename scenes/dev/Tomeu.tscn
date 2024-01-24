@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://dbj7y1m7ryrtn"]
 
 [ext_resource type="PackedScene" uid="uid://bkwmiu271cxf8" path="res://prefabs/mainMenu/main_menu.tscn" id="1_evwpy"]
+[ext_resource type="Script" path="res://scripts/game/game_setter.gd" id="1_r0xwp"]
 [ext_resource type="PackedScene" uid="uid://dq07b4db0n1if" path="res://prefabs/ui/hud.tscn" id="2_jy20f"]
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="7_hmbix"]
-[ext_resource type="PackedScene" uid="uid://ggtceocos6b3" path="res://prefabs/game/game_setter.tscn" id="7_q76yv"]
 [ext_resource type="PackedScene" uid="uid://ctvqifyknhevw" path="res://prefabs/ui/game_over_screen.tscn" id="8_wueqr"]
 [ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/environment/building1.tscn" id="9_goiiy"]
 [ext_resource type="PackedScene" uid="uid://d0pam8jlu6dcl" path="res://prefabs/environment/building2.tscn" id="10_2ycsg"]
@@ -19,7 +19,10 @@ size = Vector3(5000, 0.5, 5000)
 [sub_resource type="BoxShape3D" id="BoxShape3D_uftgj"]
 size = Vector3(5000, 0.5, 5000)
 
-[node name="Tomeu" type="Node3D"]
+[node name="Tomeu" type="Node3D" node_paths=PackedStringArray("vehicle")]
+script = ExtResource("1_r0xwp")
+play_time = 2.0
+vehicle = NodePath("Delorean")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8xg1a")
@@ -27,8 +30,7 @@ environment = SubResource("Environment_8xg1a")
 [node name="MainMenu" parent="." instance=ExtResource("1_evwpy")]
 visible = false
 
-[node name="Hud" parent="." node_paths=PackedStringArray("delorean") instance=ExtResource("2_jy20f")]
-delorean = NodePath("../Delorean")
+[node name="Hud" parent="." instance=ExtResource("2_jy20f")]
 
 [node name="Delorean" parent="." instance=ExtResource("7_hmbix")]
 transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 3.37456, 0)
@@ -50,8 +52,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.475, 0.249996, 19.4413)
 
 [node name="Building 4" parent="." instance=ExtResource("11_g1rir")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60934, 0.249996, 33.8854)
-
-[node name="GameSetter" parent="." instance=ExtResource("7_q76yv")]
-play_time = 2.0
 
 [node name="GameOverScreen" parent="." instance=ExtResource("8_wueqr")]

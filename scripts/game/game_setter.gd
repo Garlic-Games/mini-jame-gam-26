@@ -12,7 +12,8 @@ func _ready():
 	GameManager.inject_play_time(play_time);
 	GameManager.animation_player = tutorial_animation_player;
 	
-	fade_in_canvas.show();
+	if fade_in_canvas:
+		fade_in_canvas.show();
 
 
 func _process(_delta):
@@ -21,8 +22,9 @@ func _process(_delta):
 
 
 func set_game_loaded():
-	fade_in_canvas.find_child("Animation").play("fade_in");
+	if fade_in_canvas:
+		fade_in_canvas.find_child("Animation").play("fade_in");
+		
 	tutorial_started = true;
-	
 	GameManager.set_tutorial();
 	get_tree().paused = false;
