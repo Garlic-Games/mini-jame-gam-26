@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dq07b4db0n1if"]
+[gd_scene load_steps=19 format=3 uid="uid://dq07b4db0n1if"]
 
 [ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_xdulf"]
 [ext_resource type="FontFile" uid="uid://c7kkllaqq3iir" path="res://art/fonts/GravityRegular5.ttf" id="3_nq2vs"]
@@ -21,6 +21,41 @@ texture = SubResource("GradientTexture2D_rg7hs")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ys2ex"]
 shader = ExtResource("5_470ax")
 
+[sub_resource type="Animation" id="Animation_45mpl"]
+resource_name = "bounce"
+length = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureNFT:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2, 3),
+"points": PackedFloat32Array(34, -0.25, 0, 0.00465661, -3.33344, 30.0362, -0.0114087, -0.148643, 0.0455455, 0, 41.8876, -0.0209548, -2.52694, 0.0178884, 2.15717, 36.7675, -0.0746785, 0.894321, 0.0746785, -0.894321),
+"times": PackedFloat32Array(0, 0.0409782, 0.107335, 0.25)
+}
+
+[sub_resource type="Animation" id="Animation_dp8jf"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureNFT:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(34, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4mrqp"]
+_data = {
+"RESET": SubResource("Animation_dp8jf"),
+"bounce": SubResource("Animation_45mpl")
+}
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1iris"]
 shader = ExtResource("10_eb80d")
 shader_parameter/shake_power = 0.04
@@ -35,13 +70,14 @@ shader_parameter/doeet = false
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_607dw"]
 gradient = SubResource("Gradient_ygmua")
 
-[node name="Hud" type="CanvasLayer" node_paths=PackedStringArray("bar_revolutions", "label_speed", "label_points", "label_nfts", "label_time")]
+[node name="Hud" type="CanvasLayer" node_paths=PackedStringArray("bar_revolutions", "label_speed", "label_points", "label_nfts", "label_time", "icon_nft")]
 script = ExtResource("1_xdulf")
 bar_revolutions = NodePath("Revolutions")
 label_speed = NodePath("Revolutions/Control/MettersPerSeccond")
 label_points = NodePath("Points/PointsLabel")
 label_nfts = NodePath("Nfts/NftsLabel")
 label_time = NodePath("Time/TimeLabel")
+icon_nft = NodePath("TextureNFT")
 
 [node name="Revolutions" type="ProgressBar" parent="."]
 anchors_preset = -1
@@ -147,9 +183,9 @@ anchor_top = 0.064
 anchor_right = 0.951
 anchor_bottom = 0.103
 offset_left = 1094.6
-offset_top = 46.44
+offset_top = 52.44
 offset_right = 1195.96
-offset_bottom = 72.88
+offset_bottom = 78.88
 theme_override_fonts/font = ExtResource("3_nq2vs")
 theme_override_font_sizes/font_size = 20
 text = "10/10"
@@ -163,6 +199,12 @@ offset_bottom = 118.0
 texture = ExtResource("12_pr2hi")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="Animation" type="AnimationPlayer" parent="TextureNFT"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_4mrqp")
+}
 
 [node name="Glitch" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_1iris")

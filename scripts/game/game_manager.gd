@@ -2,6 +2,7 @@ extends Node
 
 signal game_finished();
 signal points_added();
+signal on_nft_added;
 
 enum GAME_STATES {
 	LOADING,
@@ -69,6 +70,7 @@ func add_points(points: int):
 
 func add_treasure():
 	GameStats.current_nfts += 1;
+	on_nft_added.emit();
 
 
 func inject_play_time(game_time):

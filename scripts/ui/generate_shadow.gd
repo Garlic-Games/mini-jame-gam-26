@@ -18,4 +18,3 @@ func _ready():
 
 func _process(_delta):
 	text_label.text = shadow_label.text;
-	pass
