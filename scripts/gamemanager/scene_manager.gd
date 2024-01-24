@@ -1,5 +1,6 @@
 extends Node
 
+var scene_resource : Resource = null; 
 var current_scene : Node = null;
 
 var current_scene_path : String = "";
@@ -36,12 +37,14 @@ func restart_scene():
 	current_scene.queue_free();
 	current_scene = null;
 	
-	loading_scene_instance = loading_scene.instantiate();
-	loading_scene_instance.connect("loading_animation_finished", instantiate_scene);
-	
-	get_tree().get_root().call_deferred("add_child", loading_scene_instance);
-	
-	ResourceLoader.load_threaded_request(current_scene_path);
+	current_scene = scene_resource.instantiate();
+	get_tree().get_root().add_child(current_scene);
+	#loading_scene_instance = loading_scene.instantiate();
+	#loading_scene_instance.connect("loading_animation_finished", instantiate_scene);
+	#
+	#get_tree().get_root().call_deferred("add_child", loading_scene_instance);
+	#
+	#ResourceLoader.load_threaded_request(current_scene_path);
 
 
 func check_loading_status():
@@ -49,11 +52,12 @@ func check_loading_status():
 
 	match loading_status:
 		ResourceLoader.THREAD_LOAD_LOADED:
+			scene_resource = ResourceLoader.load_threaded_get(current_scene_path);
 			loading_scene_instance.finish_loading_animation();
 
 
 func instantiate_scene():
-	current_scene = ResourceLoader.load_threaded_get(current_scene_path).instantiate();
+	current_scene = scene_resource.instantiate();
 	get_tree().get_root().add_child(current_scene);
-	
+
 	loading_scene_instance.queue_free();
