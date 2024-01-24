@@ -4,13 +4,10 @@ extends Node
 @export var tutorial_animation_player: AnimationPlayer;
 @export var fade_in_canvas : CanvasLayer;
 
-#var game_manager: GameManager;
-
 var tutorial_started : bool = false; 
 
 
 func _ready():
-	#game_manager = get_node("/root/GameManager");
 	GameManager.inject_play_time(play_time);
 	GameManager.animation_player = tutorial_animation_player;
 	

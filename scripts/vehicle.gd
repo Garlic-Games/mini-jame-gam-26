@@ -1,6 +1,7 @@
 class_name Vehicle
 extends VehicleBody3D
 
+signal upside_down_changed(value);
 
 const STEER_SPEED = 1.5;
 const STEER_LIMIT = 0.4;
@@ -57,13 +58,10 @@ var is_upside_down = false;
 
 var reset_count = 0;
 
-signal upside_down_changed(value);
-
-#var game_manager : GameManager;
 
 func _ready():
 	add_to_group("Car");
-	#game_manager = get_node("/root/GameManager");
+
 
 func _process(delta):
 	if(is_upside_down):
@@ -75,7 +73,6 @@ func _process(delta):
 			reset_count = 0;
 	else:
 		reset_count = 0;
-
 
 
 func _physics_process(delta):
@@ -117,8 +114,8 @@ func _physics_process(delta):
 	else:
 		wheel_br.brake = 0;
 		wheel_bl.brake = 0;
-		
-		
+
+
 	steering = move_toward(steering, steer_target, STEER_SPEED * delta);
 	speed_kph = linear_velocity.length() * 3.6;
 	calc_rpm();
@@ -168,10 +165,12 @@ func calc_rpm():
 	if(rpm_value < rpm_idle && selected_gear == 0):
 		rpm_value = rpm_idle;
 	rpm_percent = rpm_value  / rpm_max * 100;
-		
+
+
 func ResetCarFlipped():
 	transform.basis = Basis();
 	translate(Vector3(0, 0.03, 0));
+
 
 func _on_area_3d_area_entered(area):
 	if area.is_in_group("Collectable"):
