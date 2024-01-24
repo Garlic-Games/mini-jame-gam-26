@@ -1,14 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://cne6pr2amcuke"]
 
-[ext_resource type="PackedScene" uid="uid://c8v5q3e3y8gau" path="res://prefabs/environment/palm_tree.tscn" id="1_6dyhj"]
+[ext_resource type="PackedScene" uid="uid://cesnylnkki064" path="res://art/models/palm_tree.glb" id="1_gcy5d"]
 
-[node name="PalmRow2" type="Node3D"]
+[node name="PalmRow" type="Node3D"]
 
-[node name="Palm tree" parent="." instance=ExtResource("1_6dyhj")]
-transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 2, 0, 0.024)
+[node name="PalmTree" parent="." instance=ExtResource("1_gcy5d")]
+transform = Transform3D(-0.0412214, 0, 0.0911087, 0, 0.1, 0, -0.0911087, 0, -0.0412214, 1.98969, -3.8147e-07, 0.0162272)
 
-[node name="Palm tree2" parent="." instance=ExtResource("1_6dyhj")]
-transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
+[node name="PalmTree2" parent="." instance=ExtResource("1_gcy5d")]
+transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -1.98999, -3.8147e-07, 0.0081584)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.330055, 0)
