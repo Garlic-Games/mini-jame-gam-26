@@ -38,43 +38,34 @@ gradient = SubResource("Gradient_ygmua")
 [node name="Hud" type="CanvasLayer" node_paths=PackedStringArray("bar_revolutions", "label_speed", "label_points", "label_nfts", "label_time")]
 script = ExtResource("1_xdulf")
 bar_revolutions = NodePath("Revolutions")
-label_speed = NodePath("Revolutions/Control/MettersPerSeccond")
-label_points = NodePath("Control/PointsLabel")
-label_nfts = NodePath("Nfts/NftsLabel")
-label_time = NodePath("Time/TimeLabel")
+label_speed = NodePath("Revolutions/MettersPerSeccond")
+label_points = NodePath("PontsLabel")
+label_nfts = NodePath("NFTs")
+label_time = NodePath("TimeLabel")
 
 [node name="Revolutions" type="ProgressBar" parent="."]
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 978.0
-offset_top = 619.0
-offset_right = -32.0
-offset_bottom = -41.0
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = 0.778
+anchor_top = 0.832
+anchor_right = 0.978
+anchor_bottom = 0.967
+offset_left = 0.239868
+offset_top = 0.440002
+offset_right = -0.760132
+offset_bottom = -0.360107
 theme_override_styles/fill = SubResource("StyleBoxTexture_37bg7")
 value = 50.0
 show_percentage = false
 
-[node name="Control" type="Control" parent="Revolutions"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("5_yug46")
-
-[node name="MettersPerSeccond" type="Label" parent="Revolutions/Control"]
+[node name="MettersPerSeccond" type="Label" parent="Revolutions"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
-offset_right = 278.0
-offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_nq2vs")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 text = " 30 KM/H"
 vertical_alignment = 1
 
@@ -88,77 +79,54 @@ grow_vertical = 2
 texture = ExtResource("6_ai4t0")
 expand_mode = 2
 
-[node name="Time" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("5_yug46")
-
-[node name="TimeLabel" type="Label" parent="Time"]
-layout_mode = 1
+[node name="TimeLabel" type="Label" parent="."]
 anchors_preset = -1
-offset_left = 50.0
-offset_top = 40.0
-offset_right = 122.0
-offset_bottom = 68.0
+offset_left = 54.425
+offset_top = 43.0
+offset_right = 126.425
+offset_bottom = 71.0
 theme_override_fonts/font = ExtResource("3_nq2vs")
 theme_override_font_sizes/font_size = 20
 text = "1:30"
 vertical_alignment = 1
 structured_text_bidi_override = 1
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 script = ExtResource("5_yug46")
 
-[node name="PointsLabel" type="Label" parent="Control"]
-layout_mode = 1
+[node name="PontsLabel" type="Label" parent="."]
 anchors_preset = -1
 anchor_left = 0.141
 anchor_top = 0.062
 anchor_right = 0.281
 anchor_bottom = 0.09
-offset_left = 174.36
-offset_top = 37.52
-offset_right = 328.76
-offset_bottom = 64.4
+offset_left = -20.48
+offset_top = -1.64
+offset_right = -19.6799
+offset_bottom = 6.2
 theme_override_fonts/font = ExtResource("3_nq2vs")
 theme_override_font_sizes/font_size = 20
 text = "10000000"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Nfts" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("5_yug46")
-
-[node name="NftsLabel" type="Label" parent="Nfts"]
-layout_mode = 1
+[node name="NFTs" type="Label" parent="."]
 anchors_preset = -1
 anchor_left = 0.885
 anchor_top = 0.064
 anchor_right = 0.951
 anchor_bottom = 0.103
-offset_left = 1094.6
-offset_top = 46.44
-offset_right = 1195.96
-offset_bottom = 72.88
+offset_left = 0.199951
+offset_top = -0.0800018
+offset_right = -0.280029
+offset_bottom = -0.160004
 theme_override_fonts/font = ExtResource("3_nq2vs")
 theme_override_font_sizes/font_size = 20
-text = "10/10"
+text = "1/10"
 vertical_alignment = 1
 
 [node name="TextureNFT" type="TextureRect" parent="."]
-offset_left = 1044.0
+offset_left = 1052.0
 offset_top = 34.0
-offset_right = 1113.0
+offset_right = 1121.0
 offset_bottom = 118.0
 texture = ExtResource("12_pr2hi")
 expand_mode = 1

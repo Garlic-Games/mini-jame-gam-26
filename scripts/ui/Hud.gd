@@ -15,3 +15,4 @@ func _process(_delta):
 
 	if GameManager.state == GameManager.GAME_STATES.PLAYING:
 		label_time.text = "%02d:" % int(GameManager.time_remaining / 60) + "%02d" % (int(GameManager.time_remaining) % 60);
+		label_time.get_parent()
