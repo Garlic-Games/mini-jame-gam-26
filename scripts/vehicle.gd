@@ -182,7 +182,7 @@ func _on_area_3d_area_entered(area):
 	if area.is_in_group("Collectable"):
 		collectStreamPlayer.play();
 		area.get_parent().queue_free();
-		GameManager.add_treasure();
+		GameManager.add_nft();
 		
 	elif area.is_in_group("Destroyable"):
 		hitStreamPlayer.play();

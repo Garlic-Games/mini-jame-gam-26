@@ -68,7 +68,7 @@ func add_points(points: int):
 	emit_signal("points_added");
 
 
-func add_treasure():
+func add_nft():
 	GameStats.current_nfts += 1;
 	on_nft_added.emit();
 
