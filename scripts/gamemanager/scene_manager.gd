@@ -39,12 +39,6 @@ func restart_scene():
 	
 	current_scene = scene_resource.instantiate();
 	get_tree().get_root().add_child(current_scene);
-	#loading_scene_instance = loading_scene.instantiate();
-	#loading_scene_instance.connect("loading_animation_finished", instantiate_scene);
-	#
-	#get_tree().get_root().call_deferred("add_child", loading_scene_instance);
-	#
-	#ResourceLoader.load_threaded_request(current_scene_path);
 
 
 func check_loading_status():
