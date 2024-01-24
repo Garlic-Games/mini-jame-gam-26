@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://nl3ly4i4vwy"]
+[gd_scene load_steps=51 format=3 uid="uid://nl3ly4i4vwy"]
 
 [ext_resource type="Shader" path="res://art/shaders/sky.gdshader" id="2_o7bey"]
 [ext_resource type="PackedScene" uid="uid://c0y6h82ulwufq" path="res://prefabs/ui/transition_fade.tscn" id="3_ue10v"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cne6pr2amcuke" path="res://prefabs/environment/levelSections/palm_row.tscn" id="10_2bdym"]
 [ext_resource type="PackedScene" uid="uid://c8v5q3e3y8gau" path="res://prefabs/environment/palm_tree.tscn" id="10_25n55"]
 [ext_resource type="PackedScene" uid="uid://1lbn8hxgtmuy" path="res://prefabs/environment/building3.tscn" id="11_8p2ek"]
+[ext_resource type="Script" path="res://scripts/light_activator_area.gd" id="11_jelw8"]
 [ext_resource type="PackedScene" uid="uid://bo4dmmgttfilt" path="res://prefabs/environment/building1.tscn" id="12_pt58p"]
 [ext_resource type="PackedScene" uid="uid://ungaqd0sni1n" path="res://prefabs/environment/building4.tscn" id="13_4cavl"]
 [ext_resource type="Texture2D" uid="uid://bb5plvmeleg46" path="res://art/textures/sunwave.png" id="15_y6xrd"]
@@ -53,6 +54,60 @@ size = Vector3(18.357, 15.35, 28.2026)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0cpgq"]
 size = Vector3(1.049, 1, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xwiux"]
+size = Vector3(60, 15, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cfmd8"]
+size = Vector3(1.5, 6, 456.955)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_023hv"]
+size = Vector3(1.5, 6, 212.275)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_prr2u"]
+size = Vector3(1.5, 6, 170.018)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nv800"]
+size = Vector3(1.5, 6, 141.806)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sosda"]
+size = Vector3(1, 6, 28.5764)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_021w1"]
+size = Vector3(1, 6, 52.092)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nxmqh"]
+size = Vector3(1, 6, 214.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y7s7q"]
+size = Vector3(1, 6, 264.122)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wdyaj"]
+size = Vector3(312.896, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7phom"]
+size = Vector3(63.4294, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jynx2"]
+size = Vector3(119.601, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8aanh"]
+size = Vector3(114.316, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_os51f"]
+size = Vector3(114.382, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2d4xd"]
+size = Vector3(122.961, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_24b5y"]
+size = Vector3(260.882, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sosi7"]
+size = Vector3(111.852, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pwa66"]
+size = Vector3(112.015, 6, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87357"]
 bg_color = Color(0, 0, 0, 0.862745)
@@ -789,11 +844,31 @@ transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -14.5377, 0.25, -111.035)
 [node name="EntryPath22" parent="Map/Road5" instance=ExtResource("9_37k0x")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -26.5377, 0.25, -111.035)
 
-[node name="EntryPath23" parent="Map/Road5" instance=ExtResource("9_37k0x")]
+[node name="EntryPath23" type="Area3D" parent="Map/Road5"]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -38.5377, 0.25, -111.035)
+collision_mask = 4
+script = ExtResource("11_jelw8")
 
-[node name="Palm tree" parent="Map" instance=ExtResource("10_25n55")]
-transform = Transform3D(0.291413, 0, 0, 0, 0.291413, 0, 0, 0, 0.291413, 6.02296, -0.01019, 0.931549)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Road5/EntryPath23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00484937, 0, 5.315)
+shape = SubResource("BoxShape3D_xwiux")
+
+[node name="PalmRow" parent="Map/Road5/EntryPath23" instance=ExtResource("10_2bdym")]
+
+[node name="PalmRow2" parent="Map/Road5/EntryPath23" instance=ExtResource("10_2bdym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+
+[node name="PalmRow3" parent="Map/Road5/EntryPath23" instance=ExtResource("10_2bdym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="PalmRow4" parent="Map/Road5/EntryPath23" instance=ExtResource("10_2bdym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
+
+[node name="PalmRow5" parent="Map/Road5/EntryPath23" instance=ExtResource("10_2bdym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.98712)
+
+[node name="PalmRow6" parent="Map/Road5/EntryPath23" instance=ExtResource("10_2bdym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.48712)
 
 [node name="CityBuildings" type="Node3D" parent="Map"]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
@@ -1278,83 +1353,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.266
 [node name="PalmLine30" parent="Map/Border" instance=ExtResource("15_ytvxn")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.2669, 0.199993, 38.9946)
 
-[node name="PalmLine31" type="Node3D" parent="Map/Border"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.2668, 0.199993, -69.0054)
-
-[node name="PalmRow" type="Node3D" parent="Map/Border/PalmLine31"]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow"]
-collision_layer = 2
-collision_mask = 0
-
-[node name="PalmRow2" type="Node3D" parent="Map/Border/PalmLine31"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow2"]
-collision_layer = 2
-collision_mask = 0
-
-[node name="PalmRow3" type="Node3D" parent="Map/Border/PalmLine31"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow3"]
-collision_layer = 2
-collision_mask = 0
-
-[node name="PalmRow4" type="Node3D" parent="Map/Border/PalmLine31"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow4"]
-collision_layer = 2
-collision_mask = 0
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Map/Border/PalmLine31/PalmRow4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980857, -0.330055, 0)
-light_color = Color(0.894118, 0, 0.596078, 1)
-light_energy = 60.0
-light_size = 0.305
-
-[node name="PalmRow5" type="Node3D" parent="Map/Border/PalmLine31"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
-
-[node name="Palm tree2" parent="Map/Border/PalmLine31/PalmRow5" instance=ExtResource("10_25n55")]
-transform = Transform3D(0.0377356, 0, -0.0926068, 0, 0.1, 0, 0.0926068, 0, 0.0377356, -2, 0, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow5"]
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Border/PalmLine31/PalmRow5/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39554, 0, 0.00248373)
-shape = SubResource("BoxShape3D_0cpgq")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Map/Border/PalmLine31/PalmRow5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980857, -0.330055, 0)
-light_color = Color(0.894118, 0, 0.596078, 1)
-light_energy = 60.0
-light_size = 0.305
-
-[node name="PalmRow6" type="Node3D" parent="Map/Border/PalmLine31"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.5)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow6"]
-collision_layer = 2
-collision_mask = 0
-
-[node name="PalmRow7" type="Node3D" parent="Map/Border/PalmLine31"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow7"]
-collision_layer = 2
-collision_mask = 0
-
-[node name="PalmRow8" type="Node3D" parent="Map/Border/PalmLine31"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.5)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/Border/PalmLine31/PalmRow8"]
-collision_layer = 2
-collision_mask = 0
-
 [node name="PalmLine32" parent="Map/Border" instance=ExtResource("15_ytvxn")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 90.2668, 0.199993, -57.0054)
 
@@ -1415,6 +1413,179 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 75.905
 [node name="PalmLine15" parent="Map/Border" instance=ExtResource("15_ytvxn")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63.9056, 0.1, 54.6353)
 
+[node name="Caulk" type="Node3D" parent="Map"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.482319, 0, -41.534)
+shape = SubResource("BoxShape3D_cfmd8")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.26345, 0, -41.534)
+shape = SubResource("BoxShape3D_cfmd8")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.113, -1.52588e-05, -376.473)
+shape = SubResource("BoxShape3D_023hv")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.0317, -1.52588e-05, -387.976)
+shape = SubResource("BoxShape3D_prr2u")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.9539, -1.52588e-05, -373.843)
+shape = SubResource("BoxShape3D_nv800")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.7157, -1.52588e-05, -373.936)
+shape = SubResource("BoxShape3D_nv800")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.2548, -1.52588e-05, -458.385)
+shape = SubResource("BoxShape3D_sosda")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.2548, -1.52588e-05, -506.946)
+shape = SubResource("BoxShape3D_021w1")
+
+[node name="StaticBody3D9" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188.626, -1.52588e-05, -410.44)
+shape = SubResource("BoxShape3D_nxmqh")
+
+[node name="StaticBody3D10" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 319.581, -1.52588e-05, -401.348)
+shape = SubResource("BoxShape3D_y7s7q")
+
+[node name="StaticBody3D11" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.448, -1.43051e-05, -269.366)
+shape = SubResource("BoxShape3D_wdyaj")
+
+[node name="StaticBody3D12" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8579, -1.43051e-05, -269.366)
+shape = SubResource("BoxShape3D_7phom")
+
+[node name="StaticBody3D13" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.136, -1.43051e-05, -303.179)
+shape = SubResource("BoxShape3D_jynx2")
+
+[node name="StaticBody3D14" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89205, -1.43051e-05, -381.921)
+shape = SubResource("BoxShape3D_8aanh")
+
+[node name="StaticBody3D15" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.59473, -1.43051e-05, -472.326)
+shape = SubResource("BoxShape3D_os51f")
+
+[node name="StaticBody3D16" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.712585, -1.43051e-05, -480.86)
+shape = SubResource("BoxShape3D_2d4xd")
+
+[node name="StaticBody3D17" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 189.368, -1.43051e-05, -532.82)
+shape = SubResource("BoxShape3D_24b5y")
+
+[node name="StaticBody3D18" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 244.578, -1.43051e-05, -526.055)
+shape = SubResource("BoxShape3D_sosi7")
+
+[node name="StaticBody3D19" type="StaticBody3D" parent="Map/Caulk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 244.502, -1.43051e-05, -517.884)
+shape = SubResource("BoxShape3D_pwa66")
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(47.4975, 0, 0, 0, 47.4975, 0, 0, 0, 1, 0, 348.833, -1650.59)
 texture = ExtResource("15_y6xrd")
@@ -1474,3 +1645,6 @@ visible = false
 libraries = {
 "": SubResource("AnimationLibrary_wos5u")
 }
+
+[connection signal="body_entered" from="Map/Road5/EntryPath23" to="Map/Road5/EntryPath23" method="_on_body_entered"]
+[connection signal="body_exited" from="Map/Road5/EntryPath23" to="Map/Road5/EntryPath23" method="_on_body_exited"]
