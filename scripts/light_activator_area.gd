@@ -17,15 +17,15 @@ func setLightsEnabled(enabled: bool):
 			light.hide()
 
 func getAllLights(node):
-	var lights: Array[OmniLight3D] = []
+	var all_lights: Array[OmniLight3D] = []
 	
 	if node is OmniLight3D:
-		lights.append(node)
+		all_lights.append(node)
 	
 	for i in range(node.get_child_count()):
 		var child = node.get_child(i)
-		lights += getAllLights(child)
-	return lights
+		all_lights += getAllLights(child)
+	return all_lights
 
 
 func _on_body_entered(body):

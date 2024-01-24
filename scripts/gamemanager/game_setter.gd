@@ -14,7 +14,7 @@ func _ready():
 	fade_in_canvas.show();
 	
 
-func _process(delta):
+func _process(_delta):
 	if not tutorial_started:
 		set_game_loaded();
 

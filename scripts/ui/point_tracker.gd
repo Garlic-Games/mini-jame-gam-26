@@ -1,5 +1,5 @@
 extends Label
 
 
-func _process(delta):
+func _process(_delta):
 	text = "%.1d"% GameManager.current_points;

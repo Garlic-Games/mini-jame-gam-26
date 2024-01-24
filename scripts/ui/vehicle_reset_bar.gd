@@ -6,7 +6,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var reset_count = vehicle.reset_count;
 	if (reset_count > 0.1):
 		var percent = reset_count * 100 / vehicle.reset_time_seconds;

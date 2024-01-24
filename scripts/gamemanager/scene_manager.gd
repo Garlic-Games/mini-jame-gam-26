@@ -12,7 +12,7 @@ var loading_scene_instance : Node = null;
 @onready var loading_scene = preload("res://prefabs/ui/loading_screen.tscn");
 
 
-func _process(delta):
+func _process(_delta):
 	if is_scene_loading:
 		check_loading_status();
 

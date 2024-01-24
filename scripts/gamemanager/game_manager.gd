@@ -53,7 +53,7 @@ func set_tutorial():
 	animation_player.connect("animation_finished", animation_finished);
 
 
-func animation_finished(algo):
+func animation_finished(_algo):
 	tutorial_played = true;
 	animation_player.disconnect("animation_finished", animation_finished);
 	set_playing();
