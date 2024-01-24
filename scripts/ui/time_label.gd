@@ -1,9 +1,9 @@
 extends Label
 
-var game_manager: GameManager;
-func _ready():
-	game_manager = get_node("/root/Gamemanager");
+#var game_manager: GameManager;
+#func _ready():
+#	game_manager = get_node("/root/GameManager");
 
 func _process(_delta):
-	if game_manager.state == GameManager.GAME_STATES.PLAYING:
-		text = "%02d:" %(int(game_manager.time_remaining)/60) + "%02d"%(int(game_manager.time_remaining)%60);
+	if GameManager.state == 2:
+		text = "%02d:" %(int(GameManager.time_remaining)/60) + "%02d"%(int(GameManager.time_remaining)%60);

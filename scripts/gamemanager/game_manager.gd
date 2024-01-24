@@ -1,4 +1,4 @@
-class_name GameManager;
+
 extends Node
 
 signal game_finished();

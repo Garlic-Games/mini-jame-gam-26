@@ -18,7 +18,7 @@ config/icon="res://art/images/cryptogeddon.png"
 
 [autoload]
 
-Gamemanager="*res://scripts/gamemanager/game_manager.gd"
+GameManager="*res://scripts/gamemanager/game_manager.gd"
 SceneManager="*res://scripts/gamemanager/scene_manager.gd"
 
 [display]

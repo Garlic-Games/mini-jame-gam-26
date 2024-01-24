@@ -2,14 +2,14 @@ extends TextureRect
 
 @export var duration: float = 1;
 
-var game_manager: GameManager;
+#var game_manager: GameManager;
 var last: float = 0;
 var isActive: bool = false;
 
 
 func _ready():
-	game_manager = get_node("/root/Gamemanager");
-	game_manager.connect("points_added", _on_points_added);
+	#game_manager = get_node("/root/GameManager");
+	GameManager.connect("points_added", _on_points_added);
 
 
 func _process(delta):

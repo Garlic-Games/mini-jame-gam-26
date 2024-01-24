@@ -22,7 +22,7 @@ var piecesNode : Node = null;
 var modelNode : Node = null;
 var slowHitBoxNode : StaticBody3D = null;
 var pieces : Array = [];
-var game_manager: GameManager;
+#var game_manager: GameManager;
 
 var isDestroyed = false;
 
@@ -31,7 +31,7 @@ func _ready():
 	FindRigidBodies(self, pieces);
 	#print(slowHitBoxNode, buildingSize)
 	slowHitBoxNode.set_collision_layer_value(buildingSize, true)
-	game_manager = get_node("/root/Gamemanager");
+	#game_manager = get_node("/root/GameManager");
 
 	if piecesNode:
 		piecesNode.set_process(false);

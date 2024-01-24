@@ -59,11 +59,11 @@ var reset_count = 0;
 
 signal upside_down_changed(value);
 
-var game_manager : GameManager;
+#var game_manager : GameManager;
 
 func _ready():
 	add_to_group("Car");
-	game_manager = get_node("/root/Gamemanager");
+	#game_manager = get_node("/root/GameManager");
 
 func _process(delta):
 	if(is_upside_down):
@@ -80,7 +80,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	
-	if game_manager.state != game_manager.GAME_STATES.PLAYING:
+	if GameManager.state != GameManager.GAME_STATES.PLAYING:
 		return;
 		
 	var fwd_mps = (linear_velocity) * transform.basis.x;
@@ -177,7 +177,7 @@ func _on_area_3d_area_entered(area):
 	if area.is_in_group("Collectable"):
 		collectStreamPlayer.play();
 		area.get_parent().queue_free();
-		game_manager.add_treasure();
+		GameManager.add_treasure();
 		
 	elif area.is_in_group("Destroyable"):
 		hitStreamPlayer.play();
@@ -187,5 +187,5 @@ func _on_area_3d_area_entered(area):
 		if destroyable is Destroyable:
 			var direction = (global_transform.origin - destroyable.global_transform.origin).normalized();
 			apply_force(direction * destroyable.buildingSize * destroyable.destroyedForceMultiplier);
-			game_manager.add_points(destroyable.buildingSize + ((speed_kph - destroyable.buildingSize) * destroyable.pointMultiplier));
+			GameManager.add_points(destroyable.buildingSize + ((speed_kph - destroyable.buildingSize) * destroyable.pointMultiplier));
 			destroyable.Explode();
