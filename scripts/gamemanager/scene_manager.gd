@@ -32,11 +32,8 @@ func load_scene(caller_scene, scene_path):
 
 
 func restart_scene():
-	current_scene.queue_free();
-	current_scene = null;
-	
-	current_scene = scene_resource.instantiate();
-	get_tree().get_root().add_child(current_scene);
+	current_scene.queue_free();	
+	instantiate_scene();
 
 
 func check_loading_status():
