@@ -3,7 +3,7 @@ extends TextureRect
 @export var duration: float = 1;
 
 var last: float = 0;
-var isActive: bool = false;
+var is_active: bool = false;
 
 
 func _ready():
@@ -11,14 +11,14 @@ func _ready():
 
 
 func _process(delta):
-	if isActive:
+	if is_active:
 		last = last + delta;
 		if last >= duration:
-			isActive = false;
+			is_active = false;
 			material.set_shader_parameter("doeet", false);
 
 
 func _on_points_added():
 	material.set_shader_parameter("doeet", true);
 	last = 0.0;
-	isActive = true;
+	is_active = true;

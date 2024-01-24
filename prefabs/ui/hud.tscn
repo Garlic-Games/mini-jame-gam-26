@@ -39,7 +39,7 @@ gradient = SubResource("Gradient_ygmua")
 script = ExtResource("1_xdulf")
 bar_revolutions = NodePath("Revolutions")
 label_speed = NodePath("Revolutions/Control/MettersPerSeccond")
-label_points = NodePath("Control/PointsLabel")
+label_points = NodePath("Points/PointsLabel")
 label_nfts = NodePath("Nfts/NftsLabel")
 label_time = NodePath("Time/TimeLabel")
 
@@ -108,14 +108,14 @@ text = "1:30"
 vertical_alignment = 1
 structured_text_bidi_override = 1
 
-[node name="Control" type="Control" parent="."]
+[node name="Points" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("5_yug46")
 
-[node name="PointsLabel" type="Label" parent="Control"]
+[node name="PointsLabel" type="Label" parent="Points"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.141
