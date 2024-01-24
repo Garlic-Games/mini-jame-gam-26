@@ -18,16 +18,15 @@ func _process(delta):
 
 
 func load_scene(caller_scene, scene_path):
-	is_scene_loading = true;
-	
-	loading_scene_instance = loading_scene.instantiate();
-	loading_scene_instance.connect("loading_animation_finished", instantiate_scene);
-	
-	get_tree().get_root().call_deferred("add_child", loading_scene_instance);
+	is_scene_loading = true;	
 	
 	current_scene_path = scene_path;
 	ResourceLoader.load_threaded_request(current_scene_path);
 	
+	loading_scene_instance = loading_scene.instantiate();
+	loading_scene_instance.connect("loading_animation_finished", instantiate_scene);
+	get_tree().get_root().call_deferred("add_child", loading_scene_instance);
+
 	caller_scene.queue_free();
 
 
@@ -47,7 +46,7 @@ func check_loading_status():
 
 func instantiate_scene():
 	current_scene = scene_resource.instantiate();
-	get_tree().get_root().add_child(current_scene);
+	get_tree().get_root().call_deferred("add_child", current_scene);
 
 	if is_scene_loading:
 		loading_scene_instance.queue_free();
