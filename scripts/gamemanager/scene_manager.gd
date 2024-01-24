@@ -18,7 +18,7 @@ func _process(_delta):
 
 
 func load_scene(caller_scene, scene_path):
-	is_scene_loading = true;	
+	is_scene_loading = true;
 	
 	current_scene_path = scene_path;
 	ResourceLoader.load_threaded_request(current_scene_path);
@@ -31,7 +31,7 @@ func load_scene(caller_scene, scene_path):
 
 
 func restart_scene():
-	current_scene.queue_free();	
+	current_scene.queue_free();
 	instantiate_scene();
 
 
