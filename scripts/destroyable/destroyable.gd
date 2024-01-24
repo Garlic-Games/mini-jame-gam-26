@@ -1,85 +1,85 @@
 class_name Destroyable
 extends Node3D
 
-enum Building_size {XS = 10, S = 11, M = 12 , L = 13, XL = 14}
+enum BuildingSize {XS = 10, S = 11, M = 12 , L = 13, XL = 14}
 
-@export var buildingSize : Building_size = Building_size.XS;
-@export var explosionForce : float = 5.0;
-@export var despawnTime : float = 4.0;
+@export var building_size : BuildingSize = BuildingSize.XS;
+@export var explosion_force : float = 5.0;
+@export var despawn_time : float = 4.0;
 
-@export var audioPlayer: AudioStreamPlayer;
-@export var pitchMin = 0.6;
-@export var pitchMax = 0.9;
+@export var audio_player: AudioStreamPlayer;
+@export var pitch_min = 0.6;
+@export var pitch_max = 0.9;
 
-@export var destroyedForceMultiplier = 50000;
-@export var pointMultiplier = 50;
+@export var destroyed_force_multiplier = 50000;
+@export var point_multiplier = 50;
 
-var timerDespawn = 0.0;
+var timer_despawn = 0.0;
 
-var explosionCenter : Vector3 = Vector3.ZERO;
+var explosion_center : Vector3 = Vector3.ZERO;
 
-var piecesNode : Node = null;
-var modelNode : Node = null;
-var slowHitBoxNode : StaticBody3D = null;
+var pieces_node : Node = null;
+var model_node : Node = null;
+var slow_hitbox_node : StaticBody3D = null;
 var pieces : Array = [];
 
-var isDestroyed = false;
+var is_destroyed = false;
 
 func _ready():	
 	add_to_group("Destroyables");
 	FindRigidBodies(self, pieces);
 
-	slowHitBoxNode.set_collision_layer_value(buildingSize, true)
+	slow_hitbox_node.set_collision_layer_value(building_size, true);
 
-	if piecesNode:
-		piecesNode.set_process(false);
-		piecesNode.hide();
+	if pieces_node:
+		pieces_node.set_process(false);
+		pieces_node.hide();
 		pass;
 		
 func _process(delta):
-	if isDestroyed:
-		timerDespawn += delta;
+	if is_destroyed:
+		timer_despawn += delta;
 
-		if timerDespawn >= despawnTime:
+		if timer_despawn >= despawn_time:
 			queue_free();
 			
 func Explode():
-	if isDestroyed:
+	if is_destroyed:
 		return;
 		
-	var forceDirection : Vector3;
-	var randomVector : Vector3;
+	var force_direction : Vector3;
+	var random_vector : Vector3;
 	
-	isDestroyed = true;
+	is_destroyed = true;
 
-	modelNode.set_process(false);
-	modelNode.hide();
-	modelNode.queue_free();
+	model_node.set_process(false);
+	model_node.hide();
+	model_node.queue_free();
 	
-	piecesNode.set_process(true);
-	piecesNode.show();
+	pieces_node.set_process(true);
+	pieces_node.show();
 		
 	for piece in pieces:
-		forceDirection = explosionCenter.direction_to(piece.position);
-		randomVector = Vector3(randf_range(0, 1), randf_range(0, 1), randf_range(0, 1)) * forceDirection;
-		piece.apply_impulse(randomVector, forceDirection * explosionForce * 100.0);
+		force_direction = explosion_center.direction_to(piece.position);
+		random_vector = Vector3(randf_range(0, 1), randf_range(0, 1), randf_range(0, 1)) * force_direction;
+		piece.apply_impulse(random_vector, force_direction * explosion_force * 100.0);
 		
-	if audioPlayer.playing == false:
-		var pitch = randf_range(pitchMin, pitchMax);
-		audioPlayer.pitch_scale = pitch;
-		audioPlayer.play();
+	if audio_player.playing == false:
+		var pitch = randf_range(pitch_min, pitch_max);
+		audio_player.pitch_scale = pitch;
+		audio_player.play();
 
 func FindRigidBodies(node : Node, pieceContainer : Array):
 	for child in node.get_children():
 		if child.name == "Model":
-			modelNode = child;
-			slowHitBoxNode = modelNode.get_child(2)
+			model_node = child;
+			slow_hitbox_node = model_node.get_child(2);
 		
 		elif child.name == "Rest in Pieces":
-			piecesNode = child;
+			pieces_node = child;
 
-			for pz in piecesNode.get_children():
+			for pz in pieces_node.get_children():
 				if pz is RigidBody3D:
-					pz.gravity_scale = 0.0;	
+					pz.gravity_scale = 0.0;
 					
 					pieceContainer.append(pz);
