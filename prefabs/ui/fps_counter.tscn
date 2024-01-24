@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://scripts/ui/fps_counter.gd" id="1_hyns4"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="FPSCounter" type="CanvasLayer"]
 scale = Vector2(0.7, 0.7)
 transform = Transform2D(0.7, 0, 0, 0.7, 0, 0)
 
-[node name="Label" type="Label" parent="."]
+[node name="FPS_ms" type="Label" parent="."]
 offset_left = 1564.29
 offset_top = 314.286
 offset_right = 1725.29

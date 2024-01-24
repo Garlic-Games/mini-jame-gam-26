@@ -20,6 +20,7 @@ config/icon="res://art/images/cryptogeddon.png"
 
 GameManager="*res://scripts/gamemanager/game_manager.gd"
 SceneManager="*res://scripts/gamemanager/scene_manager.gd"
+GameStats="*res://scripts/gamemanager/game_stats.gd"
 
 [display]
 

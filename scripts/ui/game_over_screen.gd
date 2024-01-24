@@ -1,27 +1,33 @@
 extends CanvasLayer
 
-@export var winLabel : Label;
-@export var nftLabel : Label;
-
+@export var label_win : Label;
+@export var label_score : Label;
+@export var label_nfts : Label;
 
 func _ready():
-	GameManager.connect("game_finished", _on_game_over);
+	GameManager.connect("game_finished", on_game_over);
 	hide();
 
 
-func _on_game_over():
+func on_game_over():
 	call_deferred("pause_tree");
 	
-	nftLabel.text = str(GameManager.current_treasures, "/", GameManager.max_treasures);
+	label_nfts.text = "%.1d/" %GameStats.current_nfts + "%.1d"%GameManager.max_nfts;
+	label_score.text = "%.1d"% GameStats.current_points;
 	
 	if GameManager.state == GameManager.GAME_STATES.WIN:
-		winLabel.show();
+		label_win.show();
 	
 	elif GameManager.state == GameManager.GAME_STATES.GAMEOVER:
-		winLabel.hide();
+		label_win.hide();
 	
 	show();
-	
+
 
 func pause_tree():
 	get_tree().paused = true;
+
+
+func _on_try_again_btn_pressed():
+	get_tree().paused = false;
+	SceneManager.restart_scene();

@@ -1,6 +1,7 @@
 extends Node
 
 @export var play_time: float = 6 * 60;
+@export var vehicle : Vehicle = null;
 @export var tutorial_animation_player: AnimationPlayer;
 @export var fade_in_canvas : CanvasLayer;
 
@@ -12,7 +13,7 @@ func _ready():
 	GameManager.animation_player = tutorial_animation_player;
 	
 	fade_in_canvas.show();
-	
+
 
 func _process(_delta):
 	if not tutorial_started:

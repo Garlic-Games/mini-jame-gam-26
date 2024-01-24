@@ -1,13 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpwiasqc2c0kk"]
+[gd_scene load_steps=3 format=3 uid="uid://dpwiasqc2c0kk"]
 
-[ext_resource type="Script" path="res://scripts/ui/speed_o_meter.gd" id="1_ekmlj"]
 [ext_resource type="Script" path="res://scripts/ui/vehicle_ui.gd" id="1_n6t14"]
-[ext_resource type="Script" path="res://scripts/ui/vehicle_reset_bar.gd" id="3_bwc4c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dkmye"]
 bg_color = Color(0, 0.635294, 0.745098, 1)
 
-[node name="VehicleUi" type="Control"]
+[node name="VehicleUi" type="Control" node_paths=PackedStringArray("progress_bar")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,13 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n6t14")
-
-[node name="Button" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-script = ExtResource("1_ekmlj")
+progress_bar = NodePath("ProgressBar")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 1
@@ -39,7 +31,6 @@ grow_vertical = 0
 pivot_offset = Vector2(3.61, 0)
 theme_override_styles/fill = SubResource("StyleBoxFlat_dkmye")
 show_percentage = false
-script = ExtResource("3_bwc4c")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

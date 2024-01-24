@@ -117,8 +117,13 @@ func _physics_process(delta):
 
 
 	steering = move_toward(steering, steer_target, STEER_SPEED * delta);
+	
 	speed_kph = linear_velocity.length() * 3.6;
 	calc_rpm();
+	
+	GameStats.rpm_percent = rpm_percent;
+	GameStats.speed_kph = speed_kph;
+	
 	var pichToSet =  clamp(rpm_percent * rpm_pitch_max / 100.0, rpm_pitch_min, rpm_pitch_max);
 	# print("KPH %d Gear %d RPM %d - %d MotorPitch %f" % [speed_kph, selected_gear+1, rpm_value, rpm_percent, pichToSet])
 	motorStreamPlayer.pitch_scale = pichToSet;
@@ -164,6 +169,7 @@ func calc_rpm():
 	
 	if(rpm_value < rpm_idle && selected_gear == 0):
 		rpm_value = rpm_idle;
+		
 	rpm_percent = rpm_value  / rpm_max * 100;
 
 

@@ -1,4 +1,3 @@
-
 extends Node
 
 signal game_finished();
@@ -13,9 +12,7 @@ enum GAME_STATES {
 }
 
 var time_remaining: float;
-var current_points: int = 0;
-var current_nfts: int = 0;
-var max_nfts: int = 10;
+var max_nfts: int = 2;
 var state: GAME_STATES = GAME_STATES.LOADING;
 var animation_player: AnimationPlayer;
 var tutorial_played = false;
@@ -37,7 +34,7 @@ func _process(delta):
 			state = GAME_STATES.GAMEOVER;
 			game_finished.emit();
 
-		if current_nfts >= max_nfts:
+		if GameStats.current_nfts >= max_nfts:
 			state = GAME_STATES.WIN;
 			game_finished.emit();
 			
@@ -61,17 +58,17 @@ func animation_finished(_algo):
 
 func set_playing():
 	state = GAME_STATES.PLAYING;
-	current_points = 0;
-	current_nfts = 0;
+	GameStats.current_points = 0;
+	GameStats.current_nfts = 0;
 	
 	
 func add_points(points: int):
-	current_points = current_points + points;
+	GameStats.current_points += points;
 	emit_signal("points_added");
 
 
 func add_treasure():
-	current_nfts = current_nfts + 1;
+	GameStats.current_nfts += 1;
 
 
 func inject_play_time(game_time):
