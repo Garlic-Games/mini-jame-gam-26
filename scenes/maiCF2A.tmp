@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://eo18yjsvfw7e"]
-
-[ext_resource type="PackedScene" uid="uid://bkwmiu271cxf8" path="res://prefabs/mainMenu/main_menu.tscn" id="1_bj306"]
-
-[node name="Main" type="Node3D"]
-
-[node name="MainMenu" parent="." instance=ExtResource("1_bj306")]
