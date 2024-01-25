@@ -9,6 +9,9 @@
 [ext_resource type="Script" path="res://scripts/ui/glitch_on_points.gd" id="12_3dldl"]
 [ext_resource type="Texture2D" uid="uid://8rmt1oi3c1up" path="res://art/textures/moai_icon.png" id="12_pr2hi"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ys2ex"]
+shader = ExtResource("5_470ax")
+
 [sub_resource type="Gradient" id="Gradient_hl650"]
 colors = PackedColorArray(0.356863, 0, 1, 1, 1, 0, 1, 1)
 
@@ -17,9 +20,6 @@ gradient = SubResource("Gradient_hl650")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37bg7"]
 texture = SubResource("GradientTexture2D_rg7hs")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ys2ex"]
-shader = ExtResource("5_470ax")
 
 [sub_resource type="Animation" id="Animation_dp8jf"]
 length = 0.001
@@ -73,11 +73,21 @@ gradient = SubResource("Gradient_ygmua")
 [node name="Hud" type="CanvasLayer" node_paths=PackedStringArray("bar_revolutions", "label_speed", "label_points", "label_nfts", "label_time", "icon_nft")]
 script = ExtResource("1_xdulf")
 bar_revolutions = NodePath("Revolutions")
-label_speed = NodePath("Revolutions/Control/MettersPerSeccond")
+label_speed = NodePath("Control/MettersPerSeccond")
 label_points = NodePath("Points/PointsLabel")
 label_nfts = NodePath("Nfts/NftsLabel")
 label_time = NodePath("Time/TimeLabel")
 icon_nft = NodePath("TextureNFT")
+
+[node name="TextureHUD" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_ys2ex")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ai4t0")
+expand_mode = 2
 
 [node name="Revolutions" type="ProgressBar" parent="."]
 anchors_preset = 15
@@ -93,13 +103,16 @@ theme_override_styles/fill = SubResource("StyleBoxTexture_37bg7")
 value = 50.0
 show_percentage = false
 
-[node name="Control" type="Control" parent="Revolutions"]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 978.0
+offset_top = 619.0
+offset_right = 1018.0
+offset_bottom = 659.0
 script = ExtResource("5_yug46")
 
-[node name="MettersPerSeccond" type="Label" parent="Revolutions/Control"]
+[node name="MettersPerSeccond" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -113,16 +126,6 @@ theme_override_fonts/font = ExtResource("3_nq2vs")
 theme_override_font_sizes/font_size = 20
 text = " 30 KM/H"
 vertical_alignment = 1
-
-[node name="TextureHUD" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_ys2ex")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_ai4t0")
-expand_mode = 2
 
 [node name="Time" type="Control" parent="."]
 layout_mode = 3
