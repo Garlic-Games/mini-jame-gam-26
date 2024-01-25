@@ -51,4 +51,3 @@ text = "L O A D I N G"
 alignment = 1
 
 [node name="TransitionFadeOut" parent="." instance=ExtResource("4_okiqf")]
-layer = 2
