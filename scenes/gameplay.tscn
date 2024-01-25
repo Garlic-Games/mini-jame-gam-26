@@ -1369,165 +1369,75 @@ collision_mask = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.482319, 0, -41.534)
 shape = SubResource("BoxShape3D_cfmd8")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D2"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.26345, 0, -41.534)
 shape = SubResource("BoxShape3D_cfmd8")
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D3"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.113, -1.52588e-05, -376.473)
 shape = SubResource("BoxShape3D_023hv")
 
-[node name="StaticBody3D4" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D4"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.0317, -1.52588e-05, -387.976)
 shape = SubResource("BoxShape3D_prr2u")
 
-[node name="StaticBody3D5" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D5"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.9539, -1.52588e-05, -373.843)
 shape = SubResource("BoxShape3D_nv800")
 
-[node name="StaticBody3D6" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D6"]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.7157, -1.52588e-05, -373.936)
 shape = SubResource("BoxShape3D_nv800")
 
-[node name="StaticBody3D7" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D7"]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.2548, -1.52588e-05, -458.385)
 shape = SubResource("BoxShape3D_sosda")
 
-[node name="StaticBody3D8" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D8"]
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.2548, -1.52588e-05, -506.946)
 shape = SubResource("BoxShape3D_021w1")
 
-[node name="StaticBody3D9" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D9"]
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188.626, -1.52588e-05, -410.44)
 shape = SubResource("BoxShape3D_nxmqh")
 
-[node name="StaticBody3D10" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D10"]
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 319.581, -1.52588e-05, -401.348)
 shape = SubResource("BoxShape3D_y7s7q")
 
-[node name="StaticBody3D11" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D11"]
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.448, -1.43051e-05, -269.366)
 shape = SubResource("BoxShape3D_wdyaj")
 
-[node name="StaticBody3D12" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D12"]
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8579, -1.43051e-05, -269.366)
 shape = SubResource("BoxShape3D_7phom")
 
-[node name="StaticBody3D13" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D13"]
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.136, -1.43051e-05, -303.179)
 shape = SubResource("BoxShape3D_jynx2")
 
-[node name="StaticBody3D14" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D14"]
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.89205, -1.43051e-05, -381.921)
 shape = SubResource("BoxShape3D_8aanh")
 
-[node name="StaticBody3D15" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D15"]
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.59473, -1.43051e-05, -472.326)
 shape = SubResource("BoxShape3D_os51f")
 
-[node name="StaticBody3D16" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D16"]
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.712585, -1.43051e-05, -480.86)
 shape = SubResource("BoxShape3D_2d4xd")
 
-[node name="StaticBody3D17" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D17"]
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 189.368, -1.43051e-05, -532.82)
 shape = SubResource("BoxShape3D_24b5y")
 
-[node name="StaticBody3D18" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D18"]
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 244.578, -1.43051e-05, -526.055)
 shape = SubResource("BoxShape3D_sosi7")
 
-[node name="StaticBody3D19" type="StaticBody3D" parent="Map/Caulk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9372, 0.677545, 383.015)
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D19"]
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="Map/Caulk/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 244.502, -1.43051e-05, -517.884)
 shape = SubResource("BoxShape3D_pwa66")
 
