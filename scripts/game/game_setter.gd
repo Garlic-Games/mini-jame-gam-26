@@ -41,7 +41,8 @@ func _process(_delta):
 func end_animation():
 	tutorial_animation_player.play("RESET");
 	GameManager.start_playing();
-	
+
+
 func animation_finished(_algo):
 	GameManager.tutorial_played = true;
 
@@ -51,7 +52,7 @@ func animation_finished(_algo):
 	tutorial_animation_player.disconnect("animation_finished", animation_finished);
 
 	call_deferred("end_animation");
-	
+
 
 func set_tutorial():
 	tutorial_started = true;
