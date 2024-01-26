@@ -41,11 +41,11 @@ func _process(_delta):
 
 
 func animation_finished(_algo):
-	GameManager.tutorial_played = true;
-	GameManager.start_playing();
-	
 	if fade_in_canvas:
 		fade_in_canvas.find_child("Animation").play("fade_in");
+
+	GameManager.tutorial_played = true;
+	GameManager.start_playing();
 
 	tutorial_animation_player.disconnect("animation_finished", animation_finished);
 
