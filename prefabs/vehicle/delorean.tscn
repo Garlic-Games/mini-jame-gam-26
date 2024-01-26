@@ -147,11 +147,11 @@ use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.325
 wheel_friction_slip = 0.95
-suspension_travel = 0.25
-suspension_stiffness = 160.0
+suspension_travel = 0.1
+suspension_stiffness = 50.0
 suspension_max_force = 6500.0
-damping_compression = 0.5
-damping_relaxation = 0.75
+damping_compression = 0.1
+damping_relaxation = 0.5
 
 [node name="Wheel3" type="MeshInstance3D" parent="wheel-FR"]
 _import_path = NodePath("BODY-vehicle/wheel3-wheel")
@@ -165,11 +165,11 @@ use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.325
 wheel_friction_slip = 0.95
-suspension_travel = 0.25
-suspension_stiffness = 160.0
+suspension_travel = 0.1
+suspension_stiffness = 50.0
 suspension_max_force = 6500.0
-damping_compression = 0.5
-damping_relaxation = 0.75
+damping_compression = 0.1
+damping_relaxation = 0.5
 
 [node name="Wheel1" type="MeshInstance3D" parent="wheel-FL"]
 _import_path = NodePath("BODY-vehicle/wheel1-wheel")
@@ -181,11 +181,11 @@ surface_material_override/0 = ExtResource("3_5pg4s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.802908, 0.295627, -1.474)
 wheel_radius = 0.325
 wheel_friction_slip = 0.85
-suspension_travel = 0.25
-suspension_stiffness = 160.0
-suspension_max_force = 9000.0
-damping_compression = 0.5
-damping_relaxation = 0.75
+suspension_travel = 0.1
+suspension_stiffness = 50.0
+suspension_max_force = 6500.0
+damping_compression = 0.1
+damping_relaxation = 0.5
 
 [node name="Wheel4" type="MeshInstance3D" parent="wheel-BR"]
 _import_path = NodePath("BODY-vehicle/wheel4-wheel")
@@ -197,11 +197,11 @@ surface_material_override/0 = ExtResource("3_5pg4s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81896, 0.295627, -1.474)
 wheel_radius = 0.325
 wheel_friction_slip = 0.85
-suspension_travel = 0.25
-suspension_stiffness = 160.0
-suspension_max_force = 9000.0
-damping_compression = 0.5
-damping_relaxation = 0.75
+suspension_travel = 0.1
+suspension_stiffness = 50.0
+suspension_max_force = 6500.0
+damping_compression = 0.1
+damping_relaxation = 0.5
 
 [node name="Wheel2" type="MeshInstance3D" parent="wheel-BL"]
 _import_path = NodePath("BODY-vehicle/wheel2-wheel")
