@@ -181,7 +181,7 @@ func calc_rpm():
 	if(rpm_value < rpm_idle && selected_gear == 0):
 		rpm_value = rpm_idle;
 		
-	rpm_percent = rpm_value  / rpm_max * 100;
+	rpm_percent = rpm_value / rpm_max * 100.0;
 
 
 func ResetCarFlipped():

@@ -20,5 +20,6 @@ func _process(_delta):
 		label_time.text = "%02d:" % int(GameManager.time_remaining / 60) + "%02d" % (int(GameManager.time_remaining) % 60);
 		label_time.get_parent();
 
+
 func animate_nft():
 	icon_nft.find_child("Animation").play("bounce");

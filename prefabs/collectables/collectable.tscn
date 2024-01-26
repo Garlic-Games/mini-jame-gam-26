@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgtf2hrjpsqsa"]
 
 [ext_resource type="PackedScene" uid="uid://r1t0fejsamp5" path="res://art/models/collectable.glb" id="2_1ps1p"]
-[ext_resource type="Script" path="res://scripts/collectable_animation.gd" id="2_5gmdf"]
+[ext_resource type="Script" path="res://scripts/ui/collectable_animation.gd" id="2_5gmdf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kpmug"]
 size = Vector3(2, 3.92285, 2)
