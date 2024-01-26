@@ -1509,6 +1509,5 @@ visible = false
 [node name="PauseMenu" parent="." instance=ExtResource("22_8kyku")]
 visible = false
 
-[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="Map/Road5/EntryPath23" to="Map/Road5/EntryPath23" method="_on_body_entered"]
 [connection signal="body_exited" from="Map/Road5/EntryPath23" to="Map/Road5/EntryPath23" method="_on_body_exited"]

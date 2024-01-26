@@ -14,9 +14,9 @@ var is_skip_pressed : bool = false;
 
 func _ready():
 	GameManager.inject_play_time(play_time);
-	
+
 	InputManager.on_handbrake_input.connect(func(value): is_skip_pressed = value);
-	
+
 	if fade_in_canvas:
 		fade_in_canvas.show();
 
@@ -33,47 +33,42 @@ func _process(_delta):
 				if fade_in_canvas:
 					fade_in_canvas.find_child("Animation").play("fade_in");
 
-				call_deferred("skip_tutorial");
+				tutorial_animation_player.play("RESET");
 
 		else:
 			skip_tutorial_count = 0;
 
 
-
 func animation_finished(_algo):
-	if fade_in_canvas:
-		fade_in_canvas.find_child("Animation").play("fade_in");
-
 	GameManager.tutorial_played = true;
 	GameManager.start_playing();
+
+	if fade_in_canvas:
+		fade_in_canvas.find_child("Animation").play("fade_in");
 
 	tutorial_animation_player.disconnect("animation_finished", animation_finished);
 
 
 func set_tutorial():
 	tutorial_started = true;
-	
+
 	if (GameManager.tutorial_played):
 		GameManager.start_playing();
-		
+
 		if fade_in_canvas:
 			fade_in_canvas.find_child("Animation").play("fade_in");
-			
+
 		return;
-		
+
 	GameManager.state = GameManager.GAME_STATES.TUTORIAL;
 	
 	tutorial_animation_player.play("tutorial");
 	tutorial_animation_player.connect("animation_finished", animation_finished);
 
 
-func skip_tutorial():
-	tutorial_animation_player.play("RESET");
-
-
 func set_game_loaded():
 	set_tutorial();
 	get_tree().paused = false;
-	
+
 	if fade_in_canvas:
 		fade_in_canvas.find_child("Animation").play("fade_in");
