@@ -58,14 +58,23 @@ var is_upside_down = false;
 
 var reset_count = 0;
 
+var is_handbrake_pressed = false;
+var is_accelerate_pressed = false;
+var is_reverse_pressed = false;
+var is_turning_left_pressed = false;
+var is_turning_right_pressed = false;
 
 func _ready():
-	add_to_group("Car");
+	InputManager.on_handbrake_input.connect(func(value): is_handbrake_pressed = value);
+	InputManager.on_accelerate_input.connect(func(value) : is_accelerate_pressed = value);
+	InputManager.on_reverse_input.connect(func(value) : is_reverse_pressed = value);
+	InputManager.on_left_turn_input.connect(func(value) : is_turning_left_pressed = value);
+	InputManager.on_right_turn_input.connect(func(value) : is_turning_right_pressed = value);
 
 
 func _process(delta):
 	if(is_upside_down):
-		if Input.is_action_pressed("handbrake"):
+		if is_handbrake_pressed:
 			reset_count += delta;
 			if(reset_count > reset_time_seconds):
 				ResetCarFlipped();
@@ -82,10 +91,12 @@ func _physics_process(delta):
 		
 	var fwd_mps = (linear_velocity) * transform.basis.x;
 
-	steer_target = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right");
+	if is_turning_left_pressed or is_turning_right_pressed:
+		steer_target = Input.get_action_strength("turn_left") - Input.get_action_strength("turn_right");
+	
 	steer_target *= STEER_LIMIT;
 
-	if Input.is_action_pressed("accelerate"):
+	if is_accelerate_pressed:
 		# Increase engine force at low speeds to make the initial acceleration faster.
 		var speed = linear_velocity.length();
 		if speed < 5 and speed != 0:
@@ -95,7 +106,7 @@ func _physics_process(delta):
 	else:
 		engine_force = 0;
 
-	if Input.is_action_pressed("reverse"):
+	if is_reverse_pressed:
 		# Increase engine force at low speeds to make the initial acceleration faster.
 		if fwd_mps >= Vector3.LEFT:
 			var speed = linear_velocity.length();
@@ -108,7 +119,7 @@ func _physics_process(delta):
 	else:
 		brake = 0.0;
 
-	if Input.is_action_pressed("handbrake"):
+	if is_handbrake_pressed:
 		wheel_br.brake = engine_force_value * brake_force_multiplier;
 		wheel_bl.brake = engine_force_value * brake_force_multiplier;
 	else:

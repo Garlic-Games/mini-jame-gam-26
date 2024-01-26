@@ -5,10 +5,8 @@ const main_menu_path = "res://scenes/main.tscn";
 var is_paused = false;
 
 
-func _process(_delta):
-	if GameManager.state == GameManager.GAME_STATES.PLAYING || GameManager.state == GameManager.GAME_STATES.TUTORIAL:
-		if Input.is_action_just_pressed("pause"):
-			call_deferred("toggle_pause");
+func _ready():
+	InputManager.on_pause_pressed.connect(toggle_pause);
 
 
 func _on_continue_pressed():
