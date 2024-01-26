@@ -18,7 +18,7 @@ var max_nfts: int = 1;
 var state: GAME_STATES = GAME_STATES.MAIN_MENU;
 var animation_player: AnimationPlayer;
 var tutorial_played = false;
-var skip_tutorial_seconds = 3;
+var skip_tutorial_seconds = 2;
 var skip_tutorial_count = 0;
 
 func _process(delta):
