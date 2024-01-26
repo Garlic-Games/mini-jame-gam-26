@@ -4,7 +4,6 @@
 [ext_resource type="FontFile" uid="uid://dvxlgpgvvlyx" path="res://art/fonts/SyntheticText.ttf" id="1_a7uar"]
 [ext_resource type="StyleBox" uid="uid://c6wpjddllpb45" path="res://art/theme/button_area_hover.tres" id="1_vb3tv"]
 
-
 [resource]
 default_font = ExtResource("1_a7uar")
 default_font_size = 12

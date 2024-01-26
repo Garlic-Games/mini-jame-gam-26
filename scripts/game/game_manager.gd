@@ -5,16 +5,17 @@ signal points_added();
 signal on_nft_added;
 
 enum GAME_STATES {
+	MAIN_MENU,
 	LOADING,
 	TUTORIAL,
 	PLAYING,
 	GAMEOVER,
-	WIN
+	WIN,
 }
 
 var time_remaining: float;
-var max_nfts: int = 10;
-var state: GAME_STATES = GAME_STATES.LOADING;
+var max_nfts: int = 1;
+var state: GAME_STATES = GAME_STATES.MAIN_MENU;
 var animation_player: AnimationPlayer;
 var tutorial_played = false;
 var skip_tutorial_seconds = 3;
@@ -28,7 +29,7 @@ func _process(delta):
 				animation_player.play("RESET");
 		else:
 			skip_tutorial_count = 0;
-			
+
 	elif state == GAME_STATES.PLAYING:
 		time_remaining -= delta;
 		if time_remaining < 0:
@@ -38,7 +39,7 @@ func _process(delta):
 		if GameStats.current_nfts >= max_nfts:
 			state = GAME_STATES.WIN;
 			game_finished.emit();
-			
+
 
 func set_tutorial():
 	if (tutorial_played):

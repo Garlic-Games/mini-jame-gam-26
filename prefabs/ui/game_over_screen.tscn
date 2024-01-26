@@ -24,10 +24,11 @@ width = 128
 height = 128
 fill_from = Vector2(0, 1)
 
-[node name="GameOverScreen" type="CanvasLayer" node_paths=PackedStringArray("label_win", "label_score", "label_nfts")]
+[node name="GameOverScreen" type="CanvasLayer" node_paths=PackedStringArray("game_over_music", "label_win", "label_score", "label_nfts")]
 process_mode = 3
 layer = 9
 script = ExtResource("1_pjgt1")
+game_over_music = NodePath("MarginContainer/GameOverMusic")
 label_win = NodePath("MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/WinMessage")
 label_score = NodePath("MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GridContainer/ScoreAmount")
 label_nfts = NodePath("MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/GridContainer/NFTsAmount")
@@ -134,9 +135,8 @@ theme = ExtResource("2_vy71p")
 theme_override_font_sizes/font_size = 25
 text = "TRY AGAIN"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MarginContainer"]
+[node name="GameOverMusic" type="AudioStreamPlayer" parent="MarginContainer"]
 stream = ExtResource("6_0hy5c")
-autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/TryAgainBtn" to="." method="_on_try_again_btn_pressed"]

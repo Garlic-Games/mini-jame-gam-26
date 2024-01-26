@@ -20,6 +20,11 @@ func _process(_delta):
 func load_scene(caller_scene, scene_path):
 	is_scene_loading = true;
 	
+	if current_scene:
+		current_scene.queue_free();
+	
+	GameManager.state = GameManager.GAME_STATES.LOADING;
+	
 	current_scene_path = scene_path;
 	ResourceLoader.load_threaded_request(current_scene_path);
 	
@@ -47,7 +52,10 @@ func check_loading_status():
 func instantiate_scene():
 	current_scene = scene_resource.instantiate();
 	get_tree().get_root().call_deferred("add_child", current_scene);
-
+			
+	if current_scene_path == "res://scenes/main.tscn":
+		GameManager.state = GameManager.GAME_STATES.MAIN_MENU;
+		
 	if is_scene_loading:
 		loading_scene_instance.queue_free();
 		is_scene_loading = false;

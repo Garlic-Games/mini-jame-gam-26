@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://nl3ly4i4vwy"]
+[gd_scene load_steps=51 format=3 uid="uid://nl3ly4i4vwy"]
 
 [ext_resource type="Script" path="res://scripts/game/game_setter.gd" id="1_nfvqm"]
 [ext_resource type="Shader" path="res://art/shaders/sky.gdshader" id="2_o7bey"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cdukdf8fl5ccm" path="res://prefabs/vehicle/delorean.tscn" id="18_p48oc"]
 [ext_resource type="PackedScene" uid="uid://ctvqifyknhevw" path="res://prefabs/ui/game_over_screen.tscn" id="20_4gafm"]
 [ext_resource type="AudioStream" uid="uid://dn7tugcpfssoq" path="res://art/music/play.ogg" id="21_063c7"]
+[ext_resource type="PackedScene" uid="uid://b72gqhvkpuiwb" path="res://prefabs/ui/pause_menu.tscn" id="22_8kyku"]
 
 [sub_resource type="Animation" id="Animation_ue2ds"]
 length = 0.001
@@ -1504,6 +1505,9 @@ autoplay = true
 visible = false
 
 [node name="TransitionFadeIn" parent="UI" instance=ExtResource("3_ue10v")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("22_8kyku")]
+visible = false
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="Map/Road5/EntryPath23" to="Map/Road5/EntryPath23" method="_on_body_entered"]
