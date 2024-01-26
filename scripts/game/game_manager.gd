@@ -16,7 +16,7 @@ enum GAME_STATES {
 var state: GAME_STATES = GAME_STATES.MAIN_MENU;
 var tutorial_played: bool = false;
 var time_remaining: float;
-var max_nfts: int = 10;
+var max_nfts: int = 1;
 
 
 func _process(delta):
