@@ -71,6 +71,7 @@ shader_parameter/doeet = false
 gradient = SubResource("Gradient_ygmua")
 
 [node name="Hud" type="CanvasLayer" node_paths=PackedStringArray("bar_revolutions", "label_speed", "label_points", "label_nfts", "label_time", "icon_nft")]
+layer = 128
 script = ExtResource("1_xdulf")
 bar_revolutions = NodePath("Revolutions")
 label_speed = NodePath("Control/MettersPerSeccond")

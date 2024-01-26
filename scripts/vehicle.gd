@@ -44,7 +44,7 @@ const STEER_LIMIT = 0.4;
 @export var light_trail_speed = 80;
 
 @export_category("Interaction with collectables")
-@export var collectStreamPlayer: AudioStreamPlayer;
+@export var collectStreamPlayer: AudioStreamPlayer = null;
 
 var steer_target = 0;
 var speed_kph = 0;

@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://nl3ly4i4vwy" path="res://scenes/gameplay.tscn" id="2_37pos"]
 [ext_resource type="Theme" uid="uid://dpqda1rl4km7n" path="res://art/theme/main.tres" id="2_f3fat"]
 [ext_resource type="Shader" path="res://art/shaders/glitch.gdshader" id="4_5f5nj"]
-[ext_resource type="AudioStream" uid="uid://dcnytumipye5u" path="res://art/sounds/Menu Sounds/wav/menu_19.wav" id="6_afl2u"]
+[ext_resource type="AudioStream" uid="uid://dcnytumipye5u" path="res://art/sounds/menu_sounds/wav/menu_19.wav" id="6_afl2u"]
 [ext_resource type="Script" path="res://scripts/menu/credits_menu.gd" id="6_fsf6p"]
 [ext_resource type="Script" path="res://scripts/menu/options_menu.gd" id="6_pf22d"]
 [ext_resource type="FontFile" uid="uid://dvxlgpgvvlyx" path="res://art/fonts/SyntheticText.ttf" id="6_qgd4r"]
-[ext_resource type="AudioStream" uid="uid://08glyqutlt1y" path="res://art/sounds/Menu Sounds/wav/menu_1.wav" id="7_dmuv4"]
+[ext_resource type="AudioStream" uid="uid://08glyqutlt1y" path="res://art/sounds/menu_sounds/wav/menu_1.wav" id="7_dmuv4"]
 [ext_resource type="PackedScene" uid="uid://c8i7dlv0ns4jl" path="res://prefabs/mainMenu/intro_music.tscn" id="8_coyqn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dfff5"]

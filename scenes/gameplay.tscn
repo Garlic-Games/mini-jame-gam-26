@@ -23,6 +23,92 @@
 [ext_resource type="AudioStream" uid="uid://dn7tugcpfssoq" path="res://art/music/play.ogg" id="21_063c7"]
 [ext_resource type="PackedScene" uid="uid://b72gqhvkpuiwb" path="res://prefabs/ui/pause_menu.tscn" id="22_8kyku"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1c2am"]
+size = Vector3(18.357, 15.35, 28.2026)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0cpgq"]
+size = Vector3(1.049, 1, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xwiux"]
+size = Vector3(60, 15, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cfmd8"]
+size = Vector3(1.5, 6, 456.955)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_023hv"]
+size = Vector3(1.5, 6, 212.275)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_prr2u"]
+size = Vector3(1.5, 6, 170.018)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nv800"]
+size = Vector3(1.5, 6, 141.806)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sosda"]
+size = Vector3(1, 6, 28.5764)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_021w1"]
+size = Vector3(1, 6, 52.092)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nxmqh"]
+size = Vector3(1, 6, 214.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y7s7q"]
+size = Vector3(1, 6, 264.122)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wdyaj"]
+size = Vector3(312.896, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7phom"]
+size = Vector3(63.4294, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jynx2"]
+size = Vector3(119.601, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8aanh"]
+size = Vector3(114.316, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_os51f"]
+size = Vector3(114.382, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2d4xd"]
+size = Vector3(122.961, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_24b5y"]
+size = Vector3(260.882, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sosi7"]
+size = Vector3(111.852, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pwa66"]
+size = Vector3(112.015, 6, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tfkgv"]
+shader = ExtResource("2_o7bey")
+shader_parameter/color_top = Color(0.196078, 0, 0.219608, 1)
+shader_parameter/color_horizon = Color(0, 0.0901961, 0.823529, 1)
+shader_parameter/color_bottom = Color(0.341176, 0.670588, 0.85098, 1)
+shader_parameter/exponent_factor_top = 12.76
+shader_parameter/exponent_factor_bottom = 1.0
+shader_parameter/intensity_amp = 0.8
+
+[sub_resource type="Sky" id="Sky_u7uue"]
+sky_material = SubResource("ShaderMaterial_tfkgv")
+
+[sub_resource type="Environment" id="Environment_6pikt"]
+background_mode = 2
+background_color = Color(0.0235294, 0, 0.0784314, 1)
+sky = SubResource("Sky_u7uue")
+ambient_light_color = Color(0.431373, 0.129412, 0.784314, 1)
+tonemap_exposure = 2.45
+glow_normalized = true
+glow_intensity = 2.18
+glow_bloom = 1.0
+glow_hdr_threshold = 1.15
+fog_light_color = Color(0.027451, 0.0352941, 0.0431373, 1)
+fog_light_energy = 3.73
+adjustment_brightness = 4.41
+
 [sub_resource type="Animation" id="Animation_ue2ds"]
 length = 0.001
 tracks/0/type = "value"
@@ -80,7 +166,7 @@ tracks/4/path = NodePath("Camera3D:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -188,7 +274,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 60),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, true]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -200,7 +286,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 60),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wos5u"]
@@ -213,137 +299,11 @@ _data = {
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87357"]
 bg_color = Color(0, 0, 0, 0.862745)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1c2am"]
-size = Vector3(18.357, 15.35, 28.2026)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0cpgq"]
-size = Vector3(1.049, 1, 1.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_xwiux"]
-size = Vector3(60, 15, 60)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_cfmd8"]
-size = Vector3(1.5, 6, 456.955)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_023hv"]
-size = Vector3(1.5, 6, 212.275)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_prr2u"]
-size = Vector3(1.5, 6, 170.018)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_nv800"]
-size = Vector3(1.5, 6, 141.806)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_sosda"]
-size = Vector3(1, 6, 28.5764)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_021w1"]
-size = Vector3(1, 6, 52.092)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_nxmqh"]
-size = Vector3(1, 6, 214.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_y7s7q"]
-size = Vector3(1, 6, 264.122)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_wdyaj"]
-size = Vector3(312.896, 6, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_7phom"]
-size = Vector3(63.4294, 6, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jynx2"]
-size = Vector3(119.601, 6, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_8aanh"]
-size = Vector3(114.316, 6, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_os51f"]
-size = Vector3(114.382, 6, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2d4xd"]
-size = Vector3(122.961, 6, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_24b5y"]
-size = Vector3(260.882, 6, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_sosi7"]
-size = Vector3(111.852, 6, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_pwa66"]
-size = Vector3(112.015, 6, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tfkgv"]
-shader = ExtResource("2_o7bey")
-shader_parameter/color_top = Color(0.196078, 0, 0.219608, 1)
-shader_parameter/color_horizon = Color(0, 0.0901961, 0.823529, 1)
-shader_parameter/color_bottom = Color(0.341176, 0.670588, 0.85098, 1)
-shader_parameter/exponent_factor_top = 12.76
-shader_parameter/exponent_factor_bottom = 1.0
-shader_parameter/intensity_amp = 0.8
-
-[sub_resource type="Sky" id="Sky_u7uue"]
-sky_material = SubResource("ShaderMaterial_tfkgv")
-
-[sub_resource type="Environment" id="Environment_6pikt"]
-background_mode = 2
-background_color = Color(0.0235294, 0, 0.0784314, 1)
-sky = SubResource("Sky_u7uue")
-ambient_light_color = Color(0.431373, 0.129412, 0.784314, 1)
-tonemap_exposure = 2.45
-glow_normalized = true
-glow_intensity = 2.18
-glow_bloom = 1.0
-glow_hdr_threshold = 1.15
-fog_light_color = Color(0.027451, 0.0352941, 0.0431373, 1)
-fog_light_energy = 3.73
-adjustment_brightness = 4.41
-
 [node name="Gameplay" type="Node3D" node_paths=PackedStringArray("vehicle", "tutorial_animation_player", "fade_in_canvas")]
 script = ExtResource("1_nfvqm")
 vehicle = NodePath("Delorean")
 tutorial_animation_player = NodePath("Tutorial/TutorialAnimation")
 fade_in_canvas = NodePath("UI/TransitionFadeIn")
-
-[node name="Tutorial" type="Node" parent="."]
-
-[node name="TutorialAnimation" type="AnimationPlayer" parent="Tutorial"]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_wos5u")
-}
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Tutorial"]
-
-[node name="Panel" type="Panel" parent="Tutorial/CanvasLayer"]
-visible = false
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 74.0
-offset_top = -133.0
-offset_right = 843.64
-offset_bottom = -59.0
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_87357")
-
-[node name="MarginContainer" type="MarginContainer" parent="Tutorial/CanvasLayer/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="Label" type="Label" parent="Tutorial/CanvasLayer/Panel/MarginContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-autowrap_mode = 3
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -1491,7 +1451,6 @@ collision_mask = 10
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.671721, -0.191734, 0.715562, 0, 0.965926, 0.258819, -0.740805, -0.173854, 0.648832, 12.7683, 6.00838, 13.3346)
-visible = false
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_063c7")
@@ -1505,6 +1464,46 @@ autoplay = true
 visible = false
 
 [node name="TransitionFadeIn" parent="UI" instance=ExtResource("3_ue10v")]
+
+[node name="Tutorial" type="Node" parent="."]
+
+[node name="TutorialAnimation" type="AnimationPlayer" parent="Tutorial"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_wos5u")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Tutorial"]
+
+[node name="Panel" type="Panel" parent="Tutorial/CanvasLayer"]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 74.0
+offset_top = -133.0
+offset_right = 843.64
+offset_bottom = -59.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_87357")
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorial/CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Label" type="Label" parent="Tutorial/CanvasLayer/Panel/MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+autowrap_mode = 3
 
 [node name="PauseMenu" parent="." instance=ExtResource("22_8kyku")]
 visible = false

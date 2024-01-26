@@ -32,32 +32,32 @@ func _process(_delta):
 			if(skip_tutorial_count > skip_tutorial_seconds):
 				if fade_in_canvas:
 					fade_in_canvas.find_child("Animation").play("fade_in");
-
-				tutorial_animation_player.play("RESET");
+					call_deferred("end_animation");
 
 		else:
 			skip_tutorial_count = 0;
 
 
+func end_animation():
+	tutorial_animation_player.play("RESET");
+	GameManager.start_playing();
+	
 func animation_finished(_algo):
 	GameManager.tutorial_played = true;
-	GameManager.start_playing();
 
 	if fade_in_canvas:
 		fade_in_canvas.find_child("Animation").play("fade_in");
 
 	tutorial_animation_player.disconnect("animation_finished", animation_finished);
 
+	call_deferred("end_animation");
+	
 
 func set_tutorial():
 	tutorial_started = true;
 
 	if (GameManager.tutorial_played):
 		GameManager.start_playing();
-
-		if fade_in_canvas:
-			fade_in_canvas.find_child("Animation").play("fade_in");
-
 		return;
 
 	GameManager.state = GameManager.GAME_STATES.TUTORIAL;
