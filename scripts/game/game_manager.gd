@@ -47,5 +47,5 @@ func add_nft():
 	on_nft_added.emit();
 
 
-func inject_play_time(game_time):
+func set_time(game_time):
 	time_remaining = game_time;

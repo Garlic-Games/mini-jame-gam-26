@@ -13,7 +13,7 @@ var is_skip_pressed : bool = false;
 
 
 func _ready():
-	GameManager.inject_play_time(play_time);
+	GameManager.set_time(play_time);
 
 	InputManager.on_handbrake_input.connect(func(value): is_skip_pressed = value);
 
