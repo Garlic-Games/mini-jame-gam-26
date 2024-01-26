@@ -1,7 +1,7 @@
 extends Node
 
-signal game_finished();
-signal points_added();
+signal game_finished;
+signal points_added;
 signal on_nft_added;
 
 enum GAME_STATES {
@@ -39,7 +39,7 @@ func start_playing():
 
 func add_points(points: int):
 	GameStats.current_points += points;
-	emit_signal("points_added");
+	points_added.emit();
 
 
 func add_nft():

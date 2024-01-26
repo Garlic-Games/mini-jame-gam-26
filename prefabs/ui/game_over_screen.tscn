@@ -26,7 +26,7 @@ fill_from = Vector2(0, 1)
 
 [node name="GameOverScreen" type="CanvasLayer" node_paths=PackedStringArray("game_over_music", "label_win", "label_score", "label_nfts")]
 process_mode = 3
-layer = 9
+layer = 128
 script = ExtResource("1_pjgt1")
 game_over_music = NodePath("MarginContainer/GameOverMusic")
 label_win = NodePath("MarginContainer/GameOver/MarginContainer/MarginContainer/VBoxContainer/WinMessage")
