@@ -58,11 +58,11 @@ var is_upside_down = false;
 
 var reset_count = 0;
 
-var is_handbrake_pressed = false;
-var is_accelerate_pressed = false;
-var is_reverse_pressed = false;
-var is_turning_left_pressed = false;
-var is_turning_right_pressed = false;
+var is_handbrake_pressed : bool = false;
+var is_accelerate_pressed : bool = false;
+var is_reverse_pressed : bool = false;
+var is_turning_left_pressed : bool = false;
+var is_turning_right_pressed : bool = false;
 
 func _ready():
 	InputManager.on_handbrake_input.connect(func(value): is_handbrake_pressed = value);
