@@ -1459,6 +1459,7 @@ autoplay = true
 [node name="UI" type="Node" parent="."]
 
 [node name="Hud" parent="UI" instance=ExtResource("17_jd6ys")]
+layer = 126
 
 [node name="GameOverScreen" parent="UI" instance=ExtResource("20_4gafm")]
 visible = false

@@ -53,7 +53,7 @@ _data = {
 }
 
 [node name="TransitionFade" type="CanvasLayer"]
-layer = 10
+layer = 127
 script = ExtResource("1_ei5nc")
 
 [node name="ColorRect" type="ColorRect" parent="."]
