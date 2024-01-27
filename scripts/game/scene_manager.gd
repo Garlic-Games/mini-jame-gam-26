@@ -45,13 +45,17 @@ func check_loading_status():
 
 	match loading_status:
 		ResourceLoader.THREAD_LOAD_LOADED:
+			loading_scene_instance.progress_bar.value = 100.0;
 			scene_resource = ResourceLoader.load_threaded_get(current_scene_path);
 			loading_scene_instance.finish_loading_animation();
+		
+		ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+			loading_scene_instance.progress_bar.value = loading_progress[0] * 100;
 
 
 func instantiate_scene():
 	current_scene = scene_resource.instantiate();
-	get_tree().get_root().call_deferred("add_child", current_scene);
+	get_tree().get_root().add_child(current_scene);
 			
 	if current_scene_path == "res://scenes/main.tscn":
 		GameManager.state = GameManager.GAME_STATES.MAIN_MENU;

@@ -2,6 +2,7 @@ extends Node
 
 signal loading_animation_finished;
 
+@export var progress_bar : ProgressBar;
 @export var rotating_icon : TextureRect;
 @export var rotating_speed : float = 0.0;
 @export var loading_text : LineEdit;

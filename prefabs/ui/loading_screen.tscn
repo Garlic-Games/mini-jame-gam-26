@@ -1,16 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqfiyxgfekyqd"]
+[gd_scene load_steps=8 format=3 uid="uid://bqfiyxgfekyqd"]
 
 [ext_resource type="Texture2D" uid="uid://2xal2nt2xp0" path="res://art/textures/moai_loading.png" id="1_4isj4"]
 [ext_resource type="Script" path="res://scripts/ui/loading_screen_animation.gd" id="2_qtfsx"]
 [ext_resource type="FontFile" uid="uid://dvxlgpgvvlyx" path="res://art/fonts/SyntheticText.ttf" id="3_stht5"]
 [ext_resource type="PackedScene" uid="uid://c0y6h82ulwufq" path="res://prefabs/ui/transition_fade.tscn" id="4_okiqf"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4aov"]
+bg_color = Color(1, 1, 0.996078, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmbhr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nr0fu"]
 
-[node name="LoadingScreen" type="CanvasLayer" node_paths=PackedStringArray("rotating_icon", "loading_text")]
+[node name="LoadingScreen" type="CanvasLayer" node_paths=PackedStringArray("progress_bar", "rotating_icon", "loading_text")]
 script = ExtResource("2_qtfsx")
+progress_bar = NodePath("ProgressBar")
 rotating_icon = NodePath("TextureRect")
 rotating_speed = 200.0
 loading_text = NodePath("LineEdit")
@@ -20,6 +24,21 @@ blinking_period = 2.5
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = 161.0
+offset_right = 480.0
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_y4aov")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -52,3 +71,4 @@ alignment = 1
 
 [node name="TransitionFadeOut" parent="." instance=ExtResource("4_okiqf")]
 layer = 2
+visible = false
