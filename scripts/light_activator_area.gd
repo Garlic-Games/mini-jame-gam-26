@@ -29,10 +29,10 @@ func getAllLights(node):
 
 
 func _on_body_entered(body):
-	if body is Vehicle and 0:
+	if body is Vehicle:
 		setLightsEnabled(true);
 
 
 func _on_body_exited(body):
-	if body is Vehicle and 0:
+	if body is Vehicle:
 		setLightsEnabled(false);
