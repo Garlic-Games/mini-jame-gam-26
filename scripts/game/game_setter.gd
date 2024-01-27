@@ -14,7 +14,6 @@ var is_skip_pressed : bool = false;
 
 func _ready():
 	GameManager.set_time(play_time);
-
 	InputManager.on_handbrake_input.connect(func(value): is_skip_pressed = value);
 
 	if fade_in_canvas:
